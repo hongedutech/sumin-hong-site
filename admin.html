@@ -75,6 +75,14 @@
   .clear-image{font-family:'IBM Plex Mono',monospace;font-size:11px;background:#FCE7F8;color:#A21CAF;border:none;border-radius:6px;padding:8px 12px;cursor:pointer;}
   .clear-image:hover{opacity:.8;}
   .caption-inputs{margin-top:10px;}
+  .jump-bar{display:flex;flex-wrap:wrap;gap:6px;}
+  .jump-bar a{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-decoration:none;
+    padding:5px 11px;border-radius:20px;border:1px solid var(--line);background:#fff;color:var(--slate);
+  }
+  .jump-bar a:hover{border-color:var(--violet);color:var(--violet);}
+  main{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;scroll-padding-top:170px;}
 </style>
 </head>
 <body>
@@ -265,6 +273,44 @@ function ensureImageFields(d){
     };
   }
   if(!Array.isArray(d.gallery.items)) d.gallery.items = [];
+
+  // ---- sections added in the 2026 update ----
+  if(!d.education) d.education = {sectionTitle:{en:'Education',ko:'학력'}, sectionNote:{en:'',ko:''}, items:[]};
+  if(!Array.isArray(d.education.items)) d.education.items = [];
+  d.education.items.forEach(i => { if(typeof i.logo !== 'string') i.logo = ''; });
+
+  if(!d.books) d.books = {sectionTitle:{en:'Books',ko:'저서'}, sectionNote:{en:'',ko:''}, items:[]};
+  if(!Array.isArray(d.books.items)) d.books.items = [];
+  d.books.items.forEach(b => { if(typeof b.image !== 'string') b.image = ''; });
+
+  if(!d.awards) d.awards = {sectionTitle:{en:'Awards &amp; Certification',ko:'수상 · 자격'}, sectionNote:{en:'',ko:''}, groups:[]};
+  if(!Array.isArray(d.awards.groups)) d.awards.groups = [];
+  if(!d.coursework) d.coursework = {sectionTitle:{en:'Coursework',ko:'수강이력'}, sectionNote:{en:'',ko:''}, groups:[]};
+  if(!Array.isArray(d.coursework.groups)) d.coursework.groups = [];
+  if(!d.datascience) d.datascience = {sectionTitle:{en:'Data Science',ko:'데이터사이언스'}, sectionNote:{en:'',ko:''}, items:[]};
+  if(!Array.isArray(d.datascience.items)) d.datascience.items = [];
+  d.datascience.items.forEach(i => { if(typeof i.image !== 'string') i.image = ''; });
+
+  if(!Array.isArray(d.teaching.specialLectures)) d.teaching.specialLectures = [];
+  if(!Array.isArray(d.teaching.topics)) d.teaching.topics = [];
+  if(!d.research.presentations) d.research.presentations = {label:{en:'Conference &amp; Poster Presentations',ko:'학술대회 발표'}, groups:[]};
+  if(!Array.isArray(d.research.presentations.groups)) d.research.presentations.groups = [];
+  if(!d.research.affiliations) d.research.affiliations = {label:{en:'Professional Affiliations',ko:'학회 활동'}, memberships:[], conferenceReviews:[], journalReviews:[]};
+  ['memberships','conferenceReviews','journalReviews'].forEach(k=>{
+    if(!Array.isArray(d.research.affiliations[k])) d.research.affiliations[k] = [];
+  });
+  if(!Array.isArray(d.research.links)) d.research.links = [];
+}
+
+/* 문자열 배열(발표 목록 등) 편집용 */
+function strListPanel(title, desc, path, arr){
+  let h = `<div class="panel"><h2>${title}</h2>${desc?`<div class="desc">${desc}</div>`:''}<div>`;
+  arr.forEach((v,i)=>{
+    h += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="${path}.${i}">삭제</button>
+      <label>내용 (HTML 가능)</label><textarea data-path="${path}.${i}">${escapeHtml(v)}</textarea></div>`;
+  });
+  h += `</div><button class="btn-secondary add-btn" data-add="${path}">+ 항목 추가</button></div>`;
+  return h;
 }
 
 function toast(msg){
@@ -295,8 +341,21 @@ function renderApp(){
   const d = DATA;
   let html = '';
 
+  // ---- QUICK JUMP ----
+  html += `<div class="panel" style="position:sticky;top:82px;z-index:40;">
+    <h2>빠른 이동</h2>
+    <div class="desc">항목이 많아졌습니다. 아래 링크로 바로 이동하세요.</div>
+    <div class="jump-bar">
+      ${[['p-hero','Hero'],['p-about','소개'],['p-education','학력'],['p-career','경력'],
+         ['p-research','연구'],['p-projects','프로젝트'],['p-books','저서'],['p-teaching','강의·강연'],
+         ['p-awards','수상·자격'],['p-coursework','수강이력'],['p-data','데이터사이언스'],
+         ['p-gallery','갤러리'],['p-contact','연락처']]
+        .map(([id,label])=>`<a href="#${id}">${label}</a>`).join('')}
+    </div>
+  </div>`;
+
   // ---- HERO ----
-  html += `<div class="panel"><h2>Hero</h2><div class="desc">화면 맨 위 소개 영역</div>
+  html += `<div class="panel" id="p-hero"><h2>Hero</h2><div class="desc">화면 맨 위 소개 영역</div>
     ${imageField('프로필 사진 (원형, 이름 옆에 표시)', 'hero.profileImage', d.hero.profileImage, {maxW:400, maxH:400, format:'jpeg', shape:'round'})}
     ${biField('Eyebrow', 'hero.eyebrow', d.hero.eyebrow)}
     ${biField('한 줄 소개 (Role text, HTML 가능)', 'hero.roleText', d.hero.roleText)}
@@ -325,7 +384,7 @@ function renderApp(){
   html += `</div><button class="btn-secondary add-btn" data-add="hero.links">+ 링크 추가</button></div>`;
 
   // ---- ABOUT ----
-  html += `<div class="panel"><h2>소개 (About)</h2>
+  html += `<div class="panel" id="p-about"><h2>소개 (About)</h2>
     ${biField('본문 1', 'about.lead1', d.about.lead1)}
     ${biField('본문 2', 'about.lead2', d.about.lead2)}
   </div>`;
@@ -345,8 +404,32 @@ function renderApp(){
   });
   html += `</div><button class="btn-secondary add-btn" data-add="about.facts">+ 항목 추가</button></div>`;
 
+  // ---- EDUCATION ----
+  html += `<div class="panel" id="p-education"><h2>학력 (Education)</h2>
+    <div class="desc">학위 · 방문학자 · 교환학생 이력. 카드 형태로 표시됩니다.</div>
+    ${biField('섹션 설명', 'education.sectionNote', d.education.sectionNote)}
+    <div style="margin-top:12px;">`;
+  d.education.items.forEach((e,i)=>{
+    html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="education.items.${i}">삭제</button>
+      ${imageField('기관 로고 (선택)', `education.items.${i}.logo`, e.logo || '', {maxW:120, maxH:120, format:'png', shape:'round'})}
+      <label>기간</label><input type="text" data-path="education.items.${i}.date" value="${escapeAttr(e.date||'')}">
+      ${biField('학위 / 직위', `education.items.${i}.degree`, e.degree)}
+      ${biField('기관', `education.items.${i}.school`, e.school)}
+      ${biField('상세 (지도교수·논문 등)', `education.items.${i}.detail`, e.detail)}
+      <div class="toggle-row">
+        <label style="margin:0;">유형</label>
+        <select data-path="education.items.${i}.kind">
+          <option value="degree" ${e.kind==='degree'?'selected':''}>학위 (degree)</option>
+          <option value="visiting" ${e.kind==='visiting'?'selected':''}>방문학자 (visiting)</option>
+          <option value="exchange" ${e.kind==='exchange'?'selected':''}>교환학생 (exchange)</option>
+        </select>
+      </div>
+    </div>`;
+  });
+  html += `</div><button class="btn-secondary add-btn" data-add="education.items">+ 학력 추가</button></div>`;
+
   // ---- CAREER ----
-  html += `<div class="panel"><h2>경력 (Career ledger)</h2>
+  html += `<div class="panel" id="p-career"><h2>경력 (Work / 경력)</h2>
     <div class="desc">각 경력 항목에 학교/직장/학회 로고를 추가할 수 있습니다 (선택).</div>
     <div id="career-list">`;
   d.career.rows.forEach((r,i)=>{
@@ -368,7 +451,7 @@ function renderApp(){
   html += `</div><button class="btn-secondary add-btn" data-add="career.rows">+ 경력 추가</button></div>`;
 
   // ---- RESEARCH: flagships ----
-  html += `<div class="panel"><h2>대표 연구 시스템 (Flagships)</h2>
+  html += `<div class="panel" id="p-research"><h2>대표 연구 시스템 (Flagships)</h2>
     <div class="desc">각 시스템에 대표 이미지를 추가할 수 있습니다 (선택).</div>
     <div id="flagship-list">`;
   d.research.flagships.forEach((f,i)=>{
@@ -394,8 +477,38 @@ function renderApp(){
   });
   html += `</div><button class="btn-secondary add-btn" data-add="research.publications">+ 논문 추가</button></div>`;
 
+  // ---- RESEARCH: presentations ----
+  html += `<div class="panel"><h2>학술대회 발표 (Presentations)</h2>
+    <div class="desc">그룹별(구두/포스터/미디어)로 관리합니다. 저자명은 &lt;strong&gt;으로 감쌀 수 있습니다.</div>`;
+  d.research.presentations.groups.forEach((g,gi)=>{
+    html += `<div class="item-card" style="background:var(--card);">
+      <button class="btn-danger remove-btn" data-remove="research.presentations.groups.${gi}">그룹 삭제</button>
+      ${biField('그룹 이름', `research.presentations.groups.${gi}.label`, g.label)}
+      <div style="margin-top:10px;">`;
+    (g.items||[]).forEach((it,ii)=>{
+      html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="research.presentations.groups.${gi}.items.${ii}">삭제</button>
+        <label>발표 정보 (HTML 가능)</label><textarea data-path="research.presentations.groups.${gi}.items.${ii}">${escapeHtml(it)}</textarea></div>`;
+    });
+    html += `</div><button class="btn-secondary add-btn" data-add="research.presentations.groups.${gi}.items">+ 발표 추가</button></div>`;
+  });
+  html += `<button class="btn-secondary add-btn" data-add="research.presentations.groups">+ 그룹 추가</button></div>`;
+
+  // ---- RESEARCH: affiliations ----
+  html += `<div class="panel"><h2>학회 활동 · 심사 (Affiliations &amp; Review)</h2><div>`;
+  d.research.affiliations.memberships.forEach((m,i)=>{
+    html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="research.affiliations.memberships.${i}">삭제</button>
+      <label>학회명</label><input type="text" data-path="research.affiliations.memberships.${i}.name" value="${escapeAttr(m.name||'')}">
+      <label>기간</label><input type="text" data-path="research.affiliations.memberships.${i}.since" value="${escapeAttr(m.since||'')}">
+      <label>링크</label><input type="text" data-path="research.affiliations.memberships.${i}.href" value="${escapeAttr(m.href||'')}">
+    </div>`;
+  });
+  html += `</div><button class="btn-secondary add-btn" data-add="research.affiliations.memberships">+ 학회 추가</button></div>`;
+  html += strListPanel('학술대회 심사 (Conference Review)', '', 'research.affiliations.conferenceReviews', d.research.affiliations.conferenceReviews);
+  html += strListPanel('학술지 심사 (Journal Review)', '', 'research.affiliations.journalReviews', d.research.affiliations.journalReviews);
+
   // ---- PROJECTS ----
-  html += `<div class="panel"><h2>프로젝트 (Projects)</h2><div id="project-list">`;
+  html += `<div class="panel" id="p-projects"><h2>프로젝트 (Projects)</h2>
+    <div class="desc">역할군·분류·상태로 홈페이지에서 필터링됩니다.</div><div id="project-list">`;
   d.projects.rows.forEach((r,i)=>{
     html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="projects.rows.${i}">삭제</button>
       <label>날짜</label><input type="text" data-path="projects.rows.${i}.date" value="${escapeAttr(r.date)}">
@@ -408,18 +521,36 @@ function renderApp(){
         </select>
         <label style="margin:0;">진행상태</label>
         <select data-path="projects.rows.${i}.status">
-          <option value="done" ${r.status==='done'?'selected':''}>done</option>
-          <option value="progress" ${r.status==='progress'?'selected':''}>progress</option>
+          <option value="done" ${r.status==='done'?'selected':''}>완료 (done)</option>
+          <option value="progress" ${r.status==='progress'?'selected':''}>진행 중 (progress)</option>
+          <option value="planned" ${r.status==='planned'?'selected':''}>예정 (planned)</option>
+        </select>
+        <label style="margin:0;">분류</label>
+        <select data-path="projects.rows.${i}.cat">
+          <option value="id" ${r.cat==='id'?'selected':''}>교수설계</option>
+          <option value="online" ${r.cat==='online'?'selected':''}>온라인교육</option>
+          <option value="admin" ${r.cat==='admin'?'selected':''}>교육행정</option>
+          <option value="etc" ${r.cat==='etc'?'selected':''}>기타</option>
         </select>
       </div>
+      <div class="field-hint">배지 색은 진행상태(pill)를 따릅니다.</div>
+      <label>배지 종류 (pill)</label><input type="text" data-path="projects.rows.${i}.pill" value="${escapeAttr(r.pill||'done')}">
       <label>표시 배지 (완료/진행 중 등)</label><input type="text" data-path="projects.rows.${i}.pillLabel" value="${escapeAttr(r.pillLabel||'')}">
       <label>역할 라벨 (PM / Researcher / Facilitator 등, 없으면 비워두기)</label><input type="text" data-path="projects.rows.${i}.roleLabel" value="${escapeAttr(r.roleLabel||'')}">
     </div>`;
   });
   html += `</div><button class="btn-secondary add-btn" data-add="projects.rows">+ 프로젝트 추가</button></div>`;
 
+  // ---- TEACHING: topics ----
+  html += `<div class="panel"><h2>강의 주제 태그 (Teaching topics)</h2>
+    <div class="desc">강의·강연 섹션 상단에 태그로 표시됩니다.</div><div>`;
+  d.teaching.topics.forEach((t,i)=>{
+    html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="teaching.topics.${i}">삭제</button>${biField('태그', `teaching.topics.${i}`, t)}</div>`;
+  });
+  html += `</div><button class="btn-secondary add-btn" data-add="teaching.topics">+ 태그 추가</button></div>`;
+
   // ---- TEACHING: course lectures ----
-  html += `<div class="panel"><h2>정규 강의 (Course Lectures)</h2>
+  html += `<div class="panel" id="p-teaching"><h2>정규 강의 (Course Lectures)</h2>
     <div class="desc">각 강의에 이미지를 추가할 수 있습니다 (선택).</div>
     <div id="course-list-admin">`;
   d.teaching.courseLectures.forEach((c,i)=>{
@@ -447,6 +578,21 @@ function renderApp(){
   });
   html += `</div><button class="btn-secondary add-btn" data-add="teaching.invitedTalks">+ 강연 추가</button></div>`;
 
+  // ---- TEACHING: special lectures (list) ----
+  html += `<div class="panel"><h2>특강 · 워크숍 목록 (Special Lectures)</h2>
+    <div class="desc">최신순으로 정렬해 입력하세요. 홈페이지에서는 처음 12건만 보이고 «전체 보기» 버튼으로 펼쳐집니다.</div>
+    ${biField('섹션 설명', 'teaching.specialLecturesNote', typeof d.teaching.specialLecturesNote === 'string' ? {en:d.teaching.specialLecturesNote, ko:d.teaching.specialLecturesNote} : d.teaching.specialLecturesNote)}
+    <div style="margin-top:12px;">`;
+  d.teaching.specialLectures.forEach((s,i)=>{
+    html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="teaching.specialLectures.${i}">삭제</button>
+      <label>날짜</label><input type="text" data-path="teaching.specialLectures.${i}.date" value="${escapeAttr(s.date||'')}">
+      <label>기관</label><input type="text" data-path="teaching.specialLectures.${i}.org" value="${escapeAttr(typeof s.org==='string'?s.org:'')}">
+      <label>강의 제목</label><textarea data-path="teaching.specialLectures.${i}.title">${escapeHtml(typeof s.title==='string'?s.title:'')}</textarea>
+      <label>링크 (선택)</label><input type="text" data-path="teaching.specialLectures.${i}.href" value="${escapeAttr(s.href||'')}">
+    </div>`;
+  });
+  html += `</div><button class="btn-secondary add-btn" data-add="teaching.specialLectures">+ 특강 추가</button></div>`;
+
   // ---- TEACHING: special lecture gallery ----
   html += `<div class="panel"><h2>특강 사진 갤러리 (Special Lectures)</h2>
     <div class="desc">최근 특강 문구 아래에 나란히 표시됩니다.</div>
@@ -459,8 +605,75 @@ function renderApp(){
   });
   html += `</div><button class="btn-secondary add-btn" data-add="teaching.specialLectureGallery">+ 특강 사진 추가</button></div>`;
 
+  // ---- BOOKS ----
+  html += `<div class="panel" id="p-books"><h2>저서 (Books)</h2>
+    <div class="desc">표지 이미지를 올리면 카드에 표시되고, 없으면 기본 문양이 표시됩니다.</div>
+    ${biField('섹션 설명', 'books.sectionNote', d.books.sectionNote)}
+    <div style="margin-top:12px;">`;
+  d.books.items.forEach((b,i)=>{
+    html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="books.items.${i}">삭제</button>
+      ${imageField('표지 이미지 (3:4 권장)', `books.items.${i}.image`, b.image || '', {maxW:600, maxH:800, format:'jpeg'})}
+      ${biField('제목', `books.items.${i}.title`, b.title)}
+      <label>출판사 / 비고</label><input type="text" data-path="books.items.${i}.meta" value="${escapeAttr(typeof b.meta==='string'?b.meta:'')}">
+    </div>`;
+  });
+  html += `</div><button class="btn-secondary add-btn" data-add="books.items">+ 저서 추가</button></div>`;
+
+  // ---- AWARDS ----
+  html += `<div class="panel" id="p-awards"><h2>수상 · 자격 (Awards &amp; Certification)</h2>
+    <div class="desc">수상 / 펠로우십 / 자격 / 어학 등 그룹별로 관리합니다.</div>
+    ${biField('섹션 설명', 'awards.sectionNote', d.awards.sectionNote)}`;
+  d.awards.groups.forEach((g,gi)=>{
+    html += `<div class="item-card" style="background:var(--card);">
+      <button class="btn-danger remove-btn" data-remove="awards.groups.${gi}">그룹 삭제</button>
+      ${biField('그룹 이름', `awards.groups.${gi}.label`, g.label)}
+      <div style="margin-top:10px;">`;
+    (g.items||[]).forEach((it,ii)=>{
+      html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="awards.groups.${gi}.items.${ii}">삭제</button>
+        <label>날짜</label><input type="text" data-path="awards.groups.${gi}.items.${ii}.date" value="${escapeAttr(it.date||'')}">
+        ${biField('내용', `awards.groups.${gi}.items.${ii}.title`, it.title)}</div>`;
+    });
+    html += `</div><button class="btn-secondary add-btn" data-add="awards.groups.${gi}.items">+ 항목 추가</button></div>`;
+  });
+  html += `<button class="btn-secondary add-btn" data-add="awards.groups">+ 그룹 추가</button></div>`;
+
+  // ---- COURSEWORK ----
+  html += `<div class="panel" id="p-coursework"><h2>수강이력 (Coursework)</h2>
+    <div class="desc">기관·영역별 그룹으로 관리합니다.</div>
+    ${biField('섹션 설명', 'coursework.sectionNote', d.coursework.sectionNote)}`;
+  d.coursework.groups.forEach((g,gi)=>{
+    html += `<div class="item-card" style="background:var(--card);">
+      <button class="btn-danger remove-btn" data-remove="coursework.groups.${gi}">그룹 삭제</button>
+      ${biField('그룹 이름', `coursework.groups.${gi}.label`, g.label)}
+      ${biField('그룹 설명 (선택)', `coursework.groups.${gi}.note`, g.note)}
+      <div style="margin-top:10px;">`;
+    (g.courses||[]).forEach((c,ci)=>{
+      html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="coursework.groups.${gi}.courses.${ci}">삭제</button>
+        <label>과목명</label><input type="text" data-path="coursework.groups.${gi}.courses.${ci}.title" value="${escapeAttr(typeof c.title==='string'?c.title:'')}">
+        <label>담당 교수</label><input type="text" data-path="coursework.groups.${gi}.courses.${ci}.instructor" value="${escapeAttr(typeof c.instructor==='string'?c.instructor:'')}">
+        <label>학점 · 학기</label><input type="text" data-path="coursework.groups.${gi}.courses.${ci}.meta" value="${escapeAttr(typeof c.meta==='string'?c.meta:'')}"></div>`;
+    });
+    html += `</div><button class="btn-secondary add-btn" data-add="coursework.groups.${gi}.courses">+ 과목 추가</button></div>`;
+  });
+  html += `<button class="btn-secondary add-btn" data-add="coursework.groups">+ 그룹 추가</button></div>`;
+
+  // ---- DATA SCIENCE ----
+  html += `<div class="panel" id="p-data"><h2>데이터사이언스 (Data Science)</h2>
+    <div class="desc">미니 프로젝트 및 분석 방법. 결과 그래프 이미지를 올릴 수 있습니다.</div>
+    ${biField('섹션 설명', 'datascience.sectionNote', d.datascience.sectionNote)}
+    <div style="margin-top:12px;">`;
+  d.datascience.items.forEach((it,i)=>{
+    html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="datascience.items.${i}">삭제</button>
+      ${imageField('결과 이미지 (선택)', `datascience.items.${i}.image`, it.image || '', {maxW:900, maxH:700, format:'jpeg'})}
+      ${biField('제목', `datascience.items.${i}.title`, it.title)}
+      ${biField('설명 (HTML 가능)', `datascience.items.${i}.desc`, it.desc)}
+      <label>사용 도구 (쉼표로 구분)</label><input type="text" data-path="datascience.items.${i}.tags" data-list="1" value="${escapeAttr((it.tags||[]).join(', '))}">
+    </div>`;
+  });
+  html += `</div><button class="btn-secondary add-btn" data-add="datascience.items">+ 항목 추가</button></div>`;
+
   // ---- GALLERY ----
-  html += `<div class="panel"><h2>갤러리 (Gallery)</h2>
+  html += `<div class="panel" id="p-gallery"><h2>갤러리 (Gallery)</h2>
     <div class="desc">홈페이지 하단에 표시되는 사진 모음. 순서 조정은 JSON을 직접 편집하세요.</div>
     ${biField('섹션 제목', 'gallery.sectionTitle', d.gallery.sectionTitle)}
     ${biField('섹션 설명', 'gallery.sectionNote', d.gallery.sectionNote)}
@@ -474,7 +687,7 @@ function renderApp(){
   html += `</div><button class="btn-secondary add-btn" data-add="gallery.items">+ 사진 추가</button></div>`;
 
   // ---- CONTACT ----
-  html += `<div class="panel"><h2>연락처 (Footer)</h2>
+  html += `<div class="panel" id="p-contact"><h2>연락처 (Footer)</h2>
     ${biField('안내 문구', 'contact.lead', d.contact.lead)}
     <div id="contact-links-list">`;
   d.contact.links.forEach((l,i)=>{
@@ -511,14 +724,15 @@ function setByPath(obj, path, value){
 
 function bindInputs(){
   document.querySelectorAll('[data-path]').forEach(el=>{
-    el.addEventListener('input', ()=>{
-      setByPath(DATA, el.dataset.path, el.value);
+    const apply = ()=>{
+      const v = el.dataset.list === '1'
+        ? el.value.split(',').map(s=>s.trim()).filter(Boolean)
+        : el.value;
+      setByPath(DATA, el.dataset.path, v);
       updateSizeBadge();
-    });
-    el.addEventListener('change', ()=>{
-      setByPath(DATA, el.dataset.path, el.value);
-      updateSizeBadge();
-    });
+    };
+    el.addEventListener('input', apply);
+    el.addEventListener('change', apply);
   });
 }
 
@@ -535,15 +749,39 @@ const TEMPLATES = {
   'teaching.invitedTalks': ()=>({title:'New talk', meta:'Venue · Year', image:''}),
   'teaching.specialLectureGallery': ()=>({image:'', caption:{en:'', ko:''}}),
   'gallery.items': ()=>({image:'', caption:{en:'', ko:''}}),
-  'contact.links': ()=>({value:'label', href:'https://', k:'LINK'})
+  'contact.links': ()=>({value:'label', href:'https://', k:'LINK'}),
+  // sections added in the 2026 update
+  'education.items': ()=>({date:'2026', degree:{en:'Degree', ko:'학위'}, school:{en:'Institution', ko:'기관'}, detail:{en:'', ko:''}, kind:'degree', logo:''}),
+  'books.items': ()=>({title:{en:'New book', ko:'새 저서'}, meta:'', image:''}),
+  'teaching.topics': ()=>({en:'New topic', ko:'새 주제'}),
+  'teaching.specialLectures': ()=>({date:'2026.01.01', org:'기관명', title:'특강 제목', href:''}),
+  'research.presentations.groups': ()=>({label:{en:'New group', ko:'새 그룹'}, items:[]}),
+  'research.presentations.groups.*.items': ()=>'<strong>Hong, S.</strong> (2026). Title. Conference. City.',
+  'research.affiliations.memberships': ()=>({name:'Society name', since:'2026 –', href:'https://'}),
+  'research.affiliations.conferenceReviews': ()=>'Conference name (2026)',
+  'research.affiliations.journalReviews': ()=>'Journal name',
+  'research.links': ()=>({label:'Link', href:'https://'}),
+  'awards.groups': ()=>({label:{en:'New group', ko:'새 그룹'}, items:[]}),
+  'awards.groups.*.items': ()=>({date:'2026', title:{en:'New award', ko:'새 수상'}}),
+  'coursework.groups': ()=>({label:{en:'New group', ko:'새 그룹'}, note:{en:'', ko:''}, courses:[]}),
+  'coursework.groups.*.courses': ()=>({title:'Course title', instructor:'Instructor', meta:'3 credits · 2026'}),
+  'datascience.items': ()=>({title:{en:'New project', ko:'새 프로젝트'}, desc:{en:'', ko:''}, tags:[], image:''})
 };
+
+// 'awards.groups.3.items' → 'awards.groups.*.items'
+function templateFor(path){
+  if(TEMPLATES[path]) return TEMPLATES[path];
+  const generic = path.replace(/\.\d+(?=\.)/g, '.*');
+  return TEMPLATES[generic];
+}
 
 function bindAddRemove(){
   document.querySelectorAll('[data-add]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const path = btn.dataset.add;
       const arr = getByPath(DATA, path);
-      arr.push(TEMPLATES[path] ? TEMPLATES[path]() : {});
+      const tpl = templateFor(path);
+      arr.push(tpl ? tpl() : {});
       renderApp();
       toast('새 항목을 추가했습니다.');
     });

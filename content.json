@@ -11,8 +11,13 @@
         "ko": "소개"
       },
       {
+        "href": "#education",
+        "en": "Education",
+        "ko": "학력"
+      },
+      {
         "href": "#career",
-        "en": "Career",
+        "en": "Work",
         "ko": "경력"
       },
       {
@@ -26,9 +31,34 @@
         "ko": "프로젝트"
       },
       {
+        "href": "#books",
+        "en": "Books",
+        "ko": "저서"
+      },
+      {
         "href": "#teaching",
         "en": "Teaching",
-        "ko": "교육"
+        "ko": "강의·강연"
+      },
+      {
+        "href": "#awards",
+        "en": "Awards",
+        "ko": "수상·자격"
+      },
+      {
+        "href": "#coursework",
+        "en": "Coursework",
+        "ko": "수강이력"
+      },
+      {
+        "href": "#data",
+        "en": "Data Science",
+        "ko": "데이터사이언스"
+      },
+      {
+        "href": "#gallery",
+        "en": "Gallery",
+        "ko": "갤러리"
       },
       {
         "href": "#contact",
@@ -139,8 +169,18 @@
           "ko": "교육공학 박사 — 서울대학교 (2022–2026)"
         },
         "v2": {
-          "en": "M.A. Educational Technology, SNU (2019–2021) · B.A. Chinese Language &amp; Literature, Seoul Women's University (2013–2017)",
+          "en": "M.A. Educational Technology, SNU (2019–2021) · B.A. Chinese Language &amp; Literature, Seoul Women’s University (2013–2017)",
           "ko": "교육공학 석사, 서울대학교 (2019–2021) · 중어중문학 학사, 서울여자대학교 (2013–2017)"
+        }
+      },
+      {
+        "k": {
+          "en": "Incoming position",
+          "ko": "임용 예정"
+        },
+        "v": {
+          "en": "Assistant Professor, Myongji University — from 2026.09.01",
+          "ko": "명지대학교 조교수 — 2026.09.01 부임"
         }
       },
       {
@@ -149,18 +189,8 @@
           "ko": "현재 직위"
         },
         "v": {
-          "en": "Researcher, Learning Sciences Research Institute &amp; Center of Future Education Innovation, Seoul National University",
+          "en": "Researcher, Learning Sciences Research Institute &amp; Center of Future Education Innovation, SNU",
           "ko": "연구원, 서울대학교 학습과학연구소 &amp; 미래교육혁신센터"
-        }
-      },
-      {
-        "k": {
-          "en": "Incoming",
-          "ko": "임용 예정"
-        },
-        "v": {
-          "en": "Assistant Professor, Myongji University — 2026.09.01",
-          "ko": "명지대학교 조교수 — 2026.09.01"
         }
       },
       {
@@ -169,8 +199,18 @@
           "ko": "방문학자"
         },
         "v": {
-          "en": "Indiana University Bloomington (2024–2025) · Georgia State University AI² Research Lab (2024)",
+          "en": "Indiana University Bloomington (2024–2025) · AI² Lab, Georgia State University (2024)",
           "ko": "인디애나대학교 블루밍턴 (2024–2025) · 조지아주립대학교 AI² 연구소 (2024)"
+        }
+      },
+      {
+        "k": {
+          "en": "Output",
+          "ko": "연구 실적"
+        },
+        "v": {
+          "en": "35 peer-reviewed articles · 55+ commissioned projects · 8 co-authored books",
+          "ko": "학술논문 35편 · 위탁연구 55건 이상 · 공저서 8권"
         }
       },
       {
@@ -179,20 +219,134 @@
           "ko": "자격"
         },
         "v": {
-          "en": "Google for Education, Certified Trainer (2022–present)",
-          "ko": "Google for Education 공인 트레이너 (2022–현재)"
+          "en": "Google for Education Certified Trainer (2022–present) · Certified AI Expert (KSA, 2021)",
+          "ko": "Google for Education 공인 트레이너 (2022–현재) · 인공지능 전문가 (한국표준협회, 2021)"
         }
+      }
+    ]
+  },
+  "education": {
+    "sectionTitle": {
+      "en": "Education",
+      "ko": "학력"
+    },
+    "sectionNote": {
+      "en": "Degrees, visiting appointments, and exchange study",
+      "ko": "학위, 방문학자, 교환학생 이력"
+    },
+    "items": [
+      {
+        "date": "2022.03 – 2026.02",
+        "degree": {
+          "en": "Ph.D. in Educational Technology",
+          "ko": "교육공학 박사"
+        },
+        "school": {
+          "en": "Seoul National University, Korea",
+          "ko": "서울대학교, 대한민국"
+        },
+        "detail": {
+          "en": "Advisor: Cheolil Lim, Professor · Featured in the Department of Education promotional video",
+          "ko": "지도교수: 임철일 교수 · 교육학과 홍보영상 출연"
+        },
+        "kind": "degree",
+        "logo": ""
+      },
+      {
+        "date": "2024.06 – 2024.08",
+        "degree": {
+          "en": "Visiting Scholar",
+          "ko": "방문학자"
+        },
+        "school": {
+          "en": "Georgia State University, Atlanta, GA, USA",
+          "ko": "조지아주립대학교, 애틀랜타, 미국"
+        },
+        "detail": {
+          "en": "Learning Science (AI² Research Laboratory), College of Education &amp; Human Development",
+          "ko": "학습과학 (AI² 연구실), 교육·인간개발대학"
+        },
+        "kind": "visiting",
+        "logo": ""
+      },
+      {
+        "date": "2024.03 – 2025.02",
+        "degree": {
+          "en": "Visiting Scholar",
+          "ko": "방문학자"
+        },
+        "school": {
+          "en": "Indiana University Bloomington, IN, USA",
+          "ko": "인디애나대학교 블루밍턴, 미국"
+        },
+        "detail": {
+          "en": "Learning, Design, and Adult Education · BK21 FOUR overseas training grant",
+          "ko": "학습·설계·성인교육 전공 · 4단계 BK21 우수대학원생 해외연수"
+        },
+        "kind": "visiting",
+        "logo": ""
+      },
+      {
+        "date": "2019.03 – 2021.02",
+        "degree": {
+          "en": "M.A. in Educational Technology",
+          "ko": "교육공학 석사"
+        },
+        "school": {
+          "en": "Seoul National University, Korea",
+          "ko": "서울대학교, 대한민국"
+        },
+        "detail": {
+          "en": "Advisor: Cheolil Lim, Professor · Thesis: Development of Language Educators’ Scaffolding Strategies Using an Artificial Intelligence Speaker",
+          "ko": "지도교수: 임철일 교수 · 학위논문: 인공지능 스피커를 활용한 언어교육자의 스캐폴딩 전략 개발"
+        },
+        "kind": "degree",
+        "logo": ""
+      },
+      {
+        "date": "2013 – 2017",
+        "degree": {
+          "en": "B.A. in Chinese Language &amp; Literature",
+          "ko": "중어중문학 학사"
+        },
+        "school": {
+          "en": "Seoul Women’s University, Korea",
+          "ko": "서울여자대학교, 대한민국"
+        },
+        "detail": {
+          "en": "Certification in Chinese Language Education (secondary school teacher, Level 2)",
+          "ko": "중등학교 2급 정교사 자격(중국어)"
+        },
+        "kind": "degree",
+        "logo": ""
+      },
+      {
+        "date": "2015 – 2016",
+        "degree": {
+          "en": "Exchange Student",
+          "ko": "교환학생"
+        },
+        "school": {
+          "en": "Renmin University of China (中国人民大学), Beijing",
+          "ko": "중국인민대학교 (中国人民大学), 베이징"
+        },
+        "detail": {
+          "en": "Epson Global Leader Scholarship recipient",
+          "ko": "엡손 글로벌리더 장학생"
+        },
+        "kind": "exchange",
+        "logo": ""
       }
     ]
   },
   "career": {
     "sectionTitle": {
-      "en": "Career",
+      "en": "Work Experience",
       "ko": "경력"
     },
     "sectionNote": {
-      "en": "Positions &amp; degrees, most recent first",
-      "ko": "최근순으로 정렬된 직위 및 학위"
+      "en": "Research and teaching positions, most recent first",
+      "ko": "연구·교육 관련 직위 (최근순)"
     },
     "rows": [
       {
@@ -266,48 +420,6 @@
         "logo": ""
       },
       {
-        "date": "2024.03–2025.02",
-        "title": {
-          "en": "Visiting Scholar",
-          "ko": "방문학자"
-        },
-        "org": "Learning, Design &amp; Adult Education, Indiana University, Bloomington, IN",
-        "pill": {
-          "type": "done",
-          "en": "COMPLETE",
-          "ko": "완료"
-        },
-        "logo": ""
-      },
-      {
-        "date": "2024.06–2024.08",
-        "title": {
-          "en": "Visiting Scholar",
-          "ko": "방문학자"
-        },
-        "org": "AI² Research Laboratory, College of Education &amp; Human Development, Georgia State University, Atlanta, GA",
-        "pill": {
-          "type": "done",
-          "en": "COMPLETE",
-          "ko": "완료"
-        },
-        "logo": ""
-      },
-      {
-        "date": "2022.03–2026.02",
-        "title": {
-          "en": "Ph.D., Educational Technology",
-          "ko": "교육공학 박사"
-        },
-        "org": "Seoul National University",
-        "pill": {
-          "type": "done",
-          "en": "COMPLETE",
-          "ko": "완료"
-        },
-        "logo": ""
-      },
-      {
         "date": "2020.10–2022.02",
         "title": {
           "en": "Online Learning Designer",
@@ -337,40 +449,6 @@
           "ko": "완료"
         },
         "logo": ""
-      },
-      {
-        "date": "2019.03–2021.02",
-        "title": {
-          "en": "M.A., Educational Technology",
-          "ko": "교육공학 석사"
-        },
-        "org": {
-          "en": "Seoul National University · Thesis: Development of Language Educators' Scaffolding Strategies Using an AI Speaker",
-          "ko": "서울대학교 · 논문: 인공지능 스피커를 활용한 언어교육자의 스캐폴딩 전략 개발"
-        },
-        "pill": {
-          "type": "done",
-          "en": "COMPLETE",
-          "ko": "완료"
-        },
-        "logo": ""
-      },
-      {
-        "date": "2013–2017",
-        "title": {
-          "en": "B.A., Chinese Language &amp; Literature",
-          "ko": "중어중문학 학사"
-        },
-        "org": {
-          "en": "Seoul Women's University · Exchange, Renmin University of China",
-          "ko": "서울여자대학교 · 중국 인민대학교 교환학생"
-        },
-        "pill": {
-          "type": "done",
-          "en": "COMPLETE",
-          "ko": "완료"
-        },
-        "logo": ""
       }
     ]
   },
@@ -380,8 +458,8 @@
       "ko": "연구"
     },
     "sectionNote": {
-      "en": "Flagship systems &amp; selected publications — full list of 30+ on ORCID / ResearchGate",
-      "ko": "대표 연구 시스템 및 주요 논문 — 전체 30여 편은 ORCID / ResearchGate 참고"
+      "en": "Flagship systems, 35 peer-reviewed articles, and conference presentations",
+      "ko": "대표 연구 시스템, 학술논문 35편 및 학술대회 발표"
     },
     "flagships": [
       {
@@ -432,70 +510,380 @@
     ],
     "publications": [
       {
-        "year": "2025",
-        "authors": "<strong>Hong, S.</strong>, Moon, J., Eom, T., Awoyemi, I. D., &amp; Hwang, J.",
-        "title": "Generative AI-Enhanced Virtual Reality Simulation for Pre-Service Teacher Education: A Mixed-Methods Analysis of Usability and Instructional Utility for Course Integration.",
-        "journal": "Education Sciences, 15(8), 997."
-      },
-      {
-        "year": "2025",
-        "authors": "<strong>Hong, S.</strong>, Eom, T., &amp; Moon, J.",
-        "title": "Virtual reality simulation to foster authentic learning in pre-service teacher education: A systematic literature review.",
-        "journal": "Educational Research Review, 100743."
+        "year": "2026",
+        "authors": "Lim, C., <strong>Hong, S.</strong>, Eom, T., Park, S., &amp; Lim, M.",
+        "title": "Evolving spaces: A mixed-methods study on transitioning libraries into metaverse learning commons.",
+        "journal": "Computers &amp; Education: X Reality.",
+        "href": "https://doi.org/10.1016/j.cexr.2026.100143"
       },
       {
         "year": "2026",
         "authors": "Lim, C., <strong>Hong, S.</strong>, Eom, D., &amp; Park, S.",
         "title": "Bridging teacher competency and student outcomes: The effects of AI-integrated instruction on AI-TPACK and AI literacy.",
-        "journal": "Innovation and Education, 7(2), 224–249."
-      },
-      {
-        "year": "2026",
-        "authors": "Lim, C., <strong>Hong, S.</strong>, Eom, T., Park, S., &amp; Lim, M.",
-        "title": "Evolving spaces: A mixed-methods study on transitioning libraries into metaverse learning commons.",
-        "journal": "Computers &amp; Education: X Reality."
-      },
-      {
-        "year": "2025",
-        "authors": "Han, Y., <strong>Hong, S.</strong>, Lee, Z., &amp; Lim, C.",
-        "title": "Defining and Classifying the Roles of Intelligent Learning Companion Systems: A Scoping Review of the Literature.",
-        "journal": "TechTrends."
-      },
-      {
-        "year": "2025",
-        "authors": "Lim, C., Han, Y., Kim, S., Lee, C., <strong>Hong, S.</strong>, &amp; Jeong, J.",
-        "title": "Development of an AI and digital competency assessment instrument for in-service teachers using the Behaviorally Anchored Rating Scale (BARS).",
-        "journal": "Journal of Educational Information and Media, 31(3), 945–969."
-      },
-      {
-        "year": "2024",
-        "authors": "Lim, C., Han, H., Lim, E., Go, B., Eom, T., Kim, S., &amp; <strong>Hong, S.</strong>",
-        "title": "Developing a Comprehensive Framework for Constructing and Operating Edu-Metaverse in K-12 Education.",
-        "journal": "Journal of Educational Technology, 40(2), 361–398."
-      },
-      {
-        "year": "2023",
-        "authors": "<strong>Hong, S.</strong>, Go, B., Rho, J., An, S., Lim, C., Seo, D., &amp; Ihm, J.",
-        "title": "A blended approach of in-person closed-book and online open-book exams for dental students in Korea.",
-        "journal": "BMC Medical Education."
-      },
-      {
-        "year": "2023",
-        "authors": "<strong>Hong, S.</strong>, &amp; Han, H.",
-        "title": "Analyzing Perceptions and Educational Needs of Elementary School Teachers for Using ChatGPT in Education.",
-        "journal": "The Journal of Korean Association of Computer Education, 26(4), 51–63."
-      },
-      {
-        "year": "2021",
-        "authors": "<strong>Hong, S.</strong>, &amp; Lim, C.",
-        "title": "Development of Language Educators' Scaffolding Strategies Using an Artificial Intelligence Speaker.",
-        "journal": "Journal of Educational Technology, 37(2), 309–341."
+        "journal": "Innovation and Education, 7(2), 224–249.",
+        "href": "https://doi.org/10.1163/25248502-bja00014"
       },
       {
         "year": "2026",
         "authors": "박가은, 곽헌동, 한예준, 이은서, <strong>홍수민</strong>, 한도희",
         "title": "중등교육에서 인공지능-도덕 융합 수업 설계 모형 개발 연구.",
-        "journal": "교육공학연구, 42(2), 319–358."
+        "journal": "교육공학연구, 42(2), 319–358.",
+        "href": ""
+      },
+      {
+        "year": "2025",
+        "authors": "<strong>Hong, S.</strong>, Moon, J., Eom, T., Awoyemi, I. D., &amp; Hwang, J.",
+        "title": "Generative AI-Enhanced Virtual Reality Simulation for Pre-Service Teacher Education: A Mixed-Methods Analysis of Usability and Instructional Utility for Course Integration.",
+        "journal": "Education Sciences, 15(8), 997.",
+        "href": "https://www.mdpi.com/2227-7102/15/8/997"
+      },
+      {
+        "year": "2025",
+        "authors": "<strong>Hong, S.</strong>, Eom, T., &amp; Moon, J.",
+        "title": "Virtual reality simulation to foster authentic learning in pre-service teacher education: A systematic literature review.",
+        "journal": "Educational Research Review, 100743.",
+        "href": "https://doi.org/10.1016/j.edurev.2025.100743"
+      },
+      {
+        "year": "2025",
+        "authors": "Han, Y., <strong>Hong, S.</strong>, Lee, Z., &amp; Lim, C.",
+        "title": "Defining and Classifying the Roles of Intelligent Learning Companion Systems: A Scoping Review of the Literature.",
+        "journal": "TechTrends.",
+        "href": "https://doi.org/10.1007/s11528-025-01058-0"
+      },
+      {
+        "year": "2025",
+        "authors": "<strong>Hong, S.</strong>, Lee, Z., Lim, C., &amp; Kim, S.",
+        "title": "A Systematic Literature Review on the Use of Technology in Chinese Language Education: Focusing on the TPACK Framework.",
+        "journal": "Chinese Language Education and Research, 47, 25–52.",
+        "href": ""
+      },
+      {
+        "year": "2025",
+        "authors": "Lim, C., Han, Y., Choi, J., <strong>Hong, S.</strong>, Go, B., &amp; Lim, E.",
+        "title": "Research Trends and Future Directions in Artificial Intelligence-Integrated Education.",
+        "journal": "Journal of Educational Technology, 41(1), 363–395.",
+        "href": ""
+      },
+      {
+        "year": "2025",
+        "authors": "Lim, C., Han, Y., Kim, S., Lee, C., <strong>Hong, S.</strong>, &amp; Jeong, J.",
+        "title": "Development of an AI and digital competency assessment instrument for in-service teachers using the behaviorally anchored rating scale (BARS).",
+        "journal": "Journal of Educational Information and Media, 31(3), 945–969.",
+        "href": "http://dx.doi.org/10.15833/KAFEIAM.31.3.945"
+      },
+      {
+        "year": "2025",
+        "authors": "Lim, C., Park, S., Eom, T., &amp; <strong>Hong, S.</strong>",
+        "title": "Developing instructor–learner–AI collaborative instructional design strategies for middle school English writing using AI and digital tools.",
+        "journal": "Journal of Educational Information and Media, 31(3), 1073–1099.",
+        "href": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003216552"
+      },
+      {
+        "year": "2025",
+        "authors": "Lim, E., <strong>Hong, S.</strong>, &amp; Lim, C.",
+        "title": "Analyzing Perceptions and Educational Needs of Elementary School Teachers for AI-integrated Education.",
+        "journal": "The Journal of Korean Association of Computer Education, 28(2), 49–60.",
+        "href": ""
+      },
+      {
+        "year": "2024",
+        "authors": "<strong>Hong, S.</strong>, Yoon, I., Moon, Y., &amp; Lim, E.",
+        "title": "Analysis and evaluation of teacher training for enhancing teachers’ AI and digital competence.",
+        "journal": "The Journal of Educational Information and Media, 30(5), 1421–1446.",
+        "href": ""
+      },
+      {
+        "year": "2024",
+        "authors": "<strong>Hong, S.</strong>, Min, H., &amp; Lee, D.",
+        "title": "Study on Consulting and Effectiveness Evaluation for the Distance Education of University Courses.",
+        "journal": "Journal of Learner-Centered Curriculum and Instruction, 24(12), 737–747.",
+        "href": ""
+      },
+      {
+        "year": "2024",
+        "authors": "<strong>Hong, S.</strong>, Eom, T., &amp; Park, J.",
+        "title": "Exploratory study on the learning activities data in virtual worlds through a scoping literature review: Focusing on Roblox.",
+        "journal": "The Journal of Educational Information and Media, 30(3), 861–884.",
+        "href": ""
+      },
+      {
+        "year": "2024",
+        "authors": "<strong>Hong, S.</strong>, Eom, T., Lee, H., &amp; Hong, J.",
+        "title": "Analysis of Educational Needs and Priorities on Competencies for the Doctors of Korean Medicine.",
+        "journal": "Journal of Learner-Centered Curriculum and Instruction, 24(7), 339–349.",
+        "href": ""
+      },
+      {
+        "year": "2024",
+        "authors": "Lim, C., Han, H., Lim, E., Go, B., Eom, T., Kim, S., &amp; <strong>Hong, S.</strong>",
+        "title": "Developing a Comprehensive Framework for Constructing and Operating Edu-Metaverse in K-12 Education.",
+        "journal": "Journal of Educational Technology, 40(2), 361–398.",
+        "href": ""
+      },
+      {
+        "year": "2024",
+        "authors": "Lim, C., Park, S., Eom, T., Lim, M., &amp; <strong>Hong, S.</strong>",
+        "title": "A Study on Developing a Learning Environment Model for School Libraries in the Virtual World.",
+        "journal": "Journal of Educational Technology, 40(4), 995–1021.",
+        "href": ""
+      },
+      {
+        "year": "2024",
+        "authors": "Park, S., <strong>Hong, S.</strong>, Lim, E., &amp; Lim, C.",
+        "title": "Analysis of the state of instructional research using AI and exploration of key lesson design stages through a systematic literature review.",
+        "journal": "The Journal of Educational Information and Media, 30(4), 1135–1158.",
+        "href": ""
+      },
+      {
+        "year": "2024",
+        "authors": "Lee, S., Song, J., &amp; <strong>Hong, S.</strong>",
+        "title": "Development and Effectiveness of an Educational Program Using ChatGPT for Instructional Designers: Focusing on Middle-aged and Older Instructional Designers.",
+        "journal": "The Journal of Yeolin Education, 32(4), 85–110.",
+        "href": ""
+      },
+      {
+        "year": "2024",
+        "authors": "Han, S., Shin, Y., <strong>Hong, S.</strong>, Park, J., Lim, E., Park, S., Eom, T., Jeong, Y., &amp; Cho, J.",
+        "title": "Case Study on Development and Operation of an Educational Metaverse Using Rapid Prototype Development Methodology: A Focus on D University.",
+        "journal": "Journal of Learner-Centered Curriculum and Instruction, 24(4), 1019–1039.",
+        "href": ""
+      },
+      {
+        "year": "2023",
+        "authors": "<strong>Hong, S.</strong>, Go, B., Rho, J., An, S., Lim, C., Seo, D., &amp; Ihm, J.",
+        "title": "A blended approach of in-person closed-book and online open-book exams for dental students in Korea.",
+        "journal": "BMC Medical Education.",
+        "href": ""
+      },
+      {
+        "year": "2023",
+        "authors": "<strong>Hong, S.</strong>, Yoo, J., Kim, H., Lim, Y., &amp; Lim, C.",
+        "title": "A Study on the Utilization and Effect of Online Communication Channels to Promote Learner Questions in Engineering Education.",
+        "journal": "Journal of Engineering Education Research, 26(4), 11–21.",
+        "href": ""
+      },
+      {
+        "year": "2023",
+        "authors": "<strong>Hong, S.</strong>, &amp; Han, H.",
+        "title": "Analyzing Perceptions and Educational Needs of Elementary School Teachers for Using ChatGPT in Education.",
+        "journal": "The Journal of Korean Association of Computer Education, 26(4), 51–63.",
+        "href": ""
+      },
+      {
+        "year": "2023",
+        "authors": "<strong>Hong, S.</strong>, Eom, T., Jeong, Y., &amp; Han, S.",
+        "title": "Design and Operation of Metaverse Based Learning in Higher Education: Focus on Pre-Service Teachers.",
+        "journal": "Journal of Digital Contents Society, 24(8), 1717–1727.",
+        "href": ""
+      },
+      {
+        "year": "2023",
+        "authors": "Lim, E., <strong>Hong, S.</strong>, Park, S., &amp; Lim, C.",
+        "title": "Exploring the Improvement of the Rapid Prototyping to Instructional Systems Design (RPISD) Model.",
+        "journal": "Journal of Educational Technology, 39(3), 749–785.",
+        "href": ""
+      },
+      {
+        "year": "2023",
+        "authors": "Lim, C., <strong>Hong, S.</strong>, Lim, E., Park, S., Kim, H., &amp; Han, H.",
+        "title": "Development of conceptual models and instructional design strategies for hybrid learning in higher education.",
+        "journal": "The Journal of Educational Information and Media, 29(4), 821–850.",
+        "href": ""
+      },
+      {
+        "year": "2023",
+        "authors": "Lim, C., Han, S., Kye, B., Lee, D., Park, J., Eom, T., Choi, J., Jeon, M., Kim, E., Kwon, M., &amp; <strong>Hong, S.</strong>",
+        "title": "Development of Instructional Strategies for Metaverse Class in K-12 Education.",
+        "journal": "The Journal of Educational Information and Media, 29(4), 1007–1036.",
+        "href": ""
+      },
+      {
+        "year": "2022",
+        "authors": "<strong>Hong, S.</strong>, Kwon, H., &amp; Han, H.",
+        "title": "An Exploratory Study on Online Education Scaffolding Strategy and Effect at the University Using a Systematic Review.",
+        "journal": "Journal of Digital Convergence, 20(4), 63–72.",
+        "href": ""
+      },
+      {
+        "year": "2022",
+        "authors": "<strong>Hong, S.</strong>, Kim, H., Lim, C., &amp; Lim, Y.",
+        "title": "Strategies and Effects of Questioning Methods Based on Anonymity/Openness in Remote Engineering Education.",
+        "journal": "Journal of Engineering Education Research, 25(3), 16–24.",
+        "href": ""
+      },
+      {
+        "year": "2022",
+        "authors": "Han, H., &amp; <strong>Hong, S.</strong>",
+        "title": "A Study on Analyzing Teachers' Perception and Needs of Using Metaverse in Elementary Online Learning Environment.",
+        "journal": "Journal of Digital Contents Society, 23(8), 1383–1397.",
+        "href": ""
+      },
+      {
+        "year": "2022",
+        "authors": "Min, H., &amp; <strong>Hong, S.</strong>",
+        "title": "A Study on Instructor Satisfaction with Non-face-to-face Education: Focusing on the Case of S University.",
+        "journal": "Journal of Teaching &amp; Learning Research, 15(1), 1–21.",
+        "href": ""
+      },
+      {
+        "year": "2021",
+        "authors": "<strong>Hong, S.</strong>, &amp; Lim, C.",
+        "title": "Development of Language Educators’ Scaffolding Strategies Using an Artificial Intelligence Speaker.",
+        "journal": "Journal of Educational Technology, 37(2), 309–341.",
+        "href": ""
+      },
+      {
+        "year": "2020",
+        "authors": "Lim, C., Song, Y., <strong>Hong, S.</strong>, &amp; Park, C.",
+        "title": "A Study on the Application and Improvement of the Rapid Prototyping to Instructional Systems Design (RPISD) Model.",
+        "journal": "Journal of Educational Technology, 36(3), 589–617.",
+        "href": ""
+      },
+      {
+        "year": "2020",
+        "authors": "Lim, C., Han, H., <strong>Hong, S.</strong>, Song, Y., &amp; Lee, D.",
+        "title": "Design Principles for Improving Creative Thinking Competency in Corporate Education.",
+        "journal": "The Journal of Educational Information and Media, 26(3), 477–510.",
+        "href": ""
+      },
+      {
+        "year": "2016",
+        "authors": "李志行 · <strong>洪秀旼</strong>",
+        "title": "韩国反腐败经验对中国的启示 (Implications of Korea’s Anti-corruption Experience for China).",
+        "journal": "管理观察 (Management Observer).",
+        "href": ""
+      }
+    ],
+    "publicationsLabel": {
+      "en": "Peer-reviewed Publications",
+      "ko": "학술논문"
+    },
+    "presentations": {
+      "label": {
+        "en": "Conference &amp; Poster Presentations",
+        "ko": "학술대회 발표"
+      },
+      "groups": [
+        {
+          "label": {
+            "en": "Conference Presentations",
+            "ko": "학술대회 구두 발표"
+          },
+          "items": [
+            "박가은, 곽헌동, 한예준, 이은서, <strong>홍수민</strong>, 한도희* (2026, 5월). 중등교육에서 인공지능-도덕 융합 수업 설계 모형 개발 연구. 한국교육공학회 춘계학술대회.",
+            "<strong>홍수민</strong>, 박성경, 임철일, 임은선 (2025, 5월). 교육에서 학습자 참여도 데이터의 체계적인 검토: 학습 분석의 적용. 한국교육정보미디어학회 춘계학술대회.",
+            "박성경, <strong>홍수민</strong>, 임은선, 임철일 (2025, 5월). 주제범위 문헌고찰을 통한 LXD와 ISD의 연구동향. 한국교육정보미디어학회 춘계학술대회.",
+            "Park, H., Hwang, J., <strong>Hong, S.</strong>, &amp; Martine, S. N. (2024, Nov). Facilitating High School Students’ Scientific Modeling through Interaction with AI Chatbots with Varied Persona. 2024 International Conference on Science Education in the Infosphere.",
+            "임은선, <strong>홍수민</strong>, 임철일 (2024, 11월). AI 융합 교육에 대한 초등 교사 인식 및 교육 요구도 분석. 2024 한국교육공학회-한국교육정보미디어학회 공동추계학술대회.",
+            "이은서, <strong>홍수민</strong>, 임철일, 엄은상, 배영빈 (2024, 11월). 중등 정보교육에서 맞춤형 프로그래밍 학습을 위한 시스템 설계와 시스템 활용 수업의 효과성 분석. 2024 한국교육공학회-한국교육정보미디어학회 공동추계학술대회.",
+            "임철일, 한옥결, 김승하, 전민선, 이채린, 정재현, <strong>홍수민</strong> (2024, 11월). 행동기준 평정척도(BARS)를 활용한 현직교원의 AI·디지털 역량 측정도구 개발 및 타당화. 2024 한국교육공학회-한국교육정보미디어학회 공동추계학술대회.",
+            "<strong>Hong, S.</strong>, Go, B., Lim, E., Eom, T., Kim, S., Han, H., &amp; Lim, C.* (2024, Aug). Developing a Comprehensive Framework for Constructing and Operating EduMetaverse in K-12 Education. The 22nd ICoME. Tokyo, Japan.",
+            "<strong>Hong, S.</strong>, Eom, T., Park, S., Lim, M., &amp; Lim, C.* (2024, Aug). From Traditional Library to Metaverse Learning Commons. The 22nd ICoME. Tokyo, Japan.",
+            "Lim, C., Chae, J., Han, Y., <strong>Hong, S.</strong>, Go, B., &amp; Lim, E. (2024, Aug). Mapping the Landscape: A Systematic Review and Classification of AI-Integrated Education in South Korea. The 22nd ICoME. Tokyo, Japan.",
+            "Park, S., Lim, E., <strong>Hong, S.</strong>, &amp; Lim, C. (2024, Jun). Exploring Artificial Intelligence-Based Instructional Design Models through Systematic Literature Review. Conference of KSET. Daejeon, South Korea.",
+            "Lim, C., Han, H., <strong>Hong, S.</strong>, Ko, B., Lim, E., Eom, T., &amp; Kim, S. (2024, Jun). Development of a Framework for Building and Operating Educational Metaverses in Primary and Secondary Education. Conference of KSET. Daejeon, South Korea.",
+            "Lim, C., Park, J., Eom, T., <strong>Hong, S.</strong>, Park, S., Jeong, Y., &amp; Kim, H. (2024, May). Analysis of the Relative Importance of Key Factors for Selecting Optimal Online and Offline Instructional Strategies: Focusing on the AHP Technique. Conference of KAEIM. Seoul, South Korea.",
+            "Lim, C., <strong>Hong, S.</strong>, Lim, E., Park, S., Kim, H., &amp; Han, H. (2023, Nov). A Development of Conceptual Model and Instructional Strategies for Hybrid Learning in Higher Education. Joint Conference of KSET &amp; KAEIM. Seoul, South Korea.",
+            "Yoo, J., <strong>Hong, S.</strong>, Kim, H., Lim, C., &amp; Lim, Y. (2023, Nov). A Study on Teaching Strategy and Effectiveness Using an Online Communication Platform to Promote Learner Questions. Joint Conference of KSET &amp; KAEIM. Seoul, South Korea.",
+            "Lim, C., Park, J., Park, S., Eom, S., <strong>Hong, S.</strong>, Jeong, Y., &amp; Kim, H. (2023, Oct). An Exploration of Design Principles for Blended Learning considering the Four Quadrants of Blended Learning Types. 2023 AECT Convention. Orlando, FL, USA.",
+            "Yoo, J., <strong>Hong, S.</strong>, Kim, H., Lim, C., &amp; Lim, Y. (2023, Oct). Promoting Active Learning in Engineering College Classes through Social Learning Platforms. 2023 AECT Convention. Orlando, FL, USA.",
+            "Lim, C., <strong>Hong, S.</strong>, Lim, E., Park, S., Kim, H., &amp; Han, H. (2023, Oct). A Development of Instructional Strategies for Hybrid Learning in South Korea Higher Education. 2023 AECT Convention. Orlando, FL, USA.",
+            "Lim, C., <strong>Hong, S.</strong>, Park, J., Kim, H., Park, S., Eom, T., &amp; Jeong, Y. (2023, May). Development of a Framework and Assessment Tools for Effective Teaching and Learning Methods in the Post-COVID Era. Conference of KAEIM. Seoul, South Korea.",
+            "Lim, E., <strong>Hong, S.</strong>, Park, S., &amp; Lim, C. (2023, Jun). Exploring the Improvement of the RPISD Model. Conference of KSET. Jeju, South Korea.",
+            "Lim, C., Han, S., <strong>Hong, S.</strong>, et al. (2023, Jun). Research on Typification and Strategy Development for Instructional Design for Educational Use of the Metaverse in K-12 Education. Conference of KSET. Jeju, South Korea.",
+            "Han, Y., <strong>Hong, S.</strong>, Lee, J., &amp; Lim, C. (2023, Jun). Exploration of Artificial Intelligence Learning Companion Systems. Conference of KSET. Jeju, South Korea.",
+            "Han, Y., <strong>Hong, S.</strong>, &amp; Lim, C. (2022, Oct). Exploring a Conceptual Model for an Intelligent Learning Companion System. 2022 AECT Convention. Las Vegas, NV.",
+            "Ko, B., <strong>Hong, S.</strong>, Ihm, J., &amp; Lim, C. (2022, Oct). A Study on the Effectiveness of Open Book Evaluation in Dentistry Education. 2022 AECT Convention. Las Vegas, NV.",
+            "Lim, C., <strong>Hong, S.</strong>, Kim, H., Lim, E., Yoo, J., Lee, H., Lee, D., Park, J., &amp; Lee, J. (2022, Oct). A Study of the Optimization Method for Distance Education and Evaluation of Effectiveness: The case of S University in South Korea. 2022 AECT Convention. Las Vegas, NV.",
+            "<strong>Hong, S.</strong>, Lim, C., &amp; Han, H. (2022, Oct). The Role of the Teacher and Scaffolding Strategies for Facilitating Interaction with Artificial Intelligence Speakers in Education. 2022 AECT Convention. Las Vegas, NV.",
+            "<strong>Hong, S.</strong>, Kwon, H., &amp; Han, H. (2022, Jun). Exploration of Scaffolding Strategies in University Online Education through Systematic Literature Review. Conference of KSET. Daejeon, South Korea.",
+            "Lim, C., <strong>Hong, S.</strong>, Lee, D., Kim, H., Yoo, J., Lee, H., &amp; Lim, E. (2022, May). Research on Optimization Strategies and Effectiveness Evaluation for Remote Teaching: A Case Study of S University. Conference of KAEIM. Virtual.",
+            "<strong>Hong, S.</strong>, Lim, C., Kim, H., &amp; Lim, Y. (2022, May). The Effectiveness of Question Types and Strategies to Enhance Learner Engagement in Online Education. Conference of KAEIM. Virtual.",
+            "Park, J., <strong>Hong, S.</strong>, &amp; Lim, C. (2022, May). Exploratory Study on the Attributes of Instructional Media for Educational Use in the Metaverse. Conference of KAEIM. Virtual.",
+            "<strong>Hong, S.</strong>, &amp; Lim, C. (2021, May). Development of Language Educators’ Scaffolding Strategies Using an Artificial Intelligence Speaker. Conference of KSET. Virtual.",
+            "Lim, C., Kim, M., &amp; <strong>Hong, S.</strong> (2021, May). Development of Instructional Design Models for Flipped Learning Curriculum in Corporate Education. Conference of KSET. Virtual.",
+            "Lim, C., Song, Y., <strong>Hong, S.</strong>, Lee, D., &amp; Han, H. (2020, Oct). Design Principles for Improving Creative Thinking Competency in Corporate Education. 2020 AECT Conference. Virtual.",
+            "Song, Y., <strong>Hong, S.</strong>, Park, C., Liu, K., &amp; Lim, C. (2019, Nov). Research on the Improvement of Rapid Prototyping Models for the Development of Corporate Education. Joint Conference of Human Resources. Seoul, South Korea.",
+            "Song, Y., <strong>Hong, S.</strong>, Park, C., Liu, K., &amp; Lim, C. (2019, Nov). A Study on the Application and Improvement of the RPISD Model. Joint Conference of KSET &amp; KAEIM. Seoul, South Korea.",
+            "Lim, C., Han, H., Lee, D., Song, Y., &amp; <strong>Hong, S.</strong> (2019, Nov). Development and Application of Educational Methodologies for Improving Creative Thinking Competency in Corporate Education. Joint Conference of KSET &amp; KAEIM. Seoul, South Korea.",
+            "Song, Y., <strong>Hong, S.</strong>, Park, C., Liu, K., &amp; Lim, C. (2019, Oct). A Study on the Improvement of RPISD (Rapid Prototyping to ISD). International Conference on Education Research. Seoul, South Korea."
+          ]
+        },
+        {
+          "label": {
+            "en": "Poster Presentations",
+            "ko": "포스터 발표"
+          },
+          "items": [
+            "김동현, 손서빈, <strong>홍수민</strong>, 문미래 (2026, 5월). AI 융합 수업 설계를 위한 교사-AI 에이전트 협력 지원 시스템 개발 연구. 한국교육공학회 춘계학술대회.",
+            "<strong>Hong, S.</strong>, Eom, T., Lim, J., Lim, C., &amp; Moon, J. (2025, Apr). Integrating a Generative AI-Enhanced Virtual Reality Simulation into Teacher Education: A Preliminary Design Study. 2025 AERA Annual Meeting.",
+            "박가은, 곽헌동, 한예준, 이은서, <strong>홍수민</strong>, 한도희* (2025, 5월). 중등교육에서 인공지능-도덕 융합 수업 설계 모형 연구. 한국교육공학회 춘계학술대회.",
+            "엄태연, <strong>홍수민</strong> (2024, 11월). 가상세계 기반 학습환경에서 인공지능 에이전트의 역할에 대한 체계적 문헌고찰. 2024 한국교육공학회-한국교육정보미디어학회 공동추계학술대회.",
+            "Lim, C., <strong>Hong, S.</strong>, Lim, E., Jeong, K., Eom, T., Koh, J., Kim, Y., &amp; Hong, J. (2024, Jul). A Study on the Development of Online Education Content Manual for Korean Medicine Using the RPISD Model. International Conference on Education Research. Seoul, South Korea.",
+            "Lim, C., <strong>Hong, S.</strong>, Eom, T., Park, S., &amp; Lim, M. (2024, Jul). From Traditional School Library to Metaverse Learning Commons. International Conference on Education Research. Seoul, South Korea.",
+            "Lim, C., <strong>Hong, S.</strong>, Park, S., &amp; Eom, T. (2023, Oct). Collaborative Instructional Model among Instructors–Learners–Artificial Intelligence (AI) in English Writing Class Using Cloud-Based Learning Tools. International Conference on Education Research. Seoul, South Korea.",
+            "Park, C., Liu, K., <strong>Hong, S.</strong>, &amp; Song, Y. (2019, Oct). A Study on the Development of a Creative Marketing Educational Training Program based on RPISD. International Conference on Education Research. Seoul, South Korea."
+          ]
+        },
+        {
+          "label": {
+            "en": "Media Presentations",
+            "ko": "미디어 발표"
+          },
+          "items": [
+            "Hwang, J., <strong>Hong, S.</strong>, Eom, T., &amp; Lim, C. (2024, Jun). Enhancing Pre-service Teachers’ Competence with a Generative Artificial Intelligence-Enhanced Virtual Reality Simulation. International Society of the Learning Sciences. Buffalo, NY, USA.",
+            "Hwang, J., <strong>Hong, S.</strong>, Eom, T., &amp; Lim, C. (2023, Nov). Development of a Generative AI-based Virtual Reality Class Simulation to Improve the Teaching Competence of Pre-service Teachers. Joint Conference of KSET &amp; KAEIM. Seoul, South Korea."
+          ]
+        }
+      ]
+    },
+    "affiliations": {
+      "label": {
+        "en": "Professional Affiliations &amp; Service",
+        "ko": "학회 활동 및 학술 봉사"
+      },
+      "memberships": [
+        {
+          "name": "Korean Society of Educational Technology (KSET)",
+          "since": "2019.03 –",
+          "href": "https://www.kset.or.kr/"
+        },
+        {
+          "name": "Korean Association for Educational Information and Media (KAEIM)",
+          "since": "2019.03 –",
+          "href": "https://kaeim.jams.or.kr/co/main/jmMain.kci"
+        },
+        {
+          "name": "Association for Educational Communications and Technology (AECT)",
+          "since": "2019.03 –",
+          "href": "https://www.aect.org/home"
+        },
+        {
+          "name": "International Society of the Learning Sciences (ISLS)",
+          "since": "2024.03 –",
+          "href": "https://www.isls.org/"
+        }
+      ],
+      "conferenceReviews": [
+        "Association for Educational Communications and Technology (AECT), 2024",
+        "Association for the Advancement of Computing in Education (AACE), 2024",
+        "Immersive Learning Research Network (iLRN), 2025",
+        "Educational Data Mining Conference, 2026"
+      ],
+      "journalReviews": [
+        "Computers &amp; Education: X Reality",
+        "BMC Medical Education"
+      ]
+    },
+    "links": [
+      {
+        "label": "ORCID 0000-0003-2276-0505",
+        "href": "https://orcid.org/0000-0003-2276-0505"
+      },
+      {
+        "label": "ResearchGate",
+        "href": "https://www.researchgate.net/profile/Hong-Sumin"
       }
     ]
   },
@@ -505,8 +893,8 @@
       "ko": "프로젝트"
     },
     "sectionNote": {
-      "en": "30+ commissioned research &amp; K-12 programs since 2019 — selected entries below",
-      "ko": "2019년 이후 30여 건의 위탁연구 및 K-12 프로그램 — 대표 사례 선별"
+      "en": "55+ commissioned research and K-12/higher-education programs since 2019",
+      "ko": "2019년 이후 수행한 위탁연구 및 교육 프로그램 55건 이상"
     },
     "filters": [
       {
@@ -520,171 +908,858 @@
         "ko": "PM"
       },
       {
-        "key": "researcher",
-        "en": "Researcher",
-        "ko": "연구원"
+        "key": "id",
+        "en": "Instructional Design",
+        "ko": "교수설계"
       },
       {
-        "key": "progress",
-        "en": "In progress",
-        "ko": "진행 중"
+        "key": "online",
+        "en": "Online Education",
+        "ko": "온라인교육"
+      },
+      {
+        "key": "admin",
+        "en": "Educational Admin.",
+        "ko": "교육행정"
+      },
+      {
+        "key": "etc",
+        "en": "Other Activities",
+        "ko": "기타"
       }
     ],
     "rows": [
       {
-        "role": "pm",
+        "date": "2026 –",
+        "title": "교사의 정서행동위기 학생 대응 역량 강화를 위한 생성형 AI 통합 지능형 시뮬레이션 개발",
+        "org": {
+          "en": "National Research Foundation of Korea",
+          "ko": "한국연구재단"
+        },
+        "role": "researcher",
+        "status": "planned",
+        "cat": "id",
+        "pill": "planned",
+        "pillLabel": "예정",
+        "roleLabel": ""
+      },
+      {
+        "date": "2026 –",
+        "title": "KERIS 인공지능 활용 선도교사",
+        "org": {
+          "en": "Korea Education and Research Information Service (KERIS)",
+          "ko": "한국교육학술정보원(KERIS)"
+        },
+        "role": "researcher",
         "status": "progress",
+        "cat": "id",
+        "pill": "progress",
+        "pillLabel": "진행 중",
+        "roleLabel": ""
+      },
+      {
         "date": "2025.06–2026.02",
-        "title": "한국과학창의재단 — 디지털새싹 핵심역량 진단도구 및 성과지표 개발",
+        "title": "한국과학창의재단 디지털새싹 핵심역량 진단도구 및 성과지표 개발",
         "org": {
           "en": "Korea Foundation for the Advancement of Science &amp; Creativity",
           "ko": "한국과학창의재단"
         },
+        "role": "pm",
+        "status": "done",
+        "cat": "id",
         "pill": "done",
         "pillLabel": "완료",
         "roleLabel": "PM"
       },
       {
-        "role": "pm",
-        "status": "progress",
-        "date": "2025 →",
+        "date": "2025",
         "title": "교육부 2025 AIEDAP 수도권역 사업 운영",
         "org": {
-          "en": "Ministry of Education — metropolitan-area program operations",
-          "ko": "교육부 — 수도권역 사업 운영"
+          "en": "Ministry of Education — AIEDAP",
+          "ko": "교육부 AIEDAP"
         },
-        "pill": "progress",
-        "pillLabel": "시작 전",
-        "roleLabel": null
-      },
-      {
-        "role": "researcher",
+        "role": "pm",
         "status": "progress",
-        "date": "2025 →",
-        "title": "KERIS 인공지능 활용 선도교사",
-        "org": {
-          "en": "Korea Education &amp; Research Information Service",
-          "ko": "한국교육학술정보원"
-        },
+        "cat": "id",
         "pill": "progress",
         "pillLabel": "진행 중",
-        "roleLabel": null
+        "roleLabel": "PM"
       },
       {
+        "date": "2025",
+        "title": "교육부 2025년 AIEDAP 마스터교원 신규연수 사업",
+        "org": {
+          "en": "Ministry of Education — AIEDAP",
+          "ko": "교육부 AIEDAP"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2025",
+        "title": "중부교육지원청 중부 중등 「2025학년도 AI·디지털 기반 역량강화 연수」",
+        "org": {
+          "en": "Jungbu District Office of Education",
+          "ko": "중부교육지원청"
+        },
         "role": "researcher",
-        "status": "progress",
-        "date": "2024",
-        "title": "교육부 — 교원의 AI·디지털 역량강화 지원체계 고도화",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": ""
+      },
+      {
+        "date": "2025",
+        "title": "중부교육지원청 2025년도 중부 초등 「찾아가는 AI·디지털 기반 역량강화 연수」",
+        "org": {
+          "en": "Jungbu District Office of Education",
+          "ko": "중부교육지원청"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": ""
+      },
+      {
+        "date": "2025",
+        "title": "넥슨재단 헬로메이트 프로그램 운영 및 연구",
+        "org": {
+          "en": "Nexon Foundation",
+          "ko": "넥슨재단"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": ""
+      },
+      {
+        "date": "2024.01–2024.12",
+        "title": "교육부 교원의 AI·디지털 역량강화 지원체계 고도화",
         "org": {
           "en": "Ministry of Education",
           "ko": "교육부"
         },
+        "role": "researcher",
+        "status": "progress",
+        "cat": "id",
         "pill": "progress",
         "pillLabel": "진행 중",
         "roleLabel": "Assist Researcher"
       },
       {
-        "role": "pm",
-        "status": "done",
-        "date": "2023.10–2024.01",
-        "title": "제주대학교 — Hi-Edu 수업 개편 및 운영 가이드라인(교수자용 매뉴얼) 개발",
-        "org": null,
-        "pill": "done",
-        "pillLabel": "완료",
-        "roleLabel": "PM"
-      },
-      {
-        "role": "pm",
-        "status": "done",
         "date": "2023.10–2024.03",
-        "title": "Google for Education — Cloud-Based Instructional Design Model",
-        "org": null,
-        "pill": "done",
-        "pillLabel": "완료",
-        "roleLabel": "PM"
-      },
-      {
+        "title": "Google for Education — A Study on the Development of Cloud-Based Instructional Design Model: Utilizing Google for Education Products",
+        "org": {
+          "en": "Google for Education",
+          "ko": "Google for Education"
+        },
         "role": "pm",
         "status": "done",
-        "date": "2023.09–2023.12",
-        "title": "강원특별자치도교육청 — 메타버스 통합도서관 서비스 및 콘텐츠 구축",
-        "org": null,
+        "cat": "id",
         "pill": "done",
         "pillLabel": "완료",
         "roleLabel": "PM"
       },
       {
+        "date": "2023.10–2024.01",
+        "title": "제주대학교 Hi-Edu 수업 개편 및 운영을 위한 가이드라인(교수자용 매뉴얼) 개발",
+        "org": {
+          "en": "Jeju National University",
+          "ko": "제주대학교"
+        },
         "role": "pm",
         "status": "done",
-        "date": "2023.07–2023.11",
-        "title": "세종특별자치시교육청 — 세종형 메타버스학교 설립·운영 방안 정책연구",
-        "org": null,
+        "cat": "id",
         "pill": "done",
         "pillLabel": "완료",
         "roleLabel": "PM"
       },
       {
+        "date": "2023.09–2024.02",
+        "title": "서울대학교 시흥캠퍼스 미래혁신연구원 4차산업혁명 체험형 교육 프로그램 개발",
+        "org": {
+          "en": "SNU Siheung Campus, Institute of Future Innovation",
+          "ko": "서울대학교 시흥캠퍼스 미래혁신연구원"
+        },
         "role": "researcher",
         "status": "done",
-        "date": "2023.06–2023.10",
-        "title": "서울대학교 사범대학 — 예비교원 교수 역량 향상을 위한 VR 수업 시뮬레이션 개발",
-        "org": {
-          "en": "→ prototype of TeacherGen@i",
-          "ko": "→ TeacherGen@i 원형"
-        },
+        "cat": "id",
         "pill": "done",
         "pillLabel": "완료",
         "roleLabel": "Researcher"
       },
       {
+        "date": "2023.09–2023.12",
+        "title": "강원특별자치도교육청 메타버스 통합도서관 서비스 및 콘텐츠 구축",
+        "org": {
+          "en": "Gangwon State Office of Education",
+          "ko": "강원특별자치도교육청"
+        },
         "role": "pm",
         "status": "done",
-        "date": "2022.04–2022.11",
-        "title": "한국교육학술정보원(KERIS) — 메타버스의 교육적 활용을 위한 가이드라인 연구",
-        "org": null,
+        "cat": "id",
         "pill": "done",
         "pillLabel": "완료",
         "roleLabel": "PM"
       },
       {
+        "date": "2023.07–2024.02",
+        "title": "한국과학창의재단 2023 교원양성센터 미래교육센터",
+        "org": {
+          "en": "Korea Foundation for the Advancement of Science &amp; Creativity",
+          "ko": "한국과학창의재단"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2023.07–2023.11",
+        "title": "세종특별자치시교육청 세종형 메타버스학교 설립운영 방안 정책연구",
+        "org": {
+          "en": "Sejong City Office of Education",
+          "ko": "세종특별자치시교육청"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2023.06–2023.10",
+        "title": "서울대학교 사범대학 예비교원의 교수 역량 향상을 위한 가상현실 수업 시뮬레이션 개발",
+        "org": {
+          "en": "SNU Faculty of Liberal Education",
+          "ko": "서울대학교 기초교육원"
+        },
         "role": "researcher",
         "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2022.11–2022.12",
+        "title": "SK Academy Post 코로나 시대 과정 개발을 위한 HRD Trend Tracking 및 외부기업 벤치마킹",
+        "org": {
+          "en": "SK Academy",
+          "ko": "SK Academy"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
         "date": "2022.09–2023.01",
-        "title": "교육부 AIEDAP — 예비·현직 교원의 AI·디지털 역량 체계 정립",
-        "org": null,
+        "title": "교육부 AIEDAP 예비·현직 교원의 AI·디지털 역량 체계 정립",
+        "org": {
+          "en": "Ministry of Education — AIEDAP",
+          "ko": "교육부 AIEDAP"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
         "pill": "done",
         "pillLabel": "완료",
         "roleLabel": "Assist Researcher"
       },
       {
-        "role": "pm",
-        "status": "done",
-        "date": "2022.11–2022.12",
-        "title": "SK Academy — Post 코로나 시대 과정 개발을 위한 HRD Trend Tracking",
-        "org": null,
-        "pill": "done",
-        "pillLabel": "완료",
-        "roleLabel": "PM"
-      },
-      {
+        "date": "2022.07–2022.12",
+        "title": "Google for Education — A Study on the Development of a Cloud-driven Instructional Design Model using Google for Education Products",
+        "org": {
+          "en": "Google for Education",
+          "ko": "Google for Education"
+        },
         "role": "researcher",
         "status": "done",
-        "date": "2019.05",
-        "title": "LG 아카데미 — 스스로 생각하는 능력 강화를 위한 교육방법론 개발",
-        "org": null,
+        "cat": "id",
         "pill": "done",
         "pillLabel": "완료",
         "roleLabel": "Researcher"
       },
       {
+        "date": "2022.06–2023.01",
+        "title": "동국대학교 교육용 메타버스 교수·학습 환경 전략 연구",
+        "org": {
+          "en": "Dongguk University CTL",
+          "ko": "동국대학교 교수학습개발센터"
+        },
         "role": "researcher",
         "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2022.06–2022.08",
+        "title": "한국교통대학교 하이브리드 교수학습 가이드 및 매뉴얼 개발",
+        "org": {
+          "en": "Korea National University of Transportation",
+          "ko": "한국교통대학교"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2022.04–2022.11",
+        "title": "한국교육학술정보원(KERIS) 메타버스의 교육적 활용을 위한 가이드라인 연구",
+        "org": {
+          "en": "KERIS",
+          "ko": "한국교육학술정보원(KERIS)"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2022.01–2022.03",
+        "title": "농림수산식품교육문화정보원(EPIS) 농업교육 운영 내실화 사업: 농업교육 현장 용어집 제작",
+        "org": {
+          "en": "EPIS",
+          "ko": "농림수산식품교육문화정보원(EPIS)"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2021.12–2022.02",
+        "title": "한국과학창의재단 2022 교원양성센터 미래교육센터",
+        "org": {
+          "en": "Korea Foundation for the Advancement of Science &amp; Creativity",
+          "ko": "한국과학창의재단"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2022.02",
+        "title": "서울대학교 교육행정연수원 교장자격연수 데이터사이언스 교육과정 개발",
+        "org": {
+          "en": "SNU Academy for Educational Administrators",
+          "ko": "서울대학교 교육행정연수원"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2020.12–2021.02",
+        "title": "서울대학교 교수 교육역량 진단도구 고도화 연구",
+        "org": {
+          "en": "SNU Center for Teaching &amp; Learning",
+          "ko": "서울대학교 교수학습개발센터 교수지원부"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Assist Researcher"
+      },
+      {
+        "date": "2020.12–2021.02",
+        "title": "농림수산식품교육문화정보원 첨단품목대학 전문교육과정(3종) 개발 (장미)",
+        "org": {
+          "en": "EPIS",
+          "ko": "농림수산식품교육문화정보원(EPIS)"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2020.05–2020.08",
+        "title": "한국생산성본부 플립러닝 개발 컨설팅 및 표준모델 개발용역",
+        "org": {
+          "en": "Korea Productivity Center (KPC)",
+          "ko": "한국생산성본부(KPC)"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2020.06",
+        "title": "교육부 중앙교육연수원 정책연수과 스마트 소통형 연수 운영방안",
+        "org": {
+          "en": "National Institute for Lifelong Education / MOE",
+          "ko": "교육부 중앙교육연수원"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Assist Researcher"
+      },
+      {
+        "date": "2019.05",
+        "title": "LG 아카데미 스스로 생각하는 능력 강화를 위한 교육방법론 개발",
+        "org": {
+          "en": "LG Academy",
+          "ko": "LG 아카데미"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2019.03–2019.06",
+        "title": "CJ 푸드빌 마케팅 교육과정 개발",
+        "org": {
+          "en": "CJ Foodville",
+          "ko": "CJ 푸드빌"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
         "date": "2019.03–2019.05",
-        "title": "현대자동차 구매본부 — 역량 모델링",
-        "org": null,
+        "title": "현대자동차 구매본부 역량 모델링",
+        "org": {
+          "en": "Hyundai Motor Group",
+          "ko": "현대자동차그룹"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "id",
         "pill": "done",
         "pillLabel": "완료",
         "roleLabel": "Facilitator"
+      },
+      {
+        "date": "2024.07–2024.08",
+        "title": "강원대학교 「원격교육센터」 발전계획 수립 연구 용역",
+        "org": {
+          "en": "Kangwon National University",
+          "ko": "강원대학교"
+        },
+        "role": "researcher",
+        "status": "progress",
+        "cat": "online",
+        "pill": "progress",
+        "pillLabel": "진행 중",
+        "roleLabel": "Assist Researcher"
+      },
+      {
+        "date": "2024.01–2024.02",
+        "title": "한의학 온라인 교육 콘텐츠 매뉴얼 개발",
+        "org": {
+          "en": "7-il Co., Ltd.",
+          "ko": "주식회사 7일"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2023.04–2024.02",
+        "title": "한의학 온라인 교육 활성화 연구",
+        "org": {
+          "en": "7-il Co., Ltd.",
+          "ko": "주식회사 7일"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2021.10–2021.11",
+        "title": "부산시민의 생애주기별 온라인 평생학습 수요조사",
+        "org": {
+          "en": "Busan Metropolitan City · Busan Digital University",
+          "ko": "부산광역시 · 부산디지털대학"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Assist Researcher"
+      },
+      {
+        "date": "2021.09–2022.01",
+        "title": "서울대학교 비대면 강좌 최적화 방안 및 효과성 평가 연구",
+        "org": {
+          "en": "SNU Faculty of Liberal Education",
+          "ko": "서울대학교 기초교육원"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2021.09–2021.12",
+        "title": "서울대학교 교육행정연수원 홈페이지 개선 연구",
+        "org": {
+          "en": "SNU Academy for Educational Administrators",
+          "ko": "서울대학교 교육행정연수원"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2021.05–2021.09",
+        "title": "교육부 중앙교육연수원 교육분야 온라인 허브 구축을 위한 외부 콘텐츠 선별방안 연구",
+        "org": {
+          "en": "National Training Institute for Education, MOE",
+          "ko": "교육부 중앙교육연수원"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2020.09–2021.01",
+        "title": "서울대학교 Hybrid Learning 지원을 위한 최적화된 강좌 설계 방안 연구",
+        "org": {
+          "en": "SNU Center for Teaching &amp; Learning",
+          "ko": "서울대학교 교수학습개발센터"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2020.09–2020.12",
+        "title": "동의보감, 온라인 열린강좌를 위한 콘텐츠 개발 및 활용방안 연구",
+        "org": {
+          "en": "Sancheong-gun · Wonkwang University",
+          "ko": "경상남도 산청군 · 원광대학교 한의학과"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2020.05–2020.08",
+        "title": "서울대학교 온-오프 연계 역량기반 혁신적 교육 질 관리를 위한 분석 및 운영방안 연구",
+        "org": {
+          "en": "SNU Center for Teaching &amp; Learning",
+          "ko": "서울대학교 교수학습개발센터"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2020.03–2020.12",
+        "title": "서울대학교 K-MOOC 묶음강좌 ‘인간과 인공지능’ 재운영 및 업데이트",
+        "org": {
+          "en": "SNU Center for Teaching &amp; Learning",
+          "ko": "서울대학교 교수학습개발센터"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Assist Researcher"
+      },
+      {
+        "date": "2019.09–2020.02",
+        "title": "서울대학교 특별자원 소장기관 온라인 콘텐츠 개발",
+        "org": {
+          "en": "SNU Center for Teaching &amp; Learning",
+          "ko": "서울대학교 교수학습개발센터"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "online",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Assist Researcher"
+      },
+      {
+        "date": "2023.05–2023.11",
+        "title": "교육부 예비·현직 교원의 AI·디지털 역량 강화 사업성과 분석 및 재구조화 연구",
+        "org": {
+          "en": "Korea Foundation for the Advancement of Science &amp; Creativity",
+          "ko": "한국과학창의재단"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "admin",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2023.02–2023.03",
+        "title": "서울대학교 2022 교육수요자만족도조사 FGI",
+        "org": {
+          "en": "SNU Center for University Innovation",
+          "ko": "서울대학교 기획처 대학혁신센터"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "admin",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2022.07 –",
+        "title": "교육부 교원의 AI·디지털 역량 강화를 위한 AIEDAP 사업 지원 (3년차)",
+        "org": {
+          "en": "Ministry of Education",
+          "ko": "교육부"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "admin",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2021.02–2021.04",
+        "title": "서울대학교 2021 교육수요자만족도조사 FGI",
+        "org": {
+          "en": "SNU Center for University Innovation",
+          "ko": "서울대학교 기획처 대학혁신센터"
+        },
+        "role": "pm",
+        "status": "done",
+        "cat": "admin",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "PM"
+      },
+      {
+        "date": "2020.11–2021.04",
+        "title": "서울대학교 2020 교육수요자만족도조사",
+        "org": {
+          "en": "SNU Center for University Innovation",
+          "ko": "서울대학교 기획처 대학혁신센터"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "admin",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
+      },
+      {
+        "date": "2020.09–2020.12",
+        "title": "서울대학교 법인화 10주년 백서 편찬",
+        "org": {
+          "en": "SNU Office of Planning",
+          "ko": "서울대학교 기획처"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "admin",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Assist Researcher"
+      },
+      {
+        "date": "2019.01–2020.02",
+        "title": "2019 서울대학교 교육연구소 국제학술대회 ICER 사무국 운영",
+        "org": {
+          "en": "International Conference on Education Research",
+          "ko": "서울대학교 교육연구소 ICER"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "admin",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Secretary"
+      },
+      {
+        "date": "2015.09–2016.08",
+        "title": "엡손 글로벌리더 장학생",
+        "org": {
+          "en": "EPSON",
+          "ko": "EPSON"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "etc",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Fellow"
+      },
+      {
+        "date": "2014.09–2014.12",
+        "title": "기획재정부 대학생 경제교육 봉사단",
+        "org": {
+          "en": "Ministry of Economy and Finance",
+          "ko": "기획재정부"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "etc",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Volunteer"
+      },
+      {
+        "date": "2014.03–2014.06",
+        "title": "마이크로소프트 · 삼성전자 S아카데미 로망원정대",
+        "org": {
+          "en": "Microsoft · Samsung Electronics",
+          "ko": "Microsoft · 삼성전자"
+        },
+        "role": "researcher",
+        "status": "done",
+        "cat": "etc",
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "Member"
+      }
+    ]
+  },
+  "books": {
+    "sectionTitle": {
+      "en": "Books",
+      "ko": "저서"
+    },
+    "sectionNote": {
+      "en": "Co-authored volumes and translated works on instructional design and AI in education",
+      "ko": "교수설계 및 AI 교육 관련 공저·역서"
+    },
+    "items": [
+      {
+        "title": {
+          "en": "Principles and Models of Instructional Design for AI-Integrated Education",
+          "ko": "AI융합 교육을 위한 수업 설계의 원리와 모형"
+        },
+        "meta": "",
+        "image": ""
+      },
+      {
+        "title": {
+          "en": "Design and Development Research Methodology for Instructional Design Research",
+          "ko": "교수설계 연구를 위한 설계·개발연구 방법론"
+        },
+        "meta": "",
+        "image": ""
+      },
+      {
+        "title": {
+          "en": "Instructional Design Theories and Models",
+          "ko": "교수설계이론과 모형"
+        },
+        "meta": "",
+        "image": ""
+      },
+      {
+        "title": {
+          "en": "Directions and Practices of Future Education 1",
+          "ko": "미래교육의 방향과 실제 1"
+        },
+        "meta": "",
+        "image": ""
+      },
+      {
+        "title": {
+          "en": "Directions and Practices of Future Education 2",
+          "ko": "미래교육의 방향과 실제 2"
+        },
+        "meta": "",
+        "image": ""
+      },
+      {
+        "title": {
+          "en": "Guidelines for Educational Uses of the Metaverse",
+          "ko": "메타버스의 교육적 활용을 위한 가이드라인"
+        },
+        "meta": "KERIS",
+        "image": ""
+      },
+      {
+        "title": {
+          "en": "Quick Model for Online/Offline Instructional Design — the AMOS Model",
+          "ko": "온·오프라인 수업설계 퀵 모형, AMOS Model"
+        },
+        "meta": "",
+        "image": ""
+      },
+      {
+        "title": {
+          "en": "Educational Technology and Instruction (教育技术与教学)",
+          "ko": "교육기술과 교수 (教育技术与教学)"
+        },
+        "meta": "",
+        "image": ""
       }
     ]
   },
@@ -694,8 +1769,8 @@
       "ko": "교육 및 강연"
     },
     "sectionNote": {
-      "en": "Course lectures, invited talks, and workshops",
-      "ko": "정규 강의, 초청 강연 및 워크숍"
+      "en": "Course lectures, invited talks in English, and 60+ special lectures &amp; workshops",
+      "ko": "정규 강의, 영어 초청 강연 및 60여 회의 특강·워크숍"
     },
     "courseLecturesLabel": {
       "en": "Course Lectures",
@@ -703,35 +1778,48 @@
     },
     "courseLectures": [
       {
-        "title": "인공지능 교과 융합 교육론 기초",
-        "meta": "Seoul National University · 2025–2026",
+        "title": "서울대학교 2026-1학기 인공지능 교과 융합 교육론 기초 (2학점)",
+        "meta": "Seoul National University · 2026",
         "image": ""
       },
       {
-        "title": "디지털교육",
-        "meta": {
-          "en": "Seoul National University · 2025–2026 (regular + winter/summer sessions)",
-          "ko": "서울대학교 · 2025–2026 (정규 학기 + 계절학기)"
-        },
+        "title": "서울대학교 2026-1학기 디지털교육 (1학점)",
+        "meta": "Seoul National University · 2026",
         "image": ""
       },
       {
-        "title": {
-          "en": "Instructional Methods &amp; Educational Technology (required for teaching certification)",
-          "ko": "교육방법 및 교육공학 (교직필수)"
-        },
-        "meta": "Seoul Women's University · 2025-2",
+        "title": "서울대학교 2025-동계 계절학기 디지털교육 (1학점)",
+        "meta": "Seoul National University · 2025W",
         "image": ""
       },
       {
-        "title": {
-          "en": "AI/EduTech Clinic",
-          "ko": "AI/에듀테크 클리닉"
-        },
-        "meta": {
-          "en": "SNU Center for Liberal Education · 2021– present",
-          "ko": "서울대학교 기초교육원 · 2021–현재"
-        },
+        "title": "서울대학교 2025-2학기 디지털교육 (1학점)",
+        "meta": "Seoul National University · 2025",
+        "image": ""
+      },
+      {
+        "title": "서울여자대학교 2025-2학기 교육방법 및 교육공학 (교직필수, 2학점)",
+        "meta": "Seoul Women’s University · 2025",
+        "image": ""
+      },
+      {
+        "title": "서울여자대학교 2025-2학기 디지털교육 (1학점)",
+        "meta": "Seoul Women’s University · 2025",
+        "image": ""
+      },
+      {
+        "title": "서울대학교 2025-하계 계절학기 디지털교육 (1학점)",
+        "meta": "Seoul National University · 2025S",
+        "image": ""
+      },
+      {
+        "title": "서울대학교 2025-1학기 인공지능 교과 융합 교육론 기초 (2학점)",
+        "meta": "Seoul National University · 2025",
+        "image": ""
+      },
+      {
+        "title": "서울대학교 기초교육원 AI/EduTech 클리닉",
+        "meta": "Seoul National University · 2021 – present",
         "image": ""
       }
     ],
@@ -741,32 +1829,922 @@
     },
     "invitedTalks": [
       {
-        "title": "Text as Data: Approaches, Challenges, and Strategies in Learning Sciences Research",
-        "meta": "2025 KELS Workshop",
+        "title": "Introduction to Systematic Literature Review",
+        "meta": "2025 KELS Workshop · 2025.12.11",
         "image": ""
       },
       {
         "title": "Video as Data",
-        "meta": "2025 KELS Workshop",
+        "meta": "2025 KELS Workshop · 2025.11.06",
         "image": ""
       },
       {
-        "title": "Introduction to Systematic Literature Review",
-        "meta": "2025 KELS Workshop",
+        "title": "Text as Data: Approaches, Challenges, and Strategies in Learning Sciences Research",
+        "meta": "2025 KELS Workshop · 2025.04.15",
         "image": ""
       },
       {
-        "title": "Integrating a Generative AI-Enhanced VR Simulation into Teacher Education",
-        "meta": "Indiana University · R678 / KELS Colloquium",
+        "title": "Integrating a Generative AI-Enhanced Virtual Reality Simulation into Teacher Education",
+        "meta": "2025 KELS Colloquium, 17th Seminar · 2025.02.19",
+        "image": ""
+      },
+      {
+        "title": "Integrating a Generative AI-Enhanced Virtual Reality Simulation into Teacher Education",
+        "meta": "R678 Emerging Learning Technologies, Indiana University · 2025.02.09",
+        "image": ""
+      },
+      {
+        "title": "Enhancing Pre-service Teachers’ Competence with a Generative AI-Enhanced Virtual Reality Simulation",
+        "meta": "W200 Teaching with Technology, Indiana University · 2024.12.09",
+        "image": ""
+      },
+      {
+        "title": "2023 이종욱펠로우십 보건인력교육전문가과정 (영어 강의)",
+        "meta": "SNU College of Medicine · 2023.12.04",
+        "image": ""
+      },
+      {
+        "title": "2022 이종욱펠로우십 보건인력교육전문가과정 (영어 강의)",
+        "meta": "SNU College of Medicine · 2022.11.03",
+        "image": ""
+      },
+      {
+        "title": "Digital Literacy for Strengthening Administrative Competence",
+        "meta": "An Giang University, Vietnam — staff training · 2025.09.15",
         "image": ""
       }
     ],
     "specialLecturesLabel": {
-      "en": "Recent special lectures — GenAI &amp; vibe coding (2026)",
-      "ko": "최근 특강 — 생성형 AI 및 바이브코딩 (2026)"
+      "en": "Special Lectures &amp; Workshops",
+      "ko": "특강 · 워크숍"
     },
-    "specialLecturesNote": "서강대학교 디지털교육 바이브코딩 특강 · 숭실대학교 AI 실습형 교수법 워크숍 · 인천대학교 교수법 특강 「생성형 AI 활용 스펙트럼 넓히기」· 대한기계학회 「LLM 기반 업무 혁신 사례」· 서울대학교 중문과 강사워크숍 「생성형 AI 기반 바이브코딩 실습」.",
-    "specialLectureGallery": []
+    "specialLecturesNote": {
+      "en": "Generative AI, vibe coding, edu-tech tools, metaverse, and instructional design — for universities, K-12 schools, public institutions, and companies.",
+      "ko": "생성형 AI, 바이브코딩, 에듀테크 도구, 메타버스, 교수설계 — 대학·초중고·공공기관·기업 대상"
+    },
+    "specialLectureGallery": [],
+    "specialLectures": [
+      {
+        "date": "2026.06.25",
+        "org": "대한기계학회",
+        "title": "LLM 기반 업무 혁신 사례",
+        "href": "https://ksme.or.kr/conference/ConferenceView.asp?AC=3&CODE=C320260603&B_CATE=BBC1&top_param=1&sub_param=4"
+      },
+      {
+        "date": "2026.06.18",
+        "org": "서울대학교 중문과 강사워크숍",
+        "title": "생성형 AI 기반 바이브코딩 실습 워크숍",
+        "href": ""
+      },
+      {
+        "date": "2026.06.11",
+        "org": "숭실대학교",
+        "title": "AI 실습형 교수법 워크숍 4회차 — AI·디지털 기술을 활용한 데이터 기반 학습촉진 / 과제 피드백",
+        "href": ""
+      },
+      {
+        "date": "2026.06.09",
+        "org": "인천대학교 교수법 특강",
+        "title": "생성형 AI 활용 스펙트럼 넓히기 (Ⅱ)",
+        "href": ""
+      },
+      {
+        "date": "2026.05.28",
+        "org": "숭실대학교",
+        "title": "AI 실습형 교수법 워크숍 3회차 — AI·디지털 도구를 활용한 교수·학습자료 제작",
+        "href": ""
+      },
+      {
+        "date": "2026.05.20",
+        "org": "서강대학교",
+        "title": "디지털교육 바이브코딩 특강",
+        "href": ""
+      },
+      {
+        "date": "2026.05.06",
+        "org": "경동대학교",
+        "title": "함께 공부하는 힘 — 학습공동체 성과를 높이는 팀 기반 학습 전략과 에듀테크 활용법",
+        "href": ""
+      },
+      {
+        "date": "2026.04.22",
+        "org": "남한고등학교",
+        "title": "AI융합수업 설계 이해 및 적용: 문제해결역량을 위한 인공지능 융합교육 수업설계 모형 및 원리",
+        "href": ""
+      },
+      {
+        "date": "2026.04.01",
+        "org": "서울대학교",
+        "title": "AI융합교육의 이론과 실제, 개발 연구 방법과 사례 (2)",
+        "href": ""
+      },
+      {
+        "date": "2026.02.05",
+        "org": "서울대학교 기초교육원",
+        "title": "AI 에이전트와 협력하여 수업 설계하기(기초): Teaching with AI Agents",
+        "href": ""
+      },
+      {
+        "date": "2025.10.29",
+        "org": "초지고등학교",
+        "title": "4차산업혁명 체험교육 〈생성형 AI〉",
+        "href": ""
+      },
+      {
+        "date": "2025.09.17",
+        "org": "평택 2함대",
+        "title": "장병 AI역량 강화 교육 — 서류업무 자동화, 보고서, PPT",
+        "href": ""
+      },
+      {
+        "date": "2025.08.21",
+        "org": "서울대학교 중문과 강사워크숍",
+        "title": "생성형 AI를 활용한 중국어·한문 교육 및 연구",
+        "href": ""
+      },
+      {
+        "date": "2025.07.20",
+        "org": "에듀프리미엄",
+        "title": "생성형 AI",
+        "href": ""
+      },
+      {
+        "date": "2025.07.12",
+        "org": "스누미래교육 가족캠프",
+        "title": "〈생성형 AI〉",
+        "href": ""
+      },
+      {
+        "date": "2025.07.09",
+        "org": "중학생 AI-Speech 지도자 과정",
+        "title": "AI-Speech 지도과정 실습",
+        "href": ""
+      },
+      {
+        "date": "2025.07.03",
+        "org": "시흥 에듀톤",
+        "title": "디지털창의역량 학생 프로젝트 — 생성형AI 콘텐츠 및 AI 챗봇 제작",
+        "href": ""
+      },
+      {
+        "date": "2025.06.28",
+        "org": "스누미래교육 가족캠프",
+        "title": "〈생성형 AI〉",
+        "href": ""
+      },
+      {
+        "date": "2025.03.21",
+        "org": "배곧고등학교",
+        "title": "AI 시대의 윤리교육: 텍스트에서 비디오까지, AI 활용과 윤리",
+        "href": ""
+      },
+      {
+        "date": "2025.03.05",
+        "org": "철산중학교",
+        "title": "AI 기반 교육과 디지털 시민성",
+        "href": ""
+      },
+      {
+        "date": "2025.01.07",
+        "org": "서울대학교 기초교육원",
+        "title": "예비교수자 양성과정 — ChatGPT와 함께 수업하기(기초)",
+        "href": ""
+      },
+      {
+        "date": "2024.08.24",
+        "org": "서울대학교 기초교육원",
+        "title": "예비교수자 양성과정 — ChatGPT와 함께 수업하기(기초)",
+        "href": ""
+      },
+      {
+        "date": "2024.02",
+        "org": "서울대학교 기초교육원",
+        "title": "TA(강의조교) Workshop",
+        "href": ""
+      },
+      {
+        "date": "2024.01.24",
+        "org": "서울대학교 기초교육원",
+        "title": "예비교수자 양성과정 — 생산형 소프트웨어를 활용하여 수업 관리하기: Notion",
+        "href": ""
+      },
+      {
+        "date": "2023.11.11",
+        "org": "아산시 장애인 평생교육",
+        "title": "학습매니저 양성과정 — 교육현장에서 ChatGPT 활용법 마스터하기",
+        "href": ""
+      },
+      {
+        "date": "2023.09.15",
+        "org": "삼성전자 DS",
+        "title": "HRD 역량향상과정 5일차 — 교육과정 기획",
+        "href": ""
+      },
+      {
+        "date": "2023.09.09",
+        "org": "한국그릿진로협회",
+        "title": "ChatGPT를 활용하여 교육 프로그램 설계 및 개발하기",
+        "href": ""
+      },
+      {
+        "date": "2023.08.24",
+        "org": "중앙대학교 교수학습개발센터",
+        "title": "경력단계별 교수법특강 — ChatGPT 등 생성형 AI 활용 교수설계 이해 및 실습",
+        "href": ""
+      },
+      {
+        "date": "2023.08.23",
+        "org": "서울대학교 기초교육원",
+        "title": "예비교수자양성과정 — ChatGPT와 함께 수업하기",
+        "href": ""
+      },
+      {
+        "date": "2023.08.17",
+        "org": "서울대학교 자연과학대학",
+        "title": "작은스승(강의조교) 워크숍 — ChatGPT를 활용하여 전략적으로 학습하기",
+        "href": ""
+      },
+      {
+        "date": "2023.07.27",
+        "org": "한국평생교육HRD학회",
+        "title": "ChatGPT를 활용한 교육 프로그램 설계 및 개발",
+        "href": ""
+      },
+      {
+        "date": "2023.06.15",
+        "org": "2023 한국교육공학회 춘계학술대회",
+        "title": "사전워크숍 — 교수설계 관점에서 ChatGPT와 교육적 활용방안",
+        "href": ""
+      },
+      {
+        "date": "2023-1학기",
+        "org": "서울대학교 기초교육원",
+        "title": "Edu-Tech 활용 학습전략 워크숍",
+        "href": ""
+      },
+      {
+        "date": "2022.10.05",
+        "org": "서울대학교 미래교육혁신센터",
+        "title": "교수자 대상 에듀테크 도구 활용 워크숍",
+        "href": ""
+      },
+      {
+        "date": "2022.09.30",
+        "org": "서울여자대학교",
+        "title": "인공지능과 함께 교육하기: 인공지능 개념부터 수업 설계 실습까지",
+        "href": ""
+      },
+      {
+        "date": "2022.09.08",
+        "org": "서울대학교 기초교육원 BK21 TA 워크숍",
+        "title": "Notion 활용",
+        "href": ""
+      },
+      {
+        "date": "2022.09.06",
+        "org": "서울대학교 기초교육원 BK21 TA 워크숍",
+        "title": "New eTL 외부도구",
+        "href": ""
+      },
+      {
+        "date": "2022.08.30",
+        "org": "서울대학교 기초교육원 BK21 TA 워크숍",
+        "title": "Notion 활용",
+        "href": ""
+      },
+      {
+        "date": "2022.08.25",
+        "org": "서울대학교 기초교육원 BK21 TA 워크숍",
+        "title": "New eTL 외부도구",
+        "href": ""
+      },
+      {
+        "date": "2022.08.24",
+        "org": "서울대학교 기초교육원",
+        "title": "예비교수자양성과정 — New eTL 활용법",
+        "href": ""
+      },
+      {
+        "date": "2022.08.08",
+        "org": "서울대학교 사범대학 AI 융합학과",
+        "title": "AI융합교육 콘텐츠/도구 개발 해커톤 AIED-On 〈원격수업 툴〉",
+        "href": ""
+      },
+      {
+        "date": "2022.07.08",
+        "org": "서울대학교 기초교육원",
+        "title": "신규 이러닝 시스템(new eTL) 평가 워크숍",
+        "href": ""
+      },
+      {
+        "date": "2022.07.05",
+        "org": "서울대학교 기초교육원",
+        "title": "신규 이러닝 시스템(new eTL) 외부도구 워크숍",
+        "href": ""
+      },
+      {
+        "date": "2022.07.01",
+        "org": "KASEC 한국교육컨설팅학회",
+        "title": "메타버스의 교육적 활용: 네이버 젭(ZEP)을 중심으로",
+        "href": ""
+      },
+      {
+        "date": "2022.06.28",
+        "org": "서울대학교 기초교육원",
+        "title": "신규 이러닝 시스템(new eTL) 활용법",
+        "href": ""
+      },
+      {
+        "date": "2022.06.21",
+        "org": "서울대학교 기초교육원",
+        "title": "신규 이러닝 시스템(new eTL) 활용법",
+        "href": ""
+      },
+      {
+        "date": "2022.06.18",
+        "org": "한국북앤리터러시연구소",
+        "title": "에듀테크 도구의 활용: Notion을 중심으로",
+        "href": ""
+      },
+      {
+        "date": "2022.06.16",
+        "org": "서울대학교 기초교육원",
+        "title": "신규 이러닝 시스템(new eTL) 활용법 교육",
+        "href": ""
+      },
+      {
+        "date": "2022.06.13",
+        "org": "한국교통대학교 교육대학원",
+        "title": "교육공학입문 〈인공지능 기반 수업 설계〉",
+        "href": ""
+      },
+      {
+        "date": "2022.06.13",
+        "org": "한국교통대학교",
+        "title": "교육방법 및 교육공학 〈인공지능 체험하기〉",
+        "href": ""
+      },
+      {
+        "date": "2022.06.10",
+        "org": "서울대학교 평생교육원",
+        "title": "대학-고교 연계 프로그램 〈디자인씽킹을 활용한 인공지능의 이해〉",
+        "href": ""
+      },
+      {
+        "date": "2022.05",
+        "org": "서울대학교 기초교육원",
+        "title": "학생참여를 이끄는 참여 중심 수업 운영 및 학생 평가 방법",
+        "href": ""
+      },
+      {
+        "date": "2022.05",
+        "org": "서울대학교 미래교육혁신센터",
+        "title": "에듀테크 도구 활용 워크숍",
+        "href": ""
+      },
+      {
+        "date": "2022.01",
+        "org": "한국북앤리터러시연구소",
+        "title": "메타버스의 교육적 활용",
+        "href": ""
+      },
+      {
+        "date": "2021.12",
+        "org": "제주평생교육진흥원",
+        "title": "교육현장에서 활용하는 상호작용 및 협업 tool 활용법",
+        "href": ""
+      },
+      {
+        "date": "2021.11",
+        "org": "동아대학교 교수학습개발센터",
+        "title": "에듀테크 구글잼보드 활용 상호작용 스킬업",
+        "href": ""
+      },
+      {
+        "date": "2021.11",
+        "org": "동국대학교",
+        "title": "교육용 메타버스 플랫폼 활용 실습: 수업 in 게더타운",
+        "href": ""
+      },
+      {
+        "date": "2021.10",
+        "org": "서울대학교 기초교육원",
+        "title": "교수법 워크숍: 하이브리드 수업 운영 방법",
+        "href": ""
+      },
+      {
+        "date": "2021.09",
+        "org": "한국교통대학교",
+        "title": "메타버스의 교육적 활용: 게더타운, 로블록스를 중심으로",
+        "href": ""
+      },
+      {
+        "date": "2021.08",
+        "org": "서울대학교 공과대학",
+        "title": "BK21 TA 워크숍 — 상호작용을 촉진하는 온라인 tool 활용법",
+        "href": ""
+      },
+      {
+        "date": "2021.07",
+        "org": "한국 HRD 기업협회",
+        "title": "서울시 뉴딜일자리 민간기업 맞춤형 사업: 스마트러닝의 이해",
+        "href": ""
+      },
+      {
+        "date": "2020.09",
+        "org": "서울대학교 교수학습개발센터",
+        "title": "CTL Webinar — 학생 참여형 비대면 수업을 위한 교육용 앱 활용법",
+        "href": ""
+      },
+      {
+        "date": "—",
+        "org": "KMOOC",
+        "title": "〈내일, 내 일은 산업강사〉 12주 메타버스, 어떻게 활용하는가? 특별출연",
+        "href": ""
+      }
+    ],
+    "topicsLabel": {
+      "en": "Topics covered",
+      "ko": "주요 강의 주제"
+    },
+    "topics": [
+      {
+        "en": "Edu-tech tools (Google Workspace, Perusall, Gradescope, Notion)",
+        "ko": "에듀테크 도구 (Google Workspace, Perusall, Gradescope, Notion)"
+      },
+      {
+        "en": "Using generative AI in education",
+        "ko": "교육에서의 생성형 AI 활용"
+      },
+      {
+        "en": "Instructional systems development",
+        "ko": "교수체제개발"
+      },
+      {
+        "en": "Flipped · blended · hybrid learning",
+        "ko": "플립러닝 · 블렌디드 · 하이브리드 러닝"
+      }
+    ]
+  },
+  "awards": {
+    "sectionTitle": {
+      "en": "Awards &amp; Certification",
+      "ko": "수상 · 자격"
+    },
+    "sectionNote": {
+      "en": "Awards, fellowships, certifications, and languages",
+      "ko": "수상, 펠로우십, 자격증 및 어학"
+    },
+    "groups": [
+      {
+        "label": {
+          "en": "Awards",
+          "ko": "수상"
+        },
+        "items": [
+          {
+            "date": "2026.02",
+            "title": {
+              "en": "Junior Scholar Fellowship — BK21 FOUR Research Group for Innovation and Coexistence",
+              "ko": "BK21 FOUR 혁신과 공존의 연구사업단 Junior Scholar Fellowship"
+            }
+          },
+          {
+            "date": "2025.12",
+            "title": {
+              "en": "Commendation from the Minister of Education",
+              "ko": "교육부장관 표창장"
+            }
+          },
+          {
+            "date": "2024",
+            "title": {
+              "en": "Outstanding Publication Award — Korean Society for Educational Technology",
+              "ko": "한국교육공학회 우수저술상"
+            }
+          },
+          {
+            "date": "2024.02",
+            "title": {
+              "en": "Junior Scholar Fellowship — BK21 FOUR Research Group for Innovation and Coexistence",
+              "ko": "BK21 FOUR 혁신과 공존의 연구사업단 Junior Scholar Fellowship"
+            }
+          },
+          {
+            "date": "2023",
+            "title": {
+              "en": "Grand Prize, Media Exhibition — Joint Fall Conference of KSET &amp; KAEIM",
+              "ko": "한국교육공학회·한국교육정보미디어학회 추계공동학술대회 미디어전 최우수상"
+            }
+          },
+          {
+            "date": "2023.02",
+            "title": {
+              "en": "Junior Scholar Fellowship — BK21 FOUR Research Group for Innovation and Coexistence",
+              "ko": "BK21 FOUR 혁신과 공존의 연구사업단 Junior Scholar Fellowship"
+            }
+          },
+          {
+            "date": "2022.06",
+            "title": {
+              "en": "Jr. Priming Award — BK21 FOUR Research Group for Innovation and Coexistence",
+              "ko": "BK21 FOUR 혁신과 공존의 연구사업단 Jr. Priming Award"
+            }
+          },
+          {
+            "date": "—",
+            "title": {
+              "en": "6th Outstanding Graduate Student, BK21 Phase 4 — Seoul National University",
+              "ko": "서울대학교 BK21 4단계 제6회 우수대학원생"
+            }
+          },
+          {
+            "date": "—",
+            "title": {
+              "en": "Excellence Award (short-form), KERIS SW Education YouTube Video Contest",
+              "ko": "KERIS SW교육 유튜브 영상 공모전 우수상 (단편 부문)"
+            }
+          },
+          {
+            "date": "—",
+            "title": {
+              "en": "Korean Association of Computer Education",
+              "ko": "한국컴퓨터교육학회 수상"
+            }
+          }
+        ]
+      },
+      {
+        "label": {
+          "en": "Fellowships &amp; Scholarships",
+          "ko": "펠로우십 · 장학"
+        },
+        "items": [
+          {
+            "date": "2024.03 – 2025.02",
+            "title": {
+              "en": "BK21 Phase 4 Outstanding Graduate Student Overseas Training Grant (2023)",
+              "ko": "2023년 4단계 BK21 사업 우수대학원생 해외연수"
+            }
+          },
+          {
+            "date": "2023 (2nd half)",
+            "title": {
+              "en": "Excellent Research Talent Fellowship",
+              "ko": "2023학년도 하반기 우수연구인재 Fellowship 장학생"
+            }
+          },
+          {
+            "date": "2023 (1st half)",
+            "title": {
+              "en": "Excellent Research Talent Fellowship",
+              "ko": "2023학년도 상반기 우수연구인재 Fellowship 장학생"
+            }
+          },
+          {
+            "date": "2022 (2nd half)",
+            "title": {
+              "en": "Excellent Research Talent Fellowship",
+              "ko": "2022학년도 하반기 우수연구인재 Fellowship 장학생"
+            }
+          },
+          {
+            "date": "2015.09 – 2016.08",
+            "title": {
+              "en": "Epson Global Leader Scholarship",
+              "ko": "엡손 글로벌리더 장학생"
+            }
+          }
+        ]
+      },
+      {
+        "label": {
+          "en": "Certification",
+          "ko": "자격"
+        },
+        "items": [
+          {
+            "date": "2022.08",
+            "title": {
+              "en": "Google Certified Trainer — Google for Education",
+              "ko": "Google 공인 트레이너 — Google for Education"
+            }
+          },
+          {
+            "date": "2022.05",
+            "title": {
+              "en": "Google Certified Educator Level 2 — Google for Education",
+              "ko": "Google 공인 교육자 레벨 2 — Google for Education"
+            }
+          },
+          {
+            "date": "2022.05",
+            "title": {
+              "en": "Google Certified Educator Level 1 — Google for Education",
+              "ko": "Google 공인 교육자 레벨 1 — Google for Education"
+            }
+          },
+          {
+            "date": "2021.12",
+            "title": {
+              "en": "Certified AI Expert — Korean Standards Association",
+              "ko": "인공지능 전문가(Certified AI Expert) — 한국표준협회"
+            }
+          },
+          {
+            "date": "—",
+            "title": {
+              "en": "Secondary School Teacher Certificate Level 2 (Chinese) — Ministry of Education",
+              "ko": "중등학교 2급 정교사 자격증 (중국어) — 교육인적자원부"
+            }
+          }
+        ]
+      },
+      {
+        "label": {
+          "en": "Specialization Certificates",
+          "ko": "전문 교육과정 이수"
+        },
+        "items": [
+          {
+            "date": "—",
+            "title": {
+              "en": "Accelerated Computer Science Fundamentals Specialization — University of Illinois at Urbana-Champaign",
+              "ko": "Accelerated Computer Science Fundamentals Specialization — 일리노이대학교 어바나-샴페인"
+            }
+          },
+          {
+            "date": "2021.07 – 2021.11",
+            "title": {
+              "en": "AI Online Practical Basic Course (60 hrs) — NIPA",
+              "ko": "AI 온라인 실무 기본 교육과정 (60시간) — 정보통신산업진흥원"
+            }
+          },
+          {
+            "date": "2021.11",
+            "title": {
+              "en": "AI Online Practical Advanced Course (60 hrs) — NIPA",
+              "ko": "AI 온라인 실무 응용 교육과정 (60시간) — 정보통신산업진흥원"
+            }
+          }
+        ]
+      },
+      {
+        "label": {
+          "en": "Languages",
+          "ko": "어학"
+        },
+        "items": [
+          {
+            "date": "—",
+            "title": {
+              "en": "Korean — Native speaker",
+              "ko": "한국어 — 모국어"
+            }
+          },
+          {
+            "date": "—",
+            "title": {
+              "en": "Chinese — New HSK Level 6 (新 HSK 6级)",
+              "ko": "중국어 — 신 HSK 6급 (新 HSK 6级)"
+            }
+          },
+          {
+            "date": "—",
+            "title": {
+              "en": "English — New TEPS 345",
+              "ko": "영어 — NEW TEPS 345"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "coursework": {
+    "sectionTitle": {
+      "en": "Coursework",
+      "ko": "수강이력"
+    },
+    "sectionNote": {
+      "en": "Doctoral coursework and audited graduate courses",
+      "ko": "박사과정 수강 교과목 및 청강 이력"
+    },
+    "groups": [
+      {
+        "label": {
+          "en": "Instructional Systems Technology — Indiana University",
+          "ko": "교수체제공학 — 인디애나대학교"
+        },
+        "note": {
+          "en": "Audited while at Indiana University as a visiting scholar.",
+          "ko": "인디애나대학교 방문학자 재직 중 청강한 과목입니다."
+        },
+        "courses": [
+          {
+            "title": "Emerging Learning Technologies",
+            "instructor": "Curtis J. Bonk, Ph.D., Professor",
+            "meta": "3 credits · Spring 2025"
+          },
+          {
+            "title": "Instructional Technology Foundations",
+            "instructor": "Curtis J. Bonk, Ph.D., Professor",
+            "meta": "3 credits · Fall 2024"
+          },
+          {
+            "title": "Thinking, Collaboration, and Motivation",
+            "instructor": "Curtis J. Bonk, Ph.D., Professor",
+            "meta": "3 credits · Fall 2024"
+          },
+          {
+            "title": "Emerging Learning Technologies",
+            "instructor": "Curtis J. Bonk, Ph.D., Professor",
+            "meta": "3 credits · Spring 2024"
+          },
+          {
+            "title": "Dissertation Proposal Preparation",
+            "instructor": "Curtis J. Bonk, Ph.D., Professor",
+            "meta": "3 credits · Spring 2024"
+          }
+        ]
+      },
+      {
+        "label": {
+          "en": "Educational Technology — Seoul National University (Ph.D.)",
+          "ko": "교육공학 — 서울대학교 (박사)"
+        },
+        "note": {
+          "en": "",
+          "ko": ""
+        },
+        "courses": [
+          {
+            "title": "Learning Sciences Seminar",
+            "instructor": "Younghoan Cho, Ph.D., Professor, Dept. of Education",
+            "meta": "3 credits · Spring 2023"
+          },
+          {
+            "title": "Creative Development Lab in Educational Technology",
+            "instructor": "Sunyoung Keum, Lecturer, Dept. of Education",
+            "meta": "3 credits · Spring 2023"
+          },
+          {
+            "title": "Virtual Reality and Simulation-based Training",
+            "instructor": "Jihyun Lee, Ph.D., Professor, Dept. of Dental Science",
+            "meta": "3 credits · Fall 2023"
+          },
+          {
+            "title": "Seminar in Instructional Design Theories",
+            "instructor": "Hyunkyung Jee, Ph.D., Lecturer",
+            "meta": "3 credits · Fall 2022"
+          }
+        ]
+      },
+      {
+        "label": {
+          "en": "Doctoral Seminars — Seoul National University",
+          "ko": "박사 세미나 — 서울대학교"
+        },
+        "note": {
+          "en": "",
+          "ko": ""
+        },
+        "courses": [
+          {
+            "title": "Dissertation Research",
+            "instructor": "Cheolil Lim, Ph.D., Professor, Dept. of Education",
+            "meta": "3 credits · Fall 2022, Fall 2023"
+          },
+          {
+            "title": "Doctoral Student Seminar 1",
+            "instructor": "Dongil Kim, Ph.D., Professor, Dept. of Education",
+            "meta": "1 credit · Spring 2022"
+          }
+        ]
+      },
+      {
+        "label": {
+          "en": "HRD &amp; Educational Evaluation — Seoul National University",
+          "ko": "인적자원개발 · 교육평가 — 서울대학교"
+        },
+        "note": {
+          "en": "",
+          "ko": ""
+        },
+        "courses": [
+          {
+            "title": "Educational Program Evaluation",
+            "instructor": "Jiwon Kim, Ph.D., Lecturer, Dept. of Education",
+            "meta": "3 credits · Fall 2024"
+          },
+          {
+            "title": "Studies of Teaching Materials in Vocational Education &amp; Workforce Development",
+            "instructor": "Jincheol Jeong, Ph.D., Professor",
+            "meta": "3 credits · Spring 2023"
+          },
+          {
+            "title": "Human Resources Development Consulting",
+            "instructor": "Jinmo Kim, Ph.D., Professor",
+            "meta": "3 credits · Spring 2022"
+          }
+        ]
+      },
+      {
+        "label": {
+          "en": "Research Methods &amp; Data Science",
+          "ko": "연구방법론 · 데이터사이언스"
+        },
+        "note": {
+          "en": "",
+          "ko": ""
+        },
+        "courses": [
+          {
+            "title": "Understanding Research Ethics",
+            "instructor": "Jieun Shin, Faculty of Liberal Education",
+            "meta": "1 credit · Spring 2023"
+          },
+          {
+            "title": "English Research Paper Writing for Graduate Students",
+            "instructor": "Jina Kwon, Faculty of Liberal Education",
+            "meta": "1 credit · Spring 2023"
+          },
+          {
+            "title": "Empirical Research Methods",
+            "instructor": "Sungeun Beak, Ph.D., Professor",
+            "meta": "3 credits · Fall 2022"
+          },
+          {
+            "title": "Multilevel Modeling in Educational Studies 1",
+            "instructor": "Jinsil Lee, Ph.D., Lecturer, Dept. of Education",
+            "meta": "1 credit · Spring 2022"
+          },
+          {
+            "title": "Data Science Seminar",
+            "instructor": "Hyunwoo Park, Dept. of Data Science",
+            "meta": "1 credit · Spring 2023"
+          }
+        ]
+      }
+    ]
+  },
+  "datascience": {
+    "sectionTitle": {
+      "en": "Data Science",
+      "ko": "데이터사이언스"
+    },
+    "sectionNote": {
+      "en": "Mini projects and computational methods applied in my research",
+      "ko": "연구에 활용한 미니 프로젝트 및 분석 방법"
+    },
+    "items": [
+      {
+        "title": {
+          "en": "Web Scraping — Analyzing historical stock/revenue data of Disney",
+          "ko": "웹 스크래핑 — 디즈니 주가·매출 데이터 분석"
+        },
+        "desc": {
+          "en": "Collected and parsed HTML tables with <code>requests</code> and <code>BeautifulSoup</code>, transformed them into a pandas DataFrame, and visualized annual revenue with Matplotlib.",
+          "ko": "<code>requests</code>·<code>BeautifulSoup</code>로 HTML 테이블을 수집·파싱하고 pandas DataFrame으로 가공한 뒤 Matplotlib으로 연도별 매출을 시각화했습니다."
+        },
+        "tags": [
+          "Python",
+          "requests",
+          "BeautifulSoup",
+          "pandas",
+          "Matplotlib"
+        ],
+        "image": ""
+      },
+      {
+        "title": {
+          "en": "Traditional statistical methods for educational needs analysis",
+          "ko": "교육요구도 분석을 위한 통계 방법"
+        },
+        "desc": {
+          "en": "Applied Cronbach’s Alpha (reliability), word clouds (open-ended responses), the Borich needs model, and the Locus for Focus model for the paper <em>Analyzing Teachers’ Roles, Perceptions, and Needs for the Educational Use of ChatGPT in Elementary Schools</em>.",
+          "ko": "논문 「초등교사의 ChatGPT 교육적 활용에 대한 역할·인식·요구 분석」에 Cronbach’s Alpha(신뢰도), 워드클라우드(개방형 응답), Borich 요구도 모델, Locus for Focus 모델을 적용했습니다."
+        },
+        "tags": [
+          "Python",
+          "pingouin",
+          "wordcloud",
+          "Borich model",
+          "Locus for Focus"
+        ],
+        "image": ""
+      }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": {
+      "en": "Gallery",
+      "ko": "갤러리"
+    },
+    "sectionNote": {
+      "en": "Selected moments from talks, workshops, and events",
+      "ko": "강의·워크숍·행사 현장 사진"
+    },
+    "items": []
   },
   "contact": {
     "sectionTitle": {
@@ -782,6 +2760,11 @@
         "value": "shong@mju.ac.kr",
         "href": "mailto:shong@mju.ac.kr",
         "k": "EMAIL"
+      },
+      {
+        "value": "hongxiumin@snu.ac.kr",
+        "href": "mailto:hongxiumin@snu.ac.kr",
+        "k": "EMAIL (SNU)"
       },
       {
         "value": "0000-0003-2276-0505",
@@ -811,16 +2794,5 @@
       "en": "Seoul, Republic of Korea · Learning Sciences Research Institute, SNU",
       "ko": "서울, 대한민국 · 서울대학교 학습과학연구소"
     }
-  },
-  "gallery": {
-    "sectionTitle": {
-      "en": "Gallery",
-      "ko": "갤러리"
-    },
-    "sectionNote": {
-      "en": "Selected moments from talks, workshops, and events",
-      "ko": "강의·워크숍·행사 현장 사진"
-    },
-    "items": []
   }
 }
