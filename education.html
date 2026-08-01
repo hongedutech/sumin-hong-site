@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sumin Hong · Educational Technology Researcher</title>
+<title>Education · Sumin Hong</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -337,51 +337,32 @@
 
 <div class="sticky-nav" id="sticky-nav">
   <div class="sticky-inner">
-    <a href="#top" class="sticky-brand">Sumin <em>Hong</em></a>
+    <a href="index.html" class="sticky-brand">Sumin <em>Hong</em></a>
     <div class="sticky-links" id="sticky-links"></div>
     <button id="lang-toggle-fixed" type="button">한국어</button>
   </div>
 </div>
 
-<header class="hero" id="top">
+<header class="hero hero-compact" id="top">
   <div class="portal"></div>
   <div class="wrap">
     <div class="hero-top">
-      <span class="eyebrow" id="hero-eyebrow"></span>
+      <a class="hero-brand-link" href="index.html">Sumin <em>Hong</em></a>
       <nav class="tabs" id="hero-nav">
         <button id="lang-toggle" type="button">한국어</button>
       </nav>
     </div>
-    <div class="hero-body">
-      <div class="hero-text">
-        <h1 class="hero-name">Sumin <em>Hong</em></h1>
-        <div class="hero-kr">홍수민 · Dr. Hong</div>
-        <p class="hero-role" id="hero-role"></p>
-        <p class="hero-sub" id="hero-sub"></p>
-        <div class="status-line" id="hero-status"></div>
-        <div class="hero-links" id="hero-links"></div>
-      </div>
-      <div class="hero-profile" id="hero-profile" style="display:none;">
-        <img id="hero-profile-img" alt="Sumin Hong">
-      </div>
-    </div>
   </div>
 </header>
 
-<section id="about">
+
+<section style="padding-top:34px;" id="education">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-title" id="about-title"></span></div>
-    <div class="about-grid">
-      <div>
-        <p class="about-lead" id="about-lead1"></p>
-        <p class="about-lead" style="margin-top:16px;" id="about-lead2"></p>
-        <div class="interest-box">
-          <span class="eyebrow" id="about-interests-label"></span>
-          <div class="interest-tags" id="about-interests"></div>
-        </div>
-      </div>
-      <div class="about-facts" id="about-facts"></div>
+    <div class="sec-head">
+      <span class="sec-title" id="education-title"></span>
+      <span class="sec-note" id="education-note"></span>
     </div>
+    <div class="edu-grid" id="education-grid"></div>
   </div>
 </section>
 
@@ -394,14 +375,12 @@
 
 
 
+<div class="wrap back-wrap">
+  <a class="back-home" href="index.html">← <span id="back-label">Home</span></a>
+</div>
 
-<footer id="contact">
+<footer class="page-foot">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-title" id="contact-title"></span></div>
-    <div class="contact-grid">
-      <p class="contact-lead" id="contact-lead"></p>
-      <div class="contact-links" id="contact-links"></div>
-    </div>
     <div class="foot-bottom">
       <span>© 2026 Sumin Hong</span>
       <span id="contact-footnote"></span>
@@ -423,7 +402,7 @@
    About / Contact live on index.html; every other section has
    its own page (education.html, career.html, ...).
    ============================================================ */
-const PAGE = 'home';
+const PAGE = 'education';
 const ON_HOME = ['about','contact'];
 function navHref(href){
   const id = (href || '').replace('#','');
@@ -923,6 +902,11 @@ document.addEventListener('click', (e)=>{
 });
 
 loadData();
+
+/* back-to-home label follows the language */
+const __bl = __getEl('back-label');
+if(__bl){ const paint = ()=>{ __bl.textContent = (LANG === 'ko') ? '\uba54\uc778\uc73c\ub85c' : 'Back to home'; };
+  paint(); document.addEventListener('click', ()=>setTimeout(paint,0)); }
 
 </script>
 
