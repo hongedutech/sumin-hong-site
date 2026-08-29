@@ -55,6 +55,26 @@
   .item-tools .tool-btn:hover:not(:disabled){border-color:var(--violet) !important; color:var(--violet); opacity:1;}
   .item-tools .tool-btn:disabled{opacity:.3; cursor:default;}
   .item-tools .tool-danger{background:#FCE7F8 !important; color:#A21CAF !important; border-color:#F5D0F0 !important;}
+
+  /* 끌어서 옮기기 손잡이 */
+  .item-tools .drag-handle{
+    font-size:14px; line-height:1; color:#A79BC9; background:#fff;
+    border:1px solid var(--line); border-radius:6px; padding:5px 8px;
+    cursor:grab; user-select:none;
+  }
+  .item-tools .drag-handle:hover{border-color:var(--violet); color:var(--violet);}
+  .item-tools .drag-handle:active{cursor:grabbing;}
+  .item-card.dragging{opacity:.4;}
+  .item-card.drop-before{box-shadow:0 -3px 0 0 var(--violet);}
+  .item-card.drop-after{box-shadow:0 3px 0 0 var(--violet);}
+
+  /* 번호 입력 이동 */
+  .item-tools .pos-input{
+    width:50px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:11.5px;
+    padding:5px 2px; border:1px solid var(--line); border-radius:6px; background:#fff; color:var(--slate);
+  }
+  .item-tools .pos-input:focus{outline:none; border-color:var(--violet); color:var(--violet);}
+  .item-tools .pos-total{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#A79BC9; margin-left:-2px;}
   .item-card{padding-top:16px;}
   .item-card > .item-tools + label:first-of-type{margin-top:20px;}
   @media (max-width:640px){ .item-tools{position:static; margin-bottom:10px; justify-content:flex-end;} }
@@ -493,10 +513,13 @@ function renderApp(){
   html += `<div class="panel" style="position:sticky;top:82px;z-index:40;">
     <h2>빠른 이동</h2>
     <div class="desc">항목이 많아졌습니다. 아래 링크로 바로 이동하세요.<br>
-      각 항목 오른쪽 위의 <strong>↑ ↓</strong>로 순서를 바꾸고, <strong>복제</strong>로 비슷한 항목을 빠르게 만들 수 있습니다.
-      <strong>+ 추가</strong>를 누르면 목록 <strong>맨 위</strong>에 새 항목이 생깁니다.<br>
-      저장(다운로드)할 때 날짜가 있는 목록은 <strong>자동으로 최신순 정렬</strong>됩니다.
-      순서를 직접 정하고 싶다면 화면 위쪽의 <strong>「저장 시 날짜순 자동 정렬」</strong> 체크를 해제하세요.</div>
+      <strong>순서 바꾸기</strong> — 항목 오른쪽 위에서
+      <strong>⠿</strong> 를 끌어다 놓거나, <strong>번호칸</strong>에 원하는 순서를 적고 Enter,
+      또는 <strong>↑ ↓</strong>로 한 칸씩 옮길 수 있습니다.
+      순서를 직접 바꾸면 <strong>「저장 시 날짜순 자동 정렬」이 자동으로 꺼집니다</strong>
+      (다시 켜려면 위쪽 체크박스를 누르세요).<br>
+      <strong>추가</strong> — <strong>+ 추가</strong>는 목록 <strong>맨 위</strong>에 새 항목을 만들고,
+      <strong>복제</strong>는 비슷한 항목을 바로 아래에 하나 더 만듭니다.</div>
     <div class="jump-bar">
       ${[['p-hero','Hero'],['p-about','소개'],['p-education','학력'],['p-career','경력'],
          ['p-research','연구'],['p-projects','프로젝트'],['p-books','저서'],['p-teaching','강의·강연'],
@@ -889,15 +912,43 @@ function focusCard(arrPath, idx){
   setTimeout(()=>card.classList.remove('flash'), 1500);
 }
 
+/* 순서를 직접 바꾸면, 저장할 때 날짜순 정렬이 그 순서를 되돌리지 않도록
+   자동 정렬을 한 번만 꺼 드립니다. (위쪽 체크박스로 다시 켤 수 있습니다) */
+function noticeManualOrder(){
+  const chk = document.getElementById('autosort-chk');
+  if(!chk || !chk.checked) return false;
+  chk.checked = false;
+  try{ localStorage.setItem('admin_autosort', '0'); }catch(e){}
+  return true;
+}
+
+function afterManualMove(arrPath, to, msg){
+  const turnedOff = noticeManualOrder();
+  renderApp();
+  focusCard(arrPath, to);
+  toast(turnedOff
+    ? msg + ' · 직접 정한 순서를 지키려고 「날짜순 자동 정렬」을 껐습니다.'
+    : msg);
+}
+
 function moveItem(arrPath, idx, dir){
   const arr = getByPath(DATA, arrPath);
   if(!Array.isArray(arr)) return;
   const j = idx + dir;
   if(j < 0 || j >= arr.length) return;
   const t = arr[idx]; arr[idx] = arr[j]; arr[j] = t;
-  renderApp();
-  focusCard(arrPath, j);
-  toast(dir < 0 ? '위로 옮겼습니다.' : '아래로 옮겼습니다.');
+  afterManualMove(arrPath, j, dir < 0 ? '위로 옮겼습니다.' : '아래로 옮겼습니다.');
+}
+
+/* 번호를 입력해 그 자리로 바로 이동 */
+function moveItemTo(arrPath, from, to){
+  const arr = getByPath(DATA, arrPath);
+  if(!Array.isArray(arr) || Number.isNaN(to)) { renderApp(); return; }
+  to = Math.max(0, Math.min(arr.length - 1, to));
+  if(to === from){ renderApp(); return; }
+  const [it] = arr.splice(from, 1);
+  arr.splice(to, 0, it);
+  afterManualMove(arrPath, to, (to + 1) + '번째로 옮겼습니다.');
 }
 
 function duplicateItem(arrPath, idx){
@@ -922,9 +973,16 @@ function enhanceItemCards(){
     const arr = getByPath(DATA, arrPath);
     if(!Array.isArray(arr) || Number.isNaN(idx)) return;
 
+    const card = rm.closest('.item-card');
+    if(card){ card.dataset.arr = arrPath; card.dataset.i = idx; }
+
     const tools = document.createElement('div');
     tools.className = 'item-tools';
     tools.innerHTML =
+      `<span class="drag-handle" draggable="true" title="끌어서 원하는 자리로 옮기기">⠿</span>` +
+      `<input class="pos-input" type="number" min="1" max="${arr.length}" value="${idx + 1}"` +
+        ` data-pos="${arrPath}" data-idx="${idx}" title="번호를 고치고 Enter를 누르면 그 자리로 이동합니다">` +
+      `<span class="pos-total">/${arr.length}</span>` +
       `<button type="button" class="tool-btn" data-move="${arrPath}" data-idx="${idx}" data-dir="-1" title="위로 이동" ${idx === 0 ? 'disabled' : ''}>↑</button>` +
       `<button type="button" class="tool-btn" data-move="${arrPath}" data-idx="${idx}" data-dir="1" title="아래로 이동" ${idx === arr.length - 1 ? 'disabled' : ''}>↓</button>` +
       `<button type="button" class="tool-btn" data-dup="${arrPath}" data-idx="${idx}" title="이 항목을 복제">복제</button>`;
@@ -945,6 +1003,86 @@ function enhanceItemCards(){
     btn.addEventListener('click', ()=>{
       duplicateItem(btn.dataset.dup, Number(btn.dataset.idx));
     });
+  });
+  document.querySelectorAll('[data-pos]').forEach(inp=>{
+    inp.addEventListener('keydown', e=>{ if(e.key === 'Enter'){ e.preventDefault(); inp.blur(); } });
+    inp.addEventListener('change', ()=>{
+      moveItemTo(inp.dataset.pos, Number(inp.dataset.idx), Math.round(Number(inp.value)) - 1);
+    });
+  });
+
+  bindDragAndDrop();
+}
+
+/* ============================================================
+   끌어서 순서 바꾸기 (같은 목록 안에서만)
+   ============================================================ */
+let DRAG = null;
+
+function clearDropMarks(){
+  document.querySelectorAll('.drop-before, .drop-after').forEach(el=>{
+    el.classList.remove('drop-before', 'drop-after');
+  });
+}
+
+function bindDragAndDrop(){
+  document.querySelectorAll('.drag-handle').forEach(h=>{
+    h.addEventListener('dragstart', e=>{
+      const card = h.closest('.item-card');
+      if(!card || !card.dataset.arr) return;
+      DRAG = { arr: card.dataset.arr, i: Number(card.dataset.i), card };
+      card.classList.add('dragging');
+      try{
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', DRAG.arr + ':' + DRAG.i);
+        e.dataTransfer.setDragImage(card, 24, 20);
+      }catch(err){}
+    });
+    h.addEventListener('dragend', ()=>{
+      if(DRAG && DRAG.card) DRAG.card.classList.remove('dragging');
+      clearDropMarks();
+      DRAG = null;
+    });
+  });
+
+  const app = document.getElementById('app');
+  if(app.dataset.dndBound === '1') return;   // 위임 리스너는 한 번만
+  app.dataset.dndBound = '1';
+
+  app.addEventListener('dragover', e=>{
+    if(!DRAG) return;
+    const t = e.target && e.target.closest
+      ? e.target.closest(`.item-card[data-arr="${DRAG.arr}"]`) : null;
+    if(!t || t === DRAG.card){ clearDropMarks(); return; }
+    e.preventDefault();
+    try{ e.dataTransfer.dropEffect = 'move'; }catch(err){}
+    const r = t.getBoundingClientRect();
+    const before = e.clientY < r.top + r.height / 2;
+    if(t.classList.contains(before ? 'drop-before' : 'drop-after')) return;
+    clearDropMarks();
+    t.classList.add(before ? 'drop-before' : 'drop-after');
+  });
+
+  app.addEventListener('drop', e=>{
+    if(!DRAG) return;
+    const t = e.target && e.target.closest
+      ? e.target.closest(`.item-card[data-arr="${DRAG.arr}"]`) : null;
+    if(!t || t === DRAG.card){ clearDropMarks(); return; }
+    e.preventDefault();
+    const r = t.getBoundingClientRect();
+    const before = e.clientY < r.top + r.height / 2;
+    const arrPath = DRAG.arr, from = DRAG.i;
+    let to = Number(t.dataset.i);
+    const arr = getByPath(DATA, arrPath);
+    if(!Array.isArray(arr)){ clearDropMarks(); DRAG = null; return; }
+    const [it] = arr.splice(from, 1);
+    if(from < to) to -= 1;
+    if(!before) to += 1;
+    to = Math.max(0, Math.min(arr.length, to));
+    arr.splice(to, 0, it);
+    clearDropMarks();
+    DRAG = null;
+    afterManualMove(arrPath, to, (to + 1) + '번째로 옮겼습니다.');
   });
 }
 
