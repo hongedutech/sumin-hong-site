@@ -481,6 +481,10 @@
         "image": ""
       }
     ],
+    "publicationsLabel": {
+      "en": "Peer-reviewed Publications",
+      "ko": "학술논문"
+    },
     "publications": [
       {
         "year": "2026.06.",
@@ -728,10 +732,19 @@
         "href": ""
       }
     ],
-    "publicationsLabel": {
-      "en": "Peer-reviewed Publications",
-      "ko": "학술논문"
+    "mediaCoverageLabel": {
+      "en": "Media Coverage",
+      "ko": "언론 보도"
     },
+    "mediaCoverage": [
+      {
+        "date": "2026.05.13",
+        "outlet": "서울신문",
+        "title": "딴말하는 AI 학생, 조는 AI 학생… 예비 교사가 가상현실로 '수업 연습'까지",
+        "href": "https://www.seoul.co.kr/news/society/education-news/2026/05/13/20260513018001",
+        "note": "TeacherGen@i · ETHOBOT 소개"
+      }
+    ],
     "presentations": {
       "label": {
         "en": "Conference &amp; Poster Presentations",

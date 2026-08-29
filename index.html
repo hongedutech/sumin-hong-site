@@ -245,6 +245,7 @@
   .lec-row .lec-title{font-size:14px;color:var(--ink-soft);margin-top:1px;}
   .lec-row a{color:var(--violet);text-decoration:none;border-bottom:1px solid var(--violet-soft);}
   .lec-row.hidden{display:none;}
+  .lec-row .lec-note{font-size:12px;color:var(--slate-light);margin-top:3px;}
 
   .special-strip{display:grid;grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));gap:12px;margin-top:20px;}
   .special-strip figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;}
@@ -483,6 +484,8 @@ function ensureFields(d){
   d.research.flagships.forEach(f => { if(typeof f.image !== 'string') f.image = ''; });
   if(!Array.isArray(d.research.publications)) d.research.publications = [];
   if(!Array.isArray(d.research.links)) d.research.links = [];
+  if(!d.research.mediaCoverageLabel) d.research.mediaCoverageLabel = {en:'Media Coverage', ko:'언론 보도'};
+  if(!Array.isArray(d.research.mediaCoverage)) d.research.mediaCoverage = [];
   if(!d.research.presentations) d.research.presentations = {label:{en:'',ko:''}, groups:[]};
   if(!Array.isArray(d.research.presentations.groups)) d.research.presentations.groups = [];
   if(!d.research.affiliations) d.research.affiliations = {label:{en:'',ko:''}, memberships:[], conferenceReviews:[], journalReviews:[]};
@@ -651,6 +654,24 @@ function render(){
       <div class="yr mono">${p.year}</div>
       <div class="cite">${p.authors} — ${p.title} <span class="journal">${p.journal}</span>${
         p.href ? ` <a class="doi" href="${p.href}" target="_blank" rel="noopener">link ↗</a>` : ''}</div>
+    </div>`).join('');
+
+  /* ---- MEDIA COVERAGE (언론 보도) ---- */
+  const mc = d.research.mediaCoverage || [];
+  const mcWrap = document.getElementById('media-wrap');
+  if(mcWrap) mcWrap.style.display = mc.length ? '' : 'none';
+  document.getElementById('media-label').textContent =
+    `${tr(d.research.mediaCoverageLabel) || 'Media Coverage'} (${mc.length})`;
+  document.getElementById('media-list').innerHTML = mc.map(m=>`
+    <div class="lec-row">
+      <div class="lec-date">${m.date || ''}</div>
+      <div>
+        <div class="lec-org">${tr(m.outlet)}</div>
+        <div class="lec-title">${m.href
+          ? `<a href="${m.href}" target="_blank" rel="noopener">${tr(m.title)} ↗</a>`
+          : tr(m.title)}</div>
+        ${m.note ? `<div class="lec-note">${tr(m.note)}</div>` : ''}
+      </div>
     </div>`).join('');
 
   document.getElementById('pres-label').textContent = tr(d.research.presentations.label);

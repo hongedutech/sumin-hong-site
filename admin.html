@@ -41,6 +41,35 @@
   .item-card{border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin-top:12px; background:#fff; position:relative;}
   .item-card .remove-btn{position:absolute; top:10px; right:10px;}
   .add-btn{margin-top:14px;}
+
+  /* --- 항목 도구모음 (순서 이동 · 복제 · 삭제) --- */
+  .item-tools{
+    position:absolute; top:9px; right:9px; display:flex; gap:5px; align-items:center;
+    background:rgba(255,255,255,.92); padding:2px; border-radius:7px; z-index:2;
+  }
+  .item-tools .tool-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; line-height:1;
+    background:#fff; color:var(--slate); border:1px solid var(--line) !important;
+    border-radius:6px; padding:6px 9px; cursor:pointer; position:static !important;
+  }
+  .item-tools .tool-btn:hover:not(:disabled){border-color:var(--violet) !important; color:var(--violet); opacity:1;}
+  .item-tools .tool-btn:disabled{opacity:.3; cursor:default;}
+  .item-tools .tool-danger{background:#FCE7F8 !important; color:#A21CAF !important; border-color:#F5D0F0 !important;}
+  .item-card{padding-top:16px;}
+  .item-card > .item-tools + label:first-of-type{margin-top:20px;}
+  @media (max-width:640px){ .item-tools{position:static; margin-bottom:10px; justify-content:flex-end;} }
+
+  /* 이동·복제·추가 직후 강조 */
+  .item-card.flash{animation:flashCard 1.4s ease-out;}
+  @keyframes flashCard{
+    0%{box-shadow:0 0 0 3px var(--violet); background:#F6F0FF;}
+    100%{box-shadow:0 0 0 0 rgba(139,92,246,0); background:#fff;}
+  }
+  .autosort{
+    display:flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px; color:#C4B5FD; cursor:pointer; user-select:none;
+  }
+  .autosort input{accent-color:var(--violet); cursor:pointer;}
   .field-hint{font-size:11px; color:#A79BC9; margin-top:2px;}
   .status-msg{
     position:fixed; bottom:20px; right:20px; background:var(--ink); color:#fff; padding:12px 18px;
@@ -94,6 +123,10 @@
   </div>
   <div class="actions">
     <span class="size-badge" id="size-badge">–</span>
+    <label class="autosort" title="체크하면 저장할 때 날짜가 있는 모든 목록을 최신순으로 정렬합니다. 순서를 직접 정하셨다면 체크를 해제하세요.">
+      <input type="checkbox" id="autosort-chk" checked> 저장 시 날짜순 자동 정렬
+    </label>
+    <button class="btn-secondary" id="sort-btn">지금 정렬</button>
     <button class="btn-secondary" id="reload-btn">불러오기</button>
     <button class="btn-primary" id="download-btn">content.json 다운로드</button>
   </div>
@@ -230,6 +263,119 @@ function bindImageInputs(){
 }
 
 /* ============================================================
+   DATE SORTING  (날짜순 자동 정렬)
+   ============================================================ */
+
+const MONTH_NAMES = {jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+
+/* 문자열 어디에 있든 날짜를 찾아 정렬용 숫자 키로 바꿉니다.
+   지원 형식: 2026 / 2026.05 / 2026.05.13 / 2026.05–2026.08 /
+             (2026, 5월) / (2024, Nov) / "기관명 · 2025.12.11" 등
+   가장 자세한 날짜(연-월-일 > 연-월 > 연)를 고르고,
+   자세함이 같으면 가장 앞의 것(기간이면 시작일)을 씁니다. */
+function parseDateKey(raw){
+  if(raw == null) return null;
+  const s = String(raw).replace(/<[^>]*>/g, ' ');
+  if(!s.trim()) return null;
+  const re = /(19|20)\d{2}/g;
+  let best = null, m;
+  while((m = re.exec(s)) !== null){
+    const year = Number(m[0]);
+    const rest = s.slice(m.index + 4);
+    let month = 0, day = 0, prec = 1;
+    const dotted = rest.match(/^\.\s?(\d{1,2})(?:\.\s?(\d{1,2}))?/);   // 2026.05 / 2026.05.13
+    if(dotted){
+      month = Number(dotted[1]); prec = 2;
+      if(dotted[2]){ day = Number(dotted[2]); prec = 3; }
+    } else {
+      const kor = rest.match(/^\s*[,.]?\s*(\d{1,2})\s*월/);            // (2026, 5월)
+      if(kor){ month = Number(kor[1]); prec = 2; }
+      else {
+        const eng = rest.match(/^\s*[,.]?\s*([A-Za-z]{3})/);           // (2024, Nov)
+        const mn = eng && MONTH_NAMES[eng[1].toLowerCase()];
+        if(mn){ month = mn; prec = 2; }
+      }
+    }
+    if(month > 12){ month = 0; prec = 1; day = 0; }
+    if(day > 31){ day = 0; prec = 2; }
+    if(!best || prec > best.prec) best = {key: year*10000 + month*100 + day, prec};
+  }
+  return best ? best.key : null;
+}
+
+/* 한 목록을 최신순으로 정렬. 날짜를 못 찾은 항목은 맨 뒤에, 기존 순서 그대로 둡니다.
+   날짜가 같으면 손으로 정한 순서가 유지됩니다(안정 정렬). */
+function sortListByDate(arr, opts){
+  if(!Array.isArray(arr) || arr.length < 2) return false;
+  const field = opts && opts.field;
+  const group = opts && opts.group;
+  const dec = arr.map((item, i)=>{
+    const raw = (field && item && typeof item === 'object') ? item[field] : item;
+    return { item, i, key: parseDateKey(raw), g: group ? group(item) : 0 };
+  });
+  dec.sort((a,b)=>{
+    if(a.g !== b.g) return a.g - b.g;
+    const an = (a.key == null), bn = (b.key == null);
+    if(an && bn) return a.i - b.i;
+    if(an) return 1;
+    if(bn) return -1;
+    if(a.key !== b.key) return b.key - a.key;   // 최신순
+    return a.i - b.i;
+  });
+  let changed = false;
+  dec.forEach((x, idx)=>{ if(x.i !== idx) changed = true; });
+  if(!changed) return false;
+  arr.length = 0;
+  dec.forEach(x => arr.push(x.item));
+  return true;
+}
+
+/* 정렬 대상 목록.
+   저서 · 수강이력 · 갤러리 · 학회활동/심사처럼 날짜순이 아닌 목록은 일부러 제외했습니다. */
+const SORT_TARGETS = [
+  { path:'career.rows',             field:'date', name:'경력' },
+  { path:'education.items',         field:'date', name:'학력',
+    group:it=>({degree:0, visiting:1, exchange:2})[it && it.kind] ?? 3 },
+  { path:'research.publications',   field:'year', name:'논문' },
+  { path:'research.mediaCoverage',  field:'date', name:'언론 보도' },
+  { path:'research.presentations.groups.*.items', field:null, name:'학술대회 발표' },
+  { path:'projects.rows',           field:'date', name:'프로젝트' },
+  { path:'teaching.courseLectures', field:'meta', name:'정규 강의' },
+  { path:'teaching.invitedTalks',   field:'meta', name:'초청 강연' },
+  { path:'teaching.specialLectures',field:'date', name:'특강' },
+  { path:'awards.groups.*.items',   field:'date', name:'수상·자격' }
+];
+
+function resolveArrays(obj, path){
+  const star = path.indexOf('.*.');
+  if(star === -1){
+    const v = getByPath(obj, path);
+    return Array.isArray(v) ? [v] : [];
+  }
+  const head = path.slice(0, star), tail = path.slice(star + 3);
+  const parent = getByPath(obj, head);
+  if(!Array.isArray(parent)) return [];
+  let out = [];
+  parent.forEach((_, i)=>{ out = out.concat(resolveArrays(obj, head + '.' + i + '.' + tail)); });
+  return out;
+}
+
+function sortAllByDate(){
+  const changed = [];
+  SORT_TARGETS.forEach(t=>{
+    let hit = false;
+    resolveArrays(DATA, t.path).forEach(arr=>{ if(sortListByDate(arr, t)) hit = true; });
+    if(hit) changed.push(t.name);
+  });
+  return changed;
+}
+
+function autoSortEnabled(){
+  const el = document.getElementById('autosort-chk');
+  return !el || el.checked;
+}
+
+/* ============================================================
    LOAD / SAVE
    ============================================================ */
 
@@ -295,6 +441,8 @@ function ensureImageFields(d){
   if(!Array.isArray(d.teaching.topics)) d.teaching.topics = [];
   if(!d.research.presentations) d.research.presentations = {label:{en:'Conference &amp; Poster Presentations',ko:'학술대회 발표'}, groups:[]};
   if(!Array.isArray(d.research.presentations.groups)) d.research.presentations.groups = [];
+  if(!d.research.mediaCoverageLabel) d.research.mediaCoverageLabel = {en:'Media Coverage', ko:'언론 보도'};
+  if(!Array.isArray(d.research.mediaCoverage)) d.research.mediaCoverage = [];
   if(!d.research.affiliations) d.research.affiliations = {label:{en:'Professional Affiliations',ko:'학회 활동'}, memberships:[], conferenceReviews:[], journalReviews:[]};
   ['memberships','conferenceReviews','journalReviews'].forEach(k=>{
     if(!Array.isArray(d.research.affiliations[k])) d.research.affiliations[k] = [];
@@ -344,7 +492,11 @@ function renderApp(){
   // ---- QUICK JUMP ----
   html += `<div class="panel" style="position:sticky;top:82px;z-index:40;">
     <h2>빠른 이동</h2>
-    <div class="desc">항목이 많아졌습니다. 아래 링크로 바로 이동하세요.</div>
+    <div class="desc">항목이 많아졌습니다. 아래 링크로 바로 이동하세요.<br>
+      각 항목 오른쪽 위의 <strong>↑ ↓</strong>로 순서를 바꾸고, <strong>복제</strong>로 비슷한 항목을 빠르게 만들 수 있습니다.
+      <strong>+ 추가</strong>를 누르면 목록 <strong>맨 위</strong>에 새 항목이 생깁니다.<br>
+      저장(다운로드)할 때 날짜가 있는 목록은 <strong>자동으로 최신순 정렬</strong>됩니다.
+      순서를 직접 정하고 싶다면 화면 위쪽의 <strong>「저장 시 날짜순 자동 정렬」</strong> 체크를 해제하세요.</div>
     <div class="jump-bar">
       ${[['p-hero','Hero'],['p-about','소개'],['p-education','학력'],['p-career','경력'],
          ['p-research','연구'],['p-projects','프로젝트'],['p-books','저서'],['p-teaching','강의·강연'],
@@ -476,6 +628,22 @@ function renderApp(){
     </div>`;
   });
   html += `</div><button class="btn-secondary add-btn" data-add="research.publications">+ 논문 추가</button></div>`;
+
+  // ---- RESEARCH: media coverage ----
+  html += `<div class="panel"><h2>언론 보도 (Media Coverage)</h2>
+    <div class="desc">연구가 소개된 신문·방송 기사. 연구 페이지의 논문 목록 아래에 표시됩니다.</div>
+    ${biField('항목 제목', 'research.mediaCoverageLabel', d.research.mediaCoverageLabel)}
+    <div style="margin-top:12px;">`;
+  d.research.mediaCoverage.forEach((m,i)=>{
+    html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="research.mediaCoverage.${i}">삭제</button>
+      <label>날짜 (예: 2026.05.13)</label><input type="text" data-path="research.mediaCoverage.${i}.date" value="${escapeAttr(m.date||'')}">
+      <label>매체</label><input type="text" data-path="research.mediaCoverage.${i}.outlet" value="${escapeAttr(typeof m.outlet==='string'?m.outlet:'')}">
+      <label>기사 제목</label><textarea data-path="research.mediaCoverage.${i}.title">${escapeHtml(typeof m.title==='string'?m.title:'')}</textarea>
+      <label>기사 링크</label><input type="text" data-path="research.mediaCoverage.${i}.href" value="${escapeAttr(m.href||'')}">
+      <label>비고 (선택 · 소개된 연구·시스템 등)</label><input type="text" data-path="research.mediaCoverage.${i}.note" value="${escapeAttr(typeof m.note==='string'?m.note:'')}">
+    </div>`;
+  });
+  html += `</div><button class="btn-secondary add-btn" data-add="research.mediaCoverage">+ 기사 추가</button></div>`;
 
   // ---- RESEARCH: presentations ----
   html += `<div class="panel"><h2>학술대회 발표 (Presentations)</h2>
@@ -700,9 +868,84 @@ function renderApp(){
 
   document.getElementById('app').innerHTML = html;
   bindInputs();
+  enhanceItemCards();
   bindAddRemove();
   bindImageInputs();
   updateSizeBadge();
+}
+
+/* ============================================================
+   항목 도구모음 — 위/아래 이동 · 복제 · 삭제
+   ============================================================ */
+
+/* 이동·복제·추가한 항목으로 화면을 옮기고 잠깐 강조합니다. */
+function focusCard(arrPath, idx){
+  const btn = document.querySelector(`[data-remove="${arrPath}.${idx}"]`);
+  if(!btn) return;
+  const card = btn.closest('.item-card');
+  if(!card) return;
+  card.scrollIntoView({block:'center', behavior:'smooth'});
+  card.classList.add('flash');
+  setTimeout(()=>card.classList.remove('flash'), 1500);
+}
+
+function moveItem(arrPath, idx, dir){
+  const arr = getByPath(DATA, arrPath);
+  if(!Array.isArray(arr)) return;
+  const j = idx + dir;
+  if(j < 0 || j >= arr.length) return;
+  const t = arr[idx]; arr[idx] = arr[j]; arr[j] = t;
+  renderApp();
+  focusCard(arrPath, j);
+  toast(dir < 0 ? '위로 옮겼습니다.' : '아래로 옮겼습니다.');
+}
+
+function duplicateItem(arrPath, idx){
+  const arr = getByPath(DATA, arrPath);
+  if(!Array.isArray(arr)) return;
+  let copy;
+  try{ copy = JSON.parse(JSON.stringify(arr[idx])); }
+  catch(e){ copy = arr[idx]; }
+  arr.splice(idx + 1, 0, copy);
+  renderApp();
+  focusCard(arrPath, idx + 1);
+  toast('바로 아래에 복제했습니다. 내용을 고쳐주세요.');
+}
+
+/* 기존 「삭제」 버튼 옆에 ↑ ↓ 복제 버튼을 끼워 넣습니다. */
+function enhanceItemCards(){
+  document.querySelectorAll('[data-remove]').forEach(rm=>{
+    const path = rm.dataset.remove;
+    const cut = path.lastIndexOf('.');
+    const idx = Number(path.slice(cut + 1));
+    const arrPath = path.slice(0, cut);
+    const arr = getByPath(DATA, arrPath);
+    if(!Array.isArray(arr) || Number.isNaN(idx)) return;
+
+    const tools = document.createElement('div');
+    tools.className = 'item-tools';
+    tools.innerHTML =
+      `<button type="button" class="tool-btn" data-move="${arrPath}" data-idx="${idx}" data-dir="-1" title="위로 이동" ${idx === 0 ? 'disabled' : ''}>↑</button>` +
+      `<button type="button" class="tool-btn" data-move="${arrPath}" data-idx="${idx}" data-dir="1" title="아래로 이동" ${idx === arr.length - 1 ? 'disabled' : ''}>↓</button>` +
+      `<button type="button" class="tool-btn" data-dup="${arrPath}" data-idx="${idx}" title="이 항목을 복제">복제</button>`;
+
+    rm.parentNode.insertBefore(tools, rm);
+    tools.appendChild(rm);                 // 기존 삭제 버튼을 도구모음 안으로
+    rm.classList.remove('remove-btn');
+    rm.classList.remove('btn-danger');
+    rm.classList.add('tool-btn', 'tool-danger');
+  });
+
+  document.querySelectorAll('[data-move]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      moveItem(btn.dataset.move, Number(btn.dataset.idx), Number(btn.dataset.dir));
+    });
+  });
+  document.querySelectorAll('[data-dup]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      duplicateItem(btn.dataset.dup, Number(btn.dataset.idx));
+    });
+  });
 }
 
 function getByPath(obj, path){
@@ -744,6 +987,7 @@ const TEMPLATES = {
   'career.rows': ()=>({date:'2026', title:{en:'New role', ko:'새 직함'}, org:'Organization', pill:{type:'progress', en:'ONGOING', ko:'진행 중'}, logo:''}),
   'research.flagships': ()=>({tag:{en:'PROJECT', ko:'프로젝트'}, title:'New system', desc:{en:'Description', ko:'설명'}, href:'https://', linkText:'link →', image:''}),
   'research.publications': ()=>({year:'2026', authors:'<strong>Hong, S.</strong>', title:'New publication title', journal:'Journal name'}),
+  'research.mediaCoverage': ()=>({date:'2026.01.01', outlet:'매체명', title:'기사 제목', href:'https://', note:''}),
   'projects.rows': ()=>({role:'researcher', status:'done', date:'2026', title:'새 프로젝트', org:null, pill:'done', pillLabel:'완료', roleLabel:'Researcher'}),
   'teaching.courseLectures': ()=>({title:'새 강의', meta:'기관 · 연도', image:''}),
   'teaching.invitedTalks': ()=>({title:'New talk', meta:'Venue · Year', image:''}),
@@ -781,9 +1025,10 @@ function bindAddRemove(){
       const path = btn.dataset.add;
       const arr = getByPath(DATA, path);
       const tpl = templateFor(path);
-      arr.push(tpl ? tpl() : {});
+      arr.unshift(tpl ? tpl() : {});   // 새 항목은 목록 맨 위에
       renderApp();
-      toast('새 항목을 추가했습니다.');
+      focusCard(path, 0);
+      toast('맨 위에 새 항목을 추가했습니다.');
     });
   });
   document.querySelectorAll('[data-remove]').forEach(btn=>{
@@ -803,14 +1048,40 @@ document.getElementById('reload-btn').addEventListener('click', ()=>{
   if(confirm('저장하지 않은 변경사항은 사라집니다. 다시 불러올까요?')) loadData();
 });
 
+/* 저장 시 날짜순 자동 정렬 — 체크 상태는 브라우저에 기억됩니다. */
+(function initAutoSort(){
+  const chk = document.getElementById('autosort-chk');
+  try{
+    const saved = localStorage.getItem('admin_autosort');
+    if(saved !== null) chk.checked = (saved === '1');
+  }catch(e){}
+  chk.addEventListener('change', ()=>{
+    try{ localStorage.setItem('admin_autosort', chk.checked ? '1' : '0'); }catch(e){}
+    toast(chk.checked ? '저장할 때 날짜순으로 정렬합니다.' : '자동 정렬을 껐습니다. 직접 정한 순서가 그대로 저장됩니다.');
+  });
+})();
+
+document.getElementById('sort-btn').addEventListener('click', ()=>{
+  const changed = sortAllByDate();
+  renderApp();
+  toast(changed.length ? '날짜순 정렬: ' + changed.join(', ') : '이미 모두 날짜순입니다.');
+});
+
 document.getElementById('download-btn').addEventListener('click', ()=>{
+  let sorted = [];
+  if(autoSortEnabled()){
+    sorted = sortAllByDate();
+    if(sorted.length) renderApp();
+  }
   const blob = new Blob([JSON.stringify(DATA, null, 2)], {type:'application/json'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url; a.download = 'content.json';
   document.body.appendChild(a); a.click(); a.remove();
   URL.revokeObjectURL(url);
-  toast('content.json을 다운로드했습니다. 저장소의 content.json 파일을 이걸로 교체 후 커밋하세요.');
+  toast(sorted.length
+    ? '날짜순 정렬(' + sorted.join(', ') + ') 후 다운로드했습니다. 저장소의 content.json을 교체해 커밋하세요.'
+    : 'content.json을 다운로드했습니다. 저장소의 content.json 파일을 이걸로 교체 후 커밋하세요.');
 });
 
 loadData();
