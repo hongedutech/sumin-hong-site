@@ -938,18 +938,51 @@
     ],
     "rows": [
       {
-        "role": "researcher",
+        "role": "pm",
         "status": "progress",
-        "date": "2026.06.-2026.9.",
-        "title": "제9회 서울교육종단연구 학술대회",
+        "date": "2026.10.-2027.02.",
+        "title": "방과후학교 AI 강사 역량체계 및 진단도구 개발 연구",
         "org": null,
         "pill": "progress",
-        "pillLabel": "진행 중",
-        "roleLabel": "Researcher",
+        "pillLabel": "진행중",
+        "roleLabel": "연구책임자",
         "cat": "etc"
       },
       {
         "role": "researcher",
+        "status": "progress",
+        "date": "2026.09.-2026.12.",
+        "title": "명지대학교 교수자 AI역량 진단 도구 개발 연구",
+        "org": null,
+        "pill": "progress",
+        "pillLabel": "진행중",
+        "roleLabel": "공동연구원",
+        "cat": "etc"
+      },
+      {
+        "role": "researcher",
+        "status": "progress",
+        "date": "2026.09.-2026.12.",
+        "title": "명지대학교 학생 AI역량 진단 도구 개발 연구",
+        "org": null,
+        "pill": "progress",
+        "pillLabel": "진행중",
+        "roleLabel": "공동연구원",
+        "cat": "etc"
+      },
+      {
+        "role": "researcher",
+        "status": "done",
+        "date": "2026.06.-2026.9.",
+        "title": "제9회 서울교육종단연구 학술대회",
+        "org": null,
+        "pill": "Done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher",
+        "cat": "etc"
+      },
+      {
+        "role": "pm",
         "status": "progress",
         "date": "2026.06.-2026.11.",
         "title": "디지털새싹 참여 학생의 핵심역량 변화 및 학습 경험·인식 변화에 관한 사례연구",
@@ -981,9 +1014,9 @@
           "ko": "한국교육학술정보원(KERIS)"
         },
         "role": "pm",
-        "status": "progress",
+        "status": "done",
         "cat": "id",
-        "pill": "progress",
+        "pill": "Done",
         "pillLabel": "진행 중",
         "roleLabel": "PM"
       },
@@ -994,12 +1027,12 @@
           "en": "Ministry of Education — AIEDAP",
           "ko": "교육부 AIEDAP"
         },
-        "role": "pm",
-        "status": "progress",
+        "role": "researcher",
+        "status": "done",
         "cat": "id",
-        "pill": "progress",
-        "pillLabel": "진행 중",
-        "roleLabel": ""
+        "pill": "Done",
+        "pillLabel": "완료",
+        "roleLabel": "Researcher"
       },
       {
         "date": "2026.03-2026.12",
@@ -1009,10 +1042,10 @@
           "ko": "교육부 AIEDAP"
         },
         "role": "pm",
-        "status": "progress",
+        "status": "done",
         "cat": "id",
-        "pill": "progress",
-        "pillLabel": "진행 중",
+        "pill": "done",
+        "pillLabel": "완료",
         "roleLabel": "PM"
       },
       {
@@ -1907,6 +1940,21 @@
       "ko": "정규 강의"
     },
     "courseLectures": [
+      {
+        "title": "명지대학교 2026-2학기 교육공학 (3학점)",
+        "meta": "Myongji University · 2026",
+        "image": ""
+      },
+      {
+        "title": "명지대학교 2026-2학기 청소년복지론 (3학점)",
+        "meta": "Myongji University · 2026",
+        "image": ""
+      },
+      {
+        "title": "명지대학교 2026-2학기 AI 융합교육(대학원) (3학점)",
+        "meta": "Myongji University · 2026",
+        "image": ""
+      },
       {
         "title": "서울대학교 2026-하계계절학기 교육공학 및 교육방법론(대학원) (2학점)",
         "meta": "Seoul National University · 2026",
