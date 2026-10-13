@@ -501,6 +501,13 @@
     },
     "publications": [
       {
+        "year": "2026.09.",
+        "authors": "임철일, <strong>홍수민</strong>, 박성경, 박가은, 김도",
+        "title": "CIPP 평가모형에 기반한 초․중등 AI․디지털 교육사업 성과관리 지표 개발 및 타당화 연구",
+        "journal": "교육공학연구, 42(3), 733-765.",
+        "href": "https://doi.org/10.1163/25248502-bja00014"
+      },
+      {
         "year": "2026.06.",
         "authors": "Lim, C., <strong>Hong, S.</strong>*, Eom, D., &amp; Park, S.",
         "title": "Bridging teacher competency and student outcomes: The effects of AI-integrated instruction on AI-TPACK and AI literacy.",
@@ -2068,6 +2075,18 @@
     "specialLectureGallery": [],
     "specialLectures": [
       {
+        "date": "2026.09.23.",
+        "org": "숭실대학교",
+        "title": "[인문사회계] 인문사회계열 AI 활용 사례와 적용 전략",
+        "href": ""
+      },
+      {
+        "date": "2026.09.23.",
+        "org": "서울대학교",
+        "title": "서울대학교 교육학과 교수설계세미나 특강 : AI융합교육의 이론과 실제, 개발 연구 방법과 사례",
+        "href": ""
+      },
+      {
         "date": "2026.06.25",
         "org": "대한기계학회",
         "title": "LLM 기반 업무 혁신 사례",
@@ -2077,12 +2096,6 @@
         "date": "2026.06.18",
         "org": "서울대학교 중문과 강사워크숍",
         "title": "생성형 AI 기반 바이브코딩 실습 워크숍",
-        "href": ""
-      },
-      {
-        "date": "2026.06.11",
-        "org": "숭실대학교",
-        "title": "AI 실습형 교수법 워크숍 4회차 — AI·디지털 기술을 활용한 데이터 기반 학습촉진 / 과제 피드백",
         "href": ""
       },
       {
@@ -2113,6 +2126,12 @@
         "date": "2026.04.22",
         "org": "남한고등학교",
         "title": "AI융합수업 설계 이해 및 적용: 문제해결역량을 위한 인공지능 융합교육 수업설계 모형 및 원리",
+        "href": ""
+      },
+      {
+        "date": "2026.04.01.",
+        "org": "서울대학교",
+        "title": "서울대학교 사범대학 대학원 인공지능 및 교과 융합역량 교육론 특강: AI융합교육의이론과실제, 개발연구방법과사례(2)",
         "href": ""
       },
       {
