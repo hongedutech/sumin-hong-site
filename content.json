@@ -2613,14 +2613,14 @@
       },
       {
         "date": "2026",
-        "org": "교육부 (교육과정 검토)",
+        "org": "서울특별시교육청 교육연수원",
         "title": "2026 AI·디지털 교수학습 기반 역량강화 글로벌 직무연수(사전·사후연수) 교육과정 검토",
         "href": ""
       },
       {
         "date": "2026",
         "org": "숭실대학교",
-        "title": "수업 컨설팅",
+        "title": "강의 컨설팅",
         "href": ""
       },
       {
@@ -2640,6 +2640,24 @@
     },
     "social": [
       {
+        "date": "2026.11.28",
+        "org": "서울특별시교육청교육연수원",
+        "title": "찾아가는 맞춤형 AI·디지털 리터러시 교육 직무연수 (예정)",
+        "href": ""
+      },
+      {
+        "date": "2026",
+        "org": "교육부 AIEDAP",
+        "title": "2026 AIEDAP 수도권역 제1차 교육 포럼",
+        "href": "https://www.aiedap.or.kr/kboard/capital-notice/994"
+      },
+      {
+        "date": "2026",
+        "org": "교육부 AIEDAP",
+        "title": "2026 AIEDAP 수도권역 2차 포럼: 인천형 AI융합수업 모형과 현장 적용 사례 공유",
+        "href": "https://www.aiedap.or.kr/kboard/capital-notice/1087"
+      },
+      {
         "date": "2025",
         "org": "교육부 AIEDAP",
         "title": "2025 AIEDAP 착수보고회",
@@ -2656,24 +2674,6 @@
         "org": "교육부 AIEDAP",
         "title": "2025 AIEDAP 수도·충청권역 공동 성과공유회",
         "href": "https://www.aiedap.or.kr/kboard/capital-notice/878"
-      },
-      {
-        "date": "2026",
-        "org": "교육부 AIEDAP",
-        "title": "2026 AIEDAP 수도권역 제1차 교육 포럼",
-        "href": "https://www.aiedap.or.kr/kboard/capital-notice/994"
-      },
-      {
-        "date": "2026",
-        "org": "교육부 AIEDAP",
-        "title": "2026 AIEDAP 수도권역 2차 포럼: 인천형 AI융합수업 모형과 현장 적용 사례 공유",
-        "href": "https://www.aiedap.or.kr/kboard/capital-notice/1087"
-      },
-      {
-        "date": "2026.11.28",
-        "org": "서울특별시교육청교육연수원",
-        "title": "찾아가는 맞춤형 AI·디지털 리터러시 교육 직무연수 (예정)",
-        "href": ""
       }
     ]
   },
