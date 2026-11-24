@@ -381,6 +381,12 @@
     <div class="ledger" id="special-list" style="border-top:1px solid var(--line);"></div>
     <button class="collapse-btn" id="special-toggle" type="button"></button>
     <div class="special-strip" id="special-strip"></div>
+    <span class="sub-head" id="consult-label" style="margin-top:36px;"></span>
+    <p style="font-size:14px; color:var(--slate); max-width:70ch; margin:-6px 0 14px;" id="consult-note"></p>
+    <div class="ledger" id="consult-list" style="border-top:1px solid var(--line);"></div>
+    <span class="sub-head" id="social-label" style="margin-top:36px;"></span>
+    <p style="font-size:14px; color:var(--slate); max-width:70ch; margin:-6px 0 14px;" id="social-note"></p>
+    <div class="ledger" id="social-list" style="border-top:1px solid var(--line);"></div>
   </div>
 </section>
 
@@ -753,6 +759,29 @@ function render(){
     const cap = g.caption ? tr(g.caption) : '';
     return `<figure><img src="${g.image}" alt="" data-lightbox="${escapeAttr(g.image)}" data-caption="${escapeAttr(cap)}">${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`;
   }).join('');
+
+  /* ---- CONSULTING & SOCIAL (특강 아래 별도 섹션) ---- */
+  const renderPlainList = (items, labelId, noteId, listId, label, note) => {
+    const arr = Array.isArray(items) ? items : [];
+    const labelEl = document.getElementById(labelId);
+    const listEl = document.getElementById(listId);
+    const noteEl = document.getElementById(noteId);
+    if(!labelEl) return;
+    labelEl.textContent = `${tr(label)} (${arr.length})`;
+    noteEl.innerHTML = tr(note);
+    listEl.innerHTML = arr.map(s=>`
+      <div class="lec-row">
+        <div class="lec-date">${s.date}</div>
+        <div>
+          <div class="lec-org">${tr(s.org)}</div>
+          <div class="lec-title">${s.href ? `<a href="${s.href}" target="_blank" rel="noopener">${tr(s.title)} ↗</a>` : tr(s.title)}</div>
+        </div>
+      </div>`).join('');
+    const hide = arr.length === 0;
+    labelEl.style.display = listEl.style.display = noteEl.style.display = hide ? 'none' : '';
+  };
+  renderPlainList(d.teaching.consulting, 'consult-label', 'consult-note', 'consult-list', d.teaching.consultingLabel || {ko:'자문 및 컨설팅', en:'Consulting & Advisory'}, d.teaching.consultingNote || '');
+  renderPlainList(d.teaching.social, 'social-label', 'social-note', 'social-list', d.teaching.socialLabel || {ko:'사회', en:'Moderator & Host'}, d.teaching.socialNote || '');
 
   /* ---- AWARDS ---- */
   setSectionVisible('awards', d.awards.groups.length > 0);

@@ -363,6 +363,8 @@ const SORT_TARGETS = [
   { path:'teaching.courseLectures', field:'meta', name:'정규 강의' },
   { path:'teaching.invitedTalks',   field:'meta', name:'초청 강연' },
   { path:'teaching.specialLectures',field:'date', name:'특강' },
+  { path:'teaching.consulting',     field:'date', name:'자문·컨설팅' },
+  { path:'teaching.social',         field:'date', name:'사회' },
   { path:'awards.groups.*.items',   field:'date', name:'수상·자격' }
 ];
 
@@ -458,6 +460,8 @@ function ensureImageFields(d){
   d.datascience.items.forEach(i => { if(typeof i.image !== 'string') i.image = ''; });
 
   if(!Array.isArray(d.teaching.specialLectures)) d.teaching.specialLectures = [];
+  if(!Array.isArray(d.teaching.consulting)) d.teaching.consulting = [];
+  if(!Array.isArray(d.teaching.social)) d.teaching.social = [];
   if(!Array.isArray(d.teaching.topics)) d.teaching.topics = [];
   if(!d.research.presentations) d.research.presentations = {label:{en:'Conference &amp; Poster Presentations',ko:'학술대회 발표'}, groups:[]};
   if(!Array.isArray(d.research.presentations.groups)) d.research.presentations.groups = [];
@@ -784,6 +788,38 @@ function renderApp(){
     </div>`;
   });
   html += `</div><button class="btn-secondary add-btn" data-add="teaching.specialLectures">+ 특강 추가</button></div>`;
+
+  // ---- TEACHING: consulting (자문 및 컨설팅) ----
+  html += `<div class="panel"><h2>자문 및 컨설팅 (Consulting)</h2>
+    <div class="desc">특강 섹션 아래에 별도로 표시됩니다. 비워두면 섹션이 숨겨집니다.</div>
+    ${biField('섹션 제목', 'teaching.consultingLabel', d.teaching.consultingLabel || {en:'', ko:''})}
+    ${biField('섹션 설명', 'teaching.consultingNote', d.teaching.consultingNote || {en:'', ko:''})}
+    <div style="margin-top:12px;">`;
+  d.teaching.consulting.forEach((s,i)=>{
+    html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="teaching.consulting.${i}">삭제</button>
+      <label>날짜</label><input type="text" data-path="teaching.consulting.${i}.date" value="${escapeAttr(s.date||'')}">
+      <label>기관</label><input type="text" data-path="teaching.consulting.${i}.org" value="${escapeAttr(typeof s.org==='string'?s.org:'')}">
+      <label>내용</label><textarea data-path="teaching.consulting.${i}.title">${escapeHtml(typeof s.title==='string'?s.title:'')}</textarea>
+      <label>링크 (선택)</label><input type="text" data-path="teaching.consulting.${i}.href" value="${escapeAttr(s.href||'')}">
+    </div>`;
+  });
+  html += `</div><button class="btn-secondary add-btn" data-add="teaching.consulting">+ 컨설팅 추가</button></div>`;
+
+  // ---- TEACHING: social (사회) ----
+  html += `<div class="panel"><h2>사회 (Moderator & Host)</h2>
+    <div class="desc">특강 섹션 아래에 별도로 표시됩니다. 비워두면 섹션이 숨겨집니다.</div>
+    ${biField('섹션 제목', 'teaching.socialLabel', d.teaching.socialLabel || {en:'', ko:''})}
+    ${biField('섹션 설명', 'teaching.socialNote', d.teaching.socialNote || {en:'', ko:''})}
+    <div style="margin-top:12px;">`;
+  d.teaching.social.forEach((s,i)=>{
+    html += `<div class="item-card"><button class="btn-danger remove-btn" data-remove="teaching.social.${i}">삭제</button>
+      <label>날짜</label><input type="text" data-path="teaching.social.${i}.date" value="${escapeAttr(s.date||'')}">
+      <label>주최 기관</label><input type="text" data-path="teaching.social.${i}.org" value="${escapeAttr(typeof s.org==='string'?s.org:'')}">
+      <label>행사명</label><textarea data-path="teaching.social.${i}.title">${escapeHtml(typeof s.title==='string'?s.title:'')}</textarea>
+      <label>링크 (선택)</label><input type="text" data-path="teaching.social.${i}.href" value="${escapeAttr(s.href||'')}">
+    </div>`;
+  });
+  html += `</div><button class="btn-secondary add-btn" data-add="teaching.social">+ 사회 추가</button></div>`;
 
   // ---- TEACHING: special lecture gallery ----
   html += `<div class="panel"><h2>특강 사진 갤러리 (Special Lectures)</h2>
@@ -1131,6 +1167,8 @@ const TEMPLATES = {
   'teaching.courseLectures': ()=>({title:'새 강의', meta:'기관 · 연도', image:''}),
   'teaching.invitedTalks': ()=>({title:'New talk', meta:'Venue · Year', image:''}),
   'teaching.specialLectureGallery': ()=>({image:'', caption:{en:'', ko:''}}),
+  'teaching.consulting': ()=>({date:'2026', org:'기관명', title:'컨설팅 내용', href:''}),
+  'teaching.social': ()=>({date:'2026', org:'행사 주최', title:'행사명', href:''}),
   'gallery.items': ()=>({image:'', caption:{en:'', ko:''}}),
   'contact.links': ()=>({value:'label', href:'https://', k:'LINK'}),
   // sections added in the 2026 update

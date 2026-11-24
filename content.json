@@ -2156,66 +2156,6 @@
     "specialLectureGallery": [],
     "specialLectures": [
       {
-        "date": "2026",
-        "org": "건국대학교",
-        "title": "[자문·컨설팅] AI융합교육 소단위전공 교육과정 컨설팅",
-        "href": ""
-      },
-      {
-        "date": "2026",
-        "org": "교육부 (교육과정 검토)",
-        "title": "[자문·컨설팅] 2026 AI·디지털 교수학습 기반 역량강화 글로벌 직무연수(사전·사후연수) 교육과정 검토",
-        "href": ""
-      },
-      {
-        "date": "2026",
-        "org": "숭실대학교",
-        "title": "[자문·컨설팅] 수업 컨설팅",
-        "href": ""
-      },
-      {
-        "date": "2026",
-        "org": "한국교통대학교",
-        "title": "[자문·컨설팅] 2026학년도 K-MOOC 자율참여형 자체평가",
-        "href": ""
-      },
-      {
-        "date": "2025",
-        "org": "교육부 AIEDAP",
-        "title": "[사회] 2025 AIEDAP 착수보고회",
-        "href": "https://www.aiedap.or.kr/kboard/capital-notice/540"
-      },
-      {
-        "date": "2025",
-        "org": "교육부 AIEDAP",
-        "title": "[사회] 2025 AIEDAP 사업 최종 성과공유회",
-        "href": ""
-      },
-      {
-        "date": "2025",
-        "org": "교육부 AIEDAP",
-        "title": "[사회] 2025 AIEDAP 수도·충청권역 공동 성과공유회",
-        "href": "https://www.aiedap.or.kr/kboard/capital-notice/878"
-      },
-      {
-        "date": "2026",
-        "org": "교육부 AIEDAP",
-        "title": "[사회] 2026 AIEDAP 수도권역 제1차 교육 포럼",
-        "href": "https://www.aiedap.or.kr/kboard/capital-notice/994"
-      },
-      {
-        "date": "2026",
-        "org": "교육부 AIEDAP",
-        "title": "[사회] 2026 AIEDAP 수도권역 2차 포럼: 인천형 AI융합수업 모형과 현장 적용 사례 공유",
-        "href": "https://www.aiedap.or.kr/kboard/capital-notice/1087"
-      },
-      {
-        "date": "2026.11.28",
-        "org": "서울특별시교육청교육연수원",
-        "title": "[사회] 찾아가는 맞춤형 AI·디지털 리터러시 교육 직무연수 (예정)",
-        "href": ""
-      },
-      {
         "date": "2026.11.19.",
         "org": "숭실대학교",
         "title": "바이브 코딩(심화): 데이터와 연동하는 AI 기반 교육도구 개발 실습",
@@ -2654,6 +2594,86 @@
       {
         "en": "Flipped · blended · hybrid learning",
         "ko": "플립러닝 · 블렌디드 · 하이브리드 러닝"
+      }
+    ],
+    "consultingLabel": {
+      "ko": "자문 및 컨설팅",
+      "en": "Consulting & Advisory"
+    },
+    "consultingNote": {
+      "ko": "교육과정 검토, 수업 컨설팅 등 자문 활동",
+      "en": "Curriculum review, classroom consulting, and advisory work"
+    },
+    "consulting": [
+      {
+        "date": "2026",
+        "org": "건국대학교",
+        "title": "AI융합교육 소단위전공 교육과정 컨설팅",
+        "href": ""
+      },
+      {
+        "date": "2026",
+        "org": "교육부 (교육과정 검토)",
+        "title": "2026 AI·디지털 교수학습 기반 역량강화 글로벌 직무연수(사전·사후연수) 교육과정 검토",
+        "href": ""
+      },
+      {
+        "date": "2026",
+        "org": "숭실대학교",
+        "title": "수업 컨설팅",
+        "href": ""
+      },
+      {
+        "date": "2026",
+        "org": "한국교통대학교",
+        "title": "2026학년도 K-MOOC 자율참여형 자체평가",
+        "href": ""
+      }
+    ],
+    "socialLabel": {
+      "ko": "사회",
+      "en": "Moderator & Host"
+    },
+    "socialNote": {
+      "ko": "학술·정책 행사 사회 진행",
+      "en": "Moderating academic and policy events"
+    },
+    "social": [
+      {
+        "date": "2025",
+        "org": "교육부 AIEDAP",
+        "title": "2025 AIEDAP 착수보고회",
+        "href": "https://www.aiedap.or.kr/kboard/capital-notice/540"
+      },
+      {
+        "date": "2025",
+        "org": "교육부 AIEDAP",
+        "title": "2025 AIEDAP 사업 최종 성과공유회",
+        "href": ""
+      },
+      {
+        "date": "2025",
+        "org": "교육부 AIEDAP",
+        "title": "2025 AIEDAP 수도·충청권역 공동 성과공유회",
+        "href": "https://www.aiedap.or.kr/kboard/capital-notice/878"
+      },
+      {
+        "date": "2026",
+        "org": "교육부 AIEDAP",
+        "title": "2026 AIEDAP 수도권역 제1차 교육 포럼",
+        "href": "https://www.aiedap.or.kr/kboard/capital-notice/994"
+      },
+      {
+        "date": "2026",
+        "org": "교육부 AIEDAP",
+        "title": "2026 AIEDAP 수도권역 2차 포럼: 인천형 AI융합수업 모형과 현장 적용 사례 공유",
+        "href": "https://www.aiedap.or.kr/kboard/capital-notice/1087"
+      },
+      {
+        "date": "2026.11.28",
+        "org": "서울특별시교육청교육연수원",
+        "title": "찾아가는 맞춤형 AI·디지털 리터러시 교육 직무연수 (예정)",
+        "href": ""
       }
     ]
   },
