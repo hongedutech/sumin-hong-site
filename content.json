@@ -526,7 +526,7 @@
         "authors": "<strong>홍수민</strong>, 박성경, 박가은, 한도희, 김준서, 권혜성, 이은서, 김가형, 권현지, 임철",
         "title": "초등학생 대상 프로그래밍 멘토링 교육이 대학생 멘토의 컴퓨팅 프로그래밍 자아효능감과 교수효능감에 미치는 효과",
         "journal": "컴퓨터교육학회 논문지, 29(9), 138-147. https://doi.org/10.32431/kace.2026.29.9.011",
-        "href": "https://doi.org/10.17232/KSET.42.3.733"
+        "href": "https://doi.org/10.32431/kace.2026.29.9.011"
       },
       {
         "year": "2026.06.",
@@ -1909,6 +1909,116 @@
         "pill": "done",
         "pillLabel": "완료",
         "roleLabel": "Member"
+      },
+      {
+        "role": "researcher",
+        "status": "done",
+        "date": "2026",
+        "title": "건국대학교 AI융합교육 소단위전공 교육과정 컨설팅",
+        "org": null,
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "컨설턴트",
+        "cat": "id"
+      },
+      {
+        "role": "researcher",
+        "status": "done",
+        "date": "2026",
+        "title": "2026 AI·디지털 교수학습 기반 역량강화 글로벌 직무연수(사전·사후연수) 교육과정 검토",
+        "org": null,
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "컨설턴트",
+        "cat": "admin"
+      },
+      {
+        "role": "researcher",
+        "status": "done",
+        "date": "2026",
+        "title": "숭실대학교 수업 컨설팅",
+        "org": null,
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "컨설턴트",
+        "cat": "id"
+      },
+      {
+        "role": "researcher",
+        "status": "done",
+        "date": "2026",
+        "title": "2026학년도 K-MOOC 자율참여형 자체평가 (한국교통대학교)",
+        "org": null,
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "컨설턴트",
+        "cat": "online"
+      },
+      {
+        "role": "researcher",
+        "status": "done",
+        "date": "2025",
+        "title": "2025 AIEDAP 착수보고회",
+        "org": null,
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "참여",
+        "cat": "etc"
+      },
+      {
+        "role": "researcher",
+        "status": "done",
+        "date": "2025",
+        "title": "2025 AIEDAP 사업 최종 성과공유회",
+        "org": null,
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "참여",
+        "cat": "etc"
+      },
+      {
+        "role": "researcher",
+        "status": "done",
+        "date": "2025",
+        "title": "2025 AIEDAP 수도·충청권역 공동 성과공유회",
+        "org": null,
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "참여",
+        "cat": "etc"
+      },
+      {
+        "role": "researcher",
+        "status": "done",
+        "date": "2026",
+        "title": "2026 AIEDAP 수도권역 제1차 교육 포럼",
+        "org": null,
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "참여",
+        "cat": "etc"
+      },
+      {
+        "role": "researcher",
+        "status": "done",
+        "date": "2026",
+        "title": "2026 AIEDAP 수도권역 2차 포럼: 인천형 AI융합수업 모형과 현장 적용 사례 공유",
+        "org": null,
+        "pill": "done",
+        "pillLabel": "완료",
+        "roleLabel": "참여",
+        "cat": "etc"
+      },
+      {
+        "role": "researcher",
+        "status": "progress",
+        "date": "2026.11.28",
+        "title": "2026 서울특별시교육청교육연수원 찾아가는 맞춤형 AI·디지털 리터러시 교육 직무연수",
+        "org": null,
+        "pill": "progress",
+        "pillLabel": "예정",
+        "roleLabel": "강사·발표",
+        "cat": "etc"
       }
     ]
   },
@@ -2584,8 +2694,12 @@
         "ko": "교육에서의 생성형 AI 활용"
       },
       {
-        "en": "Instructional systems development",
-        "ko": "교수체제개발"
+        "en": "Instructional systems design",
+        "ko": "교수체제설계"
+      },
+      {
+        "en": "Vibe coding",
+        "ko": "바이브코딩"
       },
       {
         "en": "Flipped · blended · hybrid learning",

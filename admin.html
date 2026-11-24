@@ -648,6 +648,7 @@ function renderApp(){
       <label>저자 (HTML 가능, 본인 이름은 &lt;strong&gt;으로 감싸기)</label><textarea data-path="research.publications.${i}.authors">${escapeHtml(p.authors)}</textarea>
       <label>제목</label><textarea data-path="research.publications.${i}.title">${escapeHtml(p.title)}</textarea>
       <label>저널/출처</label><input type="text" data-path="research.publications.${i}.journal" value="${escapeAttr(p.journal)}">
+      <label>DOI / 링크 (https://doi.org/… 형식, 비우면 링크 없음)</label><input type="text" data-path="research.publications.${i}.href" value="${escapeAttr(p.href||'')}">
     </div>`;
   });
   html += `</div><button class="btn-secondary add-btn" data-add="research.publications">+ 논문 추가</button></div>`;
@@ -1124,7 +1125,7 @@ const TEMPLATES = {
   'about.facts': ()=>({k:{en:'Label', ko:'항목'}, v:{en:'Value', ko:'내용'}}),
   'career.rows': ()=>({date:'2026', title:{en:'New role', ko:'새 직함'}, org:'Organization', pill:{type:'progress', en:'ONGOING', ko:'진행 중'}, logo:''}),
   'research.flagships': ()=>({tag:{en:'PROJECT', ko:'프로젝트'}, title:'New system', desc:{en:'Description', ko:'설명'}, href:'https://', linkText:'link →', image:''}),
-  'research.publications': ()=>({year:'2026', authors:'<strong>Hong, S.</strong>', title:'New publication title', journal:'Journal name'}),
+  'research.publications': ()=>({year:'2026', authors:'<strong>Hong, S.</strong>', title:'New publication title', journal:'Journal name', href:''}),
   'research.mediaCoverage': ()=>({date:'2026.01.01', outlet:'매체명', title:'기사 제목', href:'https://', note:''}),
   'projects.rows': ()=>({role:'researcher', status:'done', date:'2026', title:'새 프로젝트', org:null, pill:'done', pillLabel:'완료', roleLabel:'Researcher'}),
   'teaching.courseLectures': ()=>({title:'새 강의', meta:'기관 · 연도', image:''}),
