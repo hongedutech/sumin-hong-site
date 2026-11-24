@@ -847,6 +847,54 @@
         },
         {
           "label": {
+            "en": "Conference Presentations",
+            "ko": "학술대회 구두 발표"
+          },
+          "items": [
+            "임철일, 문제웅, 홍수민, 조현기, 박성경, 변규리. (2026, 11월 14일). 사회 정서·행동위기 학생 대응 역량 강화를 위한 생성형 AI 통합 가상현실 시뮬레이션 설계 및 프로토타입 개발. 2026 추계공동학술대회, 건국대학교 서울캠퍼스, 서울.",
+            "홍다은, 홍수민. (2026, 11월 14일). 인공지능 융합교육을 위한 생산적 실패(Productive Failure) 기반 게임 설계: 젠트리피케이션 문제를 중심으로. 2026 추계공동학술대회, 건국대학교 서울캠퍼스, 서울.",
+            "김가형, 홍수민, 박성경. (2026, 11월 5일). 학생의 미래역량은 어떻게 변화하는가?: 교사 요인과의 관계에 대한 종단 분석 [발표]. 제9회 서울교육종단연구(SELS) 학술대회, 서울특별시교육청교육연구원, 서울.",
+            "박가은, 곽헌동, 한예준, 이은서, 홍수민, 한도희 (2026, 5월). 중등교육에서 인공지능-도덕 융합 수업 설계 모형 개발 연구. 한국교육공학회 춘계학술대회.",
+            "홍수민, 박성경, 임철일, 임은선 (2025, 5월). 교육에서 학습자 참여도 데이터의 체계적인 검토: 학습 분석의 적용. 한국교육정보미디어학회 춘계학술대회.",
+            "박성경, 홍수민, 임은선, 임철일 (2025, 5월). 주제범위 문헌고찰을 통한 LXD와 ISD의 연구동향. 한국교육정보미디어학회 춘계학술대회.",
+            "Park, H., Hwang, J., Hong, S., &amp; Martine, S. N. (2024, Nov). Facilitating High School Students’ Scientific Modeling through Interaction with AI Chatbots with Varied Persona. 2024 International Conference on Science Education in the Infosphere.",
+            "임은선, 홍수민, 임철일 (2024, 11월). AI 융합 교육에 대한 초등 교사 인식 및 교육 요구도 분석. 2024 한국교육공학회-한국교육정보미디어학회 공동추계학술대회.",
+            "이은서, 홍수민, 임철일, 엄은상, 배영빈 (2024, 11월). 중등 정보교육에서 맞춤형 프로그래밍 학습을 위한 시스템 설계와 시스템 활용 수업의 효과성 분석. 2024 한국교육공학회-한국교육정보미디어학회 공동추계학술대회.",
+            "임철일, 한옥결, 김승하, 전민선, 이채린, 정재현, 홍수민 (2024, 11월). 행동기준 평정척도(BARS)를 활용한 현직교원의 AI·디지털 역량 측정도구 개발 및 타당화. 2024 한국교육공학회-한국교육정보미디어학회 공동추계학술대회.",
+            "Hong, S., Go, B., Lim, E., Eom, T., Kim, S., Han, H., &amp; Lim, C. (2024, Aug). Developing a Comprehensive Framework for Constructing and Operating EduMetaverse in K-12 Education. The 22nd ICoME. Tokyo, Japan.",
+            "Hong, S., Eom, T., Park, S., Lim, M., &amp; Lim, C. (2024, Aug). From Traditional Library to Metaverse Learning Commons. The 22nd ICoME. Tokyo, Japan.",
+            "Lim, C., Chae, J., Han, Y., Hong, S., Go, B., &amp; Lim, E. (2024, Aug). Mapping the Landscape: A Systematic Review and Classification of AI-Integrated Education in South Korea. The 22nd ICoME. Tokyo, Japan.",
+            "Park, S., Lim, E., Hong, S., &amp; Lim, C. (2024, Jun). Exploring Artificial Intelligence-Based Instructional Design Models through Systematic Literature Review. Conference of KSET. Daejeon, South Korea.",
+            "Lim, C., Han, H., Hong, S., Ko, B., Lim, E., Eom, T., &amp; Kim, S. (2024, Jun). Development of a Framework for Building and Operating Educational Metaverses in Primary and Secondary Education. Conference of KSET. Daejeon, South Korea.",
+            "Lim, C., Park, J., Eom, T., Hong, S., Park, S., Jeong, Y., &amp; Kim, H. (2024, May). Analysis of the Relative Importance of Key Factors for Selecting Optimal Online and Offline Instructional Strategies: Focusing on the AHP Technique. Conference of KAEIM. Seoul, South Korea.",
+            "Lim, C., Hong, S., Lim, E., Park, S., Kim, H., &amp; Han, H. (2023, Nov). A Development of Conceptual Model and Instructional Strategies for Hybrid Learning in Higher Education. Joint Conference of KSET &amp; KAEIM. Seoul, South Korea.",
+            "Yoo, J., Hong, S., Kim, H., Lim, C., &amp; Lim, Y. (2023, Nov). A Study on Teaching Strategy and Effectiveness Using an Online Communication Platform to Promote Learner Questions. Joint Conference of KSET &amp; KAEIM. Seoul, South Korea.",
+            "Lim, C., Park, J., Park, S., Eom, S., Hong, S., Jeong, Y., &amp; Kim, H. (2023, Oct). An Exploration of Design Principles for Blended Learning considering the Four Quadrants of Blended Learning Types. 2023 AECT Convention. Orlando, FL, USA.",
+            "Yoo, J., Hong, S., Kim, H., Lim, C., &amp; Lim, Y. (2023, Oct). Promoting Active Learning in Engineering College Classes through Social Learning Platforms. 2023 AECT Convention. Orlando, FL, USA.",
+            "Lim, C., Hong, S., Lim, E., Park, S., Kim, H., &amp; Han, H. (2023, Oct). A Development of Instructional Strategies for Hybrid Learning in South Korea Higher Education. 2023 AECT Convention. Orlando, FL, USA.",
+            "Lim, E., Hong, S., Park, S., &amp; Lim, C. (2023, Jun). Exploring the Improvement of the RPISD Model. Conference of KSET. Jeju, South Korea.",
+            "Lim, C., Han, S., Hong, S., et al. (2023, Jun). Research on Typification and Strategy Development for Instructional Design for Educational Use of the Metaverse in K-12 Education. Conference of KSET. Jeju, South Korea.",
+            "Han, Y., Hong, S., Lee, J., &amp; Lim, C. (2023, Jun). Exploration of Artificial Intelligence Learning Companion Systems. Conference of KSET. Jeju, South Korea.",
+            "Lim, C., Hong, S., Park, J., Kim, H., Park, S., Eom, T., &amp; Jeong, Y. (2023, May). Development of a Framework and Assessment Tools for Effective Teaching and Learning Methods in the Post-COVID Era. Conference of KAEIM. Seoul, South Korea.",
+            "Han, Y., Hong, S., &amp; Lim, C. (2022, Oct). Exploring a Conceptual Model for an Intelligent Learning Companion System. 2022 AECT Convention. Las Vegas, NV.",
+            "Ko, B., Hong, S., Ihm, J., &amp; Lim, C. (2022, Oct). A Study on the Effectiveness of Open Book Evaluation in Dentistry Education. 2022 AECT Convention. Las Vegas, NV.",
+            "Lim, C., Hong, S., Kim, H., Lim, E., Yoo, J., Lee, H., Lee, D., Park, J., &amp; Lee, J. (2022, Oct). A Study of the Optimization Method for Distance Education and Evaluation of Effectiveness: The case of S University in South Korea. 2022 AECT Convention. Las Vegas, NV.",
+            "Hong, S., Lim, C., &amp; Han, H. (2022, Oct). The Role of the Teacher and Scaffolding Strategies for Facilitating Interaction with Artificial Intelligence Speakers in Education. 2022 AECT Convention. Las Vegas, NV.",
+            "Hong, S., Kwon, H., &amp; Han, H. (2022, Jun). Exploration of Scaffolding Strategies in University Online Education through Systematic Literature Review. Conference of KSET. Daejeon, South Korea.",
+            "Lim, C., Hong, S., Lee, D., Kim, H., Yoo, J., Lee, H., &amp; Lim, E. (2022, May). Research on Optimization Strategies and Effectiveness Evaluation for Remote Teaching: A Case Study of S University. Conference of KAEIM. Virtual.",
+            "Hong, S., Lim, C., Kim, H., &amp; Lim, Y. (2022, May). The Effectiveness of Question Types and Strategies to Enhance Learner Engagement in Online Education. Conference of KAEIM. Virtual.",
+            "Park, J., Hong, S., &amp; Lim, C. (2022, May). Exploratory Study on the Attributes of Instructional Media for Educational Use in the Metaverse. Conference of KAEIM. Virtual.",
+            "Hong, S., &amp; Lim, C. (2021, May). Development of Language Educators’ Scaffolding Strategies Using an Artificial Intelligence Speaker. Conference of KSET. Virtual.",
+            "Lim, C., Kim, M., &amp; Hong, S. (2021, May). Development of Instructional Design Models for Flipped Learning Curriculum in Corporate Education. Conference of KSET. Virtual.",
+            "Lim, C., Song, Y., Hong, S., Lee, D., &amp; Han, H. (2020, Oct). Design Principles for Improving Creative Thinking Competency in Corporate Education. 2020 AECT Conference. Virtual.",
+            "송유경, 홍수민, 박찬실, 유강동 &amp; 임철일 (2019, 11월). Research on the Improvement of Rapid Prototyping Models for the Development of Corporate Education. Joint Conference of Human Resources. Seoul, South Korea.",
+            "송유경, 홍수민, 박찬실, 유강동 &amp; 임철일 (2019, 11월). A Study on the Application and Improvement of the RPISD Model. Joint Conference of KSET &amp; KAEIM. Seoul, South Korea.",
+            "임철일, 한형종, 이다연, 송유경, &amp; 홍수민 (2019, 11월). Development and Application of Educational Methodologies for Improving Creative Thinking Competency in Corporate Education. Joint Conference of KSET &amp; KAEIM. Seoul, South Korea.",
+            "Song, Y., Hong, S., Park, C., Liu, K., &amp; Lim, C. (2019, Oct). A Study on the Improvement of RPISD (Rapid Prototyping to ISD). International Conference on Education Research. Seoul, South Korea."
+          ]
+        },
+        {
+          "label": {
             "en": "Poster Presentations",
             "ko": "포스터 발표"
           },
@@ -867,6 +915,7 @@
             "ko": "미디어 발표"
           },
           "items": [
+            "홍수민, 채지윤, 박가은, 한도희, 임철일, 문제웅. (2026, 11월 14일). 인공지능 윤리와 컴퓨팅 사고력의 통합적 함양을 위한 증거중심설계(ECD) 기반 학습용 게임 「Reboot Seoul 2050」 개발. 2026 추계공동학술대회, 건국대학교 서울캠퍼스, 서울.",
             "Hwang, J., Hong, S., Eom, T., &amp; Lim, C. (2024, Jun). Enhancing Pre-service Teachers’ Competence with a Generative Artificial Intelligence-Enhanced Virtual Reality Simulation. International Society of the Learning Sciences. Buffalo, NY, USA.",
             "황준오, 홍수민, 엄태연, 임철일 (2023, 11월). 예비교원의 교수 역량 향상을 위한 생성형 AI 기반의 가상현실 수업 시뮬레이션 개발. 한국교육공학회-한국교육정보미디어학회 추계공동학술대회. 서울, 대한민국."
           ]
@@ -2560,6 +2609,13 @@
           "ko": "수상"
         },
         "items": [
+          {
+            "date": "2026. 11. 14. ",
+            "title": {
+              "en": "Reboot Seoul 2050: An evidence-centered design (ECD)-based learning game for integrating AI ethics and computational thinking [Media exhibition]. Gold Prize, 2026 Fall Joint Conference of the Korean Association for Educational Information and Media and the Korean Society for Educational Technology, Konkuk University Seoul Campus, Seoul, South Korea.",
+              "ko": "인공지능 윤리와 컴퓨팅 사고력의 통합적 함양을 위한 증거중심설계(ECD) 기반 학습용 게임 「Reboot Seoul 2050」 개발. 미디어전 금상, 2026 한국교육정보미디어학회·한국교육공학회 추계공동학술대회, 건국대학교 서울캠퍼스."
+            }
+          },
           {
             "date": "2026.05",
             "title": {
